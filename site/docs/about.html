@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — 5G Regulatory Compliance</title>
+<style>/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}
+</style>
+</head><body>
+<header>
+  <a class="brand" href="index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="archive.html">Archive</a>
+  <a href="about.html" class="on">About</a>
+</nav>
+<main>
+<article>
+<h2>About</h2>
+<p class="lede">5G Regulatory Compliance is a professional blog on mortgage regulatory compliance. <b>3G</b> stands for Giumarra, Gregg, and Grok.</p>
+
+<h2>Ben Giumarra</h2>
+<p>Ben Giumarra is a mortgage compliance attorney. In 2017–2018, while at Spillane Consulting Associates, Inc., he wrote RIMBA’s Wednesday compliance newsletter and served on RIMBA’s Education Committee. His pieces from that period cover HMDA, TRID, RESPA, flood, servicing, Qualified Mortgage rules, fair lending, and CFPB developments.</p>
+
+<h2>Gregg Oberg</h2>
+<p>Gregg Oberg is an attorney who, also at Spillane Consulting Associates in 2017–2018, contributed to and later wrote the same newsletter. He provided vacation-week commentary on Ben’s HMDA demographic-data guides (<cite>HMDA is coming …Review #1</cite> and <cite>HMDA is Coming … Review #2</cite>) and is the author of <cite>HMDA on Hold?</cite> and <cite>Who Ya Gonna Call?</cite>, among other pieces.</p>
+
+<h2>Grok</h2>
+<p>Grok helps research, organize, and publish. Ben and Gregg remain the authors of record for their work.</p>
+
+<h2>About this site</h2>
+<p>RIMBA posts that appear here in full are republished with permission. Each one names its author as credited, links back to the original page on <a href="https://www.rimba.org/">rimba.org</a>, and is marked with a permission note. Other 2017–2018 pieces located on the RIMBA site are listed on the <a href="archive.html">Archive</a> page with summaries and links only.</p>
+<p class="disclaimer">Nothing on this site is legal advice, and it is not an official publication of RIMBA or of any employer. Opinions are those of the named authors.</p>
+</article>
+</main>
+<footer>5G Regulatory Compliance · v1.0.0 · Built 2026-11-12 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+</body></html>

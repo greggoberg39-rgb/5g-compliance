@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5G Regulatory Compliance</title>
+<style>/*__CSS__*/</style>
+</head><body>
+<header>
+  <a class="brand" href="index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+  <a href="index.html" class="on">Home</a>
+  <a href="archive.html">Archive</a>
+  <a href="about.html">About</a>
+</nav>
+<main>
+<section>
+  <h2>Mortgage regulatory compliance</h2>
+  <p class="lede">5G is a professional blog on mortgage regulatory compliance — HMDA, TRID, RESPA, CFPB developments, flood, servicing, and Qualified Mortgage rules. The name is a play on <b>3G</b>: Giumarra, Gregg, and Grok. It builds on work Ben Giumarra and Gregg Oberg first published with the Rhode Island Mortgage Bankers Association (RIMBA) in 2017–2018.</p>
+  <p class="disclaimer">These posts are the authors’ opinions. They are not legal advice and are not an official publication of RIMBA or of any employer. Republished RIMBA pieces appear with permission and link back to the original pages.</p>
+</section>
+<section>
+  <h2>Posts</h2>
+  <div class="filters" id="filters">
+    <span class="label">Filter:</span>
+    <!--__FILTERS__-->
+  </div>
+  <div class="grid cards" id="list">
+<!--__POSTS__-->
+  </div>
+</section>
+<script>
+(function(){
+  var buttons = document.querySelectorAll("#filters button.tag");
+  var cards = document.querySelectorAll("#list .card-link");
+  buttons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var tag = btn.getAttribute("data-tag");
+      var on = btn.classList.contains("on") && tag !== "all";
+      buttons.forEach(function(b){ b.classList.remove("on"); });
+      if (on || tag === "all") {
+        document.querySelector("#filters button[data-tag='all']").classList.add("on");
+        cards.forEach(function(c){ c.style.display = ""; });
+      } else {
+        btn.classList.add("on");
+        cards.forEach(function(c){
+          var tags = (c.getAttribute("data-tags") || "").split(",");
+          c.style.display = tags.indexOf(tag) >= 0 ? "" : "none";
+        });
+      }
+    });
+  });
+})();
+</script>
+</main>
+<footer>5G Regulatory Compliance · v/*__VERSION__*/ · Built /*__BUILT__*/ · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+</body></html>

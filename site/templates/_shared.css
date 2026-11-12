@@ -1,0 +1,168 @@
+/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}

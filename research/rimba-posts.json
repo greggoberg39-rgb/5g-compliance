@@ -1,0 +1,930 @@
+{
+  "project": "5G Regulatory Compliance",
+  "source_site": "https://www.rimba.org/",
+  "source_note": "Rhode Island Mortgage Bankers Association (RIMBA) blog, not rimba.com (an unrelated site). Live pages were still available on 2026-11-12, so Wayback Machine copies were not required. Dates and bylines come from each live page and the WordPress API (https://www.rimba.org/wp-json/wp/v2/posts). RIMBA CMS often lists Carolyn Dion as the WordPress poster; the article byline ('Article By:') is treated as the author credit.",
+  "scope": "Posts authored by Ben Giumarra or Gregg Oberg (then of Spillane Consulting Associates, Inc.) in 2017–2018.",
+  "republished_scope": "Only the seed set below is republished in full on this site, with an original-URL credit and a permission note. Other located posts are listed as links and one-line summaries only.",
+  "authorship_notes": [
+    "Most 2017 Wednesday-newsletter pieces carry 'Article By: Ben Giumarra, Spillane Consulting Associates, Inc.'",
+    "'HMDA is coming …Review #1' (2017-11-10) and 'HMDA is Coming … Review #2' (2017-11-17) are credited to Ben Giumarra but appeared while he was traveling. Both include vacation-week commentary by Gregg Oberg; Review #2 also has a short note from Ben thanking Gregg for covering the newsletter.",
+    "'HMDA on Hold?' (2018-01-02) is by Gregg Oberg, as the original page states ('Article By: Gregg Oberg, Spillane Consulting Associates, Inc.'). A RIMBA closing line thanks Ben Giumarra for the newsletter. Gregg has confirmed this is his post.",
+    "'Who Ya Gonna Call?' (2018-03-22) is by Gregg Oberg and discusses an MBA webinar in which Ben Giumarra (then at Embrace Home Loans) and Gregg spoke.",
+    "A WordPress search of rimba.org also located additional 2017–2018 pieces with Ben or Gregg bylines that were not in the republished seed set. They are listed under 'also_located' and are not republished here."
+  ],
+  "republished": [
+    {
+      "title": "Unnecessary Flood Disclosures?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-03-28",
+      "original_url": "https://www.rimba.org/unnecessary-flood-disclosures/",
+      "archive_url": null,
+      "summary": "Explains which flood-related disclosures are actually required and where lenders may be over-disclosing.",
+      "topic_tags": [
+        "Flood",
+        "Disclosures"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "How much of TRID will help with HMDA?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-10-27",
+      "original_url": "https://www.rimba.org/how-much-of-trid-will-help-with-hmda/",
+      "archive_url": null,
+      "summary": "Tests how far TRID lessons, principles, and definitions carry over to 2018 HMDA data collection.",
+      "topic_tags": [
+        "TRID",
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA Analysis for More than Just Compliance…",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-11-02",
+      "original_url": "https://www.rimba.org/hmda-analysis-for-more-than-just-compliance/",
+      "archive_url": null,
+      "summary": "Argues that HMDA LAR review can surface business and fair-lending insights, not just technical reporting errors.",
+      "topic_tags": [
+        "HMDA",
+        "Fair Lending"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA is coming …Review #1",
+      "authors": [
+        "Ben Giumarra",
+        "Gregg Oberg (commentary)"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc. (with commentary from Gregg Oberg)",
+      "date": "2017-11-10",
+      "original_url": "https://www.rimba.org/hmda-is-coming-review-1/",
+      "archive_url": null,
+      "summary": "Vacation-week guide, based on Ben’s material with commentary from Gregg, on when HMDA demographic data does not have to be collected.",
+      "topic_tags": [
+        "HMDA",
+        "Demographic Data"
+      ],
+      "byline_unconfirmed": false,
+      "authorship_note": "Credited to Ben Giumarra. Appeared while Ben was traveling; includes commentary by Gregg Oberg."
+    },
+    {
+      "title": "HMDA is Coming … Review #2",
+      "authors": [
+        "Ben Giumarra",
+        "Gregg Oberg (commentary)"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc. (vacation-week text and commentary by Gregg Oberg; short note from Ben)",
+      "date": "2017-11-17",
+      "original_url": "https://www.rimba.org/hmda-is-coming-review-2/",
+      "archive_url": null,
+      "summary": "Follow-up on collecting 2018 demographic data, including visual observation and treating applicant answers as given.",
+      "topic_tags": [
+        "HMDA",
+        "Demographic Data"
+      ],
+      "byline_unconfirmed": false,
+      "authorship_note": "Credited to Ben Giumarra. Gregg covered the newsletter while Ben was traveling; includes a thank-you note from Ben."
+    },
+    {
+      "title": "Borrower Changes Demographic Data Answer",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-11-27",
+      "original_url": "https://www.rimba.org/borrower-changes-demographic-data-answer/",
+      "archive_url": null,
+      "summary": "How to handle a borrower who wants to change HMDA ethnicity, race, or sex answers after the application is taken.",
+      "topic_tags": [
+        "HMDA",
+        "Demographic Data"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Republicans Win CFPB Hearing: How It Affects You",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates",
+      "date": "2017-12-01",
+      "original_url": "https://www.rimba.org/republicans-win-cfpb-hearing-how-it-affects-you/",
+      "archive_url": null,
+      "summary": "What the late-2017 fight over the CFPB acting director, after Director Cordray’s departure, meant for mortgage institutions.",
+      "topic_tags": [
+        "CFPB"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "How to Invite Real Estate Agents to Your Christmas Party (without running afoul of RESPA)",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates",
+      "date": "2017-12-07",
+      "original_url": "https://www.rimba.org/how-to-invite-real-estate-agents-to-your-christmas-party-without-running-afoul-of-respa/",
+      "archive_url": null,
+      "summary": "RESPA Section 8 pointers for lender-sponsored parties and other events with real estate agents or referral partners.",
+      "topic_tags": [
+        "RESPA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Small Way to Avoid Some Servicing Requirements?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-12-14",
+      "original_url": "https://www.rimba.org/small-way-to-avoid-some-servicing-requirements/",
+      "archive_url": null,
+      "summary": "Identifies loan types that fall outside some federal mortgage servicing rules so shops can avoid unnecessary burden.",
+      "topic_tags": [
+        "Servicing"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Thanks to John + Any difference between Non-QM and higher-priced QM?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2018-01-02",
+      "original_url": "https://www.rimba.org/thanks-to-john-any-difference-between-non-qm-and-higher-priced-qm/",
+      "archive_url": null,
+      "summary": "Distinguishes non-QM from higher-priced QM and why the difference matters for credit strategy and risk.",
+      "topic_tags": [
+        "QM",
+        "Ability-to-Repay"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA on Hold?",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-01-02",
+      "original_url": "https://www.rimba.org/hmda-on-hold/",
+      "archive_url": null,
+      "summary": "Reads the CFPB’s late-2017 “good faith compliance” HMDA statement and what it did — and did not — change for January 1, 2018.",
+      "topic_tags": [
+        "HMDA",
+        "CFPB"
+      ],
+      "byline_unconfirmed": false,
+      "authorship_note": "Confirmed by Gregg Oberg. The original page byline is 'Article By: Gregg Oberg, Spillane Consulting Associates, Inc.' A RIMBA closing line thanks Ben Giumarra for the newsletter."
+    },
+    {
+      "title": "Who Ya Gonna Call?",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-03-22",
+      "original_url": "https://www.rimba.org/who-ya-gonna-call/",
+      "archive_url": null,
+      "summary": "Describes SCA’s compliance hotline and works through real HMDA implementation questions from an MBA webinar.",
+      "topic_tags": [
+        "HMDA",
+        "Compliance Operations"
+      ],
+      "byline_unconfirmed": false
+    }
+  ],
+  "also_located": [
+    {
+      "title": "Dodging HMDA-applicability on pre-approvals under the new rules",
+      "authors": [
+        "Ben Giumarra (probable; byline format not standardized)"
+      ],
+      "authors_as_credited": "Uncertain — early 2017 page; appeared in a Giumarra search of rimba.org but did not use a clear 'Article By:' line",
+      "date": "2017-02-13",
+      "original_url": "https://www.rimba.org/dodging-hmda-applicability-on-pre-approvals-under-the-new-rules/",
+      "archive_url": null,
+      "summary": "Looks at whether and when pre-approvals are covered under the revised HMDA rules.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": true
+    },
+    {
+      "title": "Understand which vendors need extreme vetting per CFPB",
+      "authors": [
+        "Ben Giumarra (probable; byline format not standardized)"
+      ],
+      "authors_as_credited": "Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located",
+      "date": "2017-02-16",
+      "original_url": "https://www.rimba.org/understand-which-vendors-need-extreme-vetting-per-cfpb/",
+      "archive_url": null,
+      "summary": "Guidance on which vendors warrant heightened CFPB-related due diligence.",
+      "topic_tags": [
+        "CFPB",
+        "Vendor Management"
+      ],
+      "byline_unconfirmed": true
+    },
+    {
+      "title": "TRID Tips on Speeding-Up Closing",
+      "authors": [
+        "Ben Giumarra (probable; byline format not standardized)"
+      ],
+      "authors_as_credited": "Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located",
+      "date": "2017-02-24",
+      "original_url": "https://www.rimba.org/trid-tips-on-speeding-up-closing/",
+      "archive_url": null,
+      "summary": "Practical TRID tips aimed at shortening the path to closing.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": true
+    },
+    {
+      "title": "Simplified HMDA Data When Applicant Declines to Report GMI",
+      "authors": [
+        "Ben Giumarra (probable; byline format not standardized)"
+      ],
+      "authors_as_credited": "Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located",
+      "date": "2017-03-01",
+      "original_url": "https://www.rimba.org/simplified-hmda-data-when-applicant-declines-to-report-gmi/",
+      "archive_url": null,
+      "summary": "How to report HMDA government-monitoring information when an applicant declines to provide it.",
+      "topic_tags": [
+        "HMDA",
+        "Demographic Data"
+      ],
+      "byline_unconfirmed": true
+    },
+    {
+      "title": "Unnecessary Disclosures: Servicing/Rescission – CFPB Death Penalty?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-03-14",
+      "original_url": "https://www.rimba.org/unnecessary-disclosures-servicingrescission-cfpb-death-penalty/",
+      "archive_url": null,
+      "summary": "Warns that extra, unnecessary disclosures can create servicing and rescission risk.",
+      "topic_tags": [
+        "CFPB",
+        "Servicing",
+        "Disclosures"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Lender’s Obligation for Seller’s Closing Disclosure?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-03-21",
+      "original_url": "https://www.rimba.org/lenders-obligation-for-sellers-closing-disclosure/",
+      "archive_url": null,
+      "summary": "Clarifies what a lender must do with the seller’s Closing Disclosure under TRID.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Complying with a Massachusetts advertising rule for brokered loans",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-04-04",
+      "original_url": "https://www.rimba.org/complying-with-a-massachusetts-advertising-rule-for-brokered-loans/",
+      "archive_url": null,
+      "summary": "Walks through a Massachusetts advertising rule that applies to brokered loans.",
+      "topic_tags": [
+        "Advertising",
+        "Massachusetts"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Special Treatment for Commercial Customers — Fair Lending Concern or No?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-04-12",
+      "original_url": "https://www.rimba.org/special-treatment-for-commercial-customers-fair-lending-concern-or-no/",
+      "archive_url": null,
+      "summary": "Asks whether preferential treatment of commercial customers raises fair-lending issues.",
+      "topic_tags": [
+        "Fair Lending"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Waiving overdraft fees: Fair lending concerns in 2017",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-04-20",
+      "original_url": "https://www.rimba.org/waiving-overdraft-fees-fair-lending-concerns-in-2017/",
+      "archive_url": null,
+      "summary": "Looks at fair-lending risk when overdraft fees are waived for some customers and not others.",
+      "topic_tags": [
+        "Fair Lending"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Underwriter also doing Appraisal Review?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-04-26",
+      "original_url": "https://www.rimba.org/underwriter-also-doing-appraisal-review/",
+      "archive_url": null,
+      "summary": "Examines independence and compliance issues when an underwriter also reviews the appraisal.",
+      "topic_tags": [
+        "Appraisals",
+        "Underwriting"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Incorporate Massachusetts fair lending rules into ECOA disclosures?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-05-11",
+      "original_url": "https://www.rimba.org/incorporate-massachusetts-fair-lending-rules-into-ecoa-disclosures/",
+      "archive_url": null,
+      "summary": "Considers whether Massachusetts fair-lending rules should be built into ECOA disclosures.",
+      "topic_tags": [
+        "ECOA",
+        "Fair Lending",
+        "Massachusetts"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Figuring out HELOCs: Late Charges, Prepayment Penalties, and More (Massachusetts-heavy)",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-05-19",
+      "original_url": "https://www.rimba.org/figuring-out-helocs-late-charges-prepayment-penalties-and-more-massachusetts-heavy/",
+      "archive_url": null,
+      "summary": "Unpacks HELOC late charges, prepayment penalties, and related Massachusetts rules.",
+      "topic_tags": [
+        "HELOC",
+        "Massachusetts"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Are No-Verification Loans Making a Comeback?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-05-22",
+      "original_url": "https://www.rimba.org/are-no-verification-loans-making-a-comeback/",
+      "archive_url": null,
+      "summary": "Asks whether low- or no-verification loan products can return under post-crisis ability-to-repay rules.",
+      "topic_tags": [
+        "QM",
+        "Ability-to-Repay"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "4-Step Self Assessment for Fair Lending Pricing Problems",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-05-25",
+      "original_url": "https://www.rimba.org/4-step-self-assessment-for-fair-lending-pricing-problems/",
+      "archive_url": null,
+      "summary": "A four-step self-assessment for spotting fair-lending issues in loan pricing.",
+      "topic_tags": [
+        "Fair Lending",
+        "Pricing"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Underwriting to “Shadow Rent” in Compliance with Ability-to-Repay/QM Rules?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-05-31",
+      "original_url": "https://www.rimba.org/underwriting-to-shadow-rent-in-compliance-with-ability-to-repayqm-rules/",
+      "archive_url": null,
+      "summary": "Evaluates whether underwriting to “shadow rent” can satisfy ATR/QM requirements.",
+      "topic_tags": [
+        "QM",
+        "Ability-to-Repay"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Focus on Counties, not Towns, to Avoid Redlining Allegations",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-06-08",
+      "original_url": "https://www.rimba.org/focus-on-counties-not-towns-to-avoid-redlining-allegations/",
+      "archive_url": null,
+      "summary": "Argues for county-level market analysis as a way to reduce redlining risk.",
+      "topic_tags": [
+        "Fair Lending",
+        "Redlining"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "TILA Slowing Down Day 1 Certainty Implementation?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-06-16",
+      "original_url": "https://www.rimba.org/tila-slowing-down-day-1-certainty-implementation/",
+      "archive_url": null,
+      "summary": "Looks at TILA constraints on Day 1 Certainty-style appraisal and underwriting programs.",
+      "topic_tags": [
+        "TILA",
+        "Appraisals"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Corrected Disclosures Affecting HMDA LAR and Federal Reserve Comments on Finance Charge",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-06-22",
+      "original_url": "https://www.rimba.org/corrected-disclosures-affecting-hmda-lar-and-federal-reserve-comments-on-finance-charge/",
+      "archive_url": null,
+      "summary": "How corrected disclosures flow through to the HMDA LAR, plus Federal Reserve comments on the finance charge.",
+      "topic_tags": [
+        "HMDA",
+        "TILA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "“Uber”-Like Mortgage Originators?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-06-29",
+      "original_url": "https://www.rimba.org/uber-like-mortgage-originators/",
+      "archive_url": null,
+      "summary": "Considers compliance issues raised by more flexible, contractor-style mortgage originator models.",
+      "topic_tags": [
+        "Loan Originator",
+        "TILA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "NMLS vs. TILA Definitions of “Loan Originator”",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-07-05",
+      "original_url": "https://www.rimba.org/nmls-vs-tila-definitions-of-loan-originator/",
+      "archive_url": null,
+      "summary": "Explains why licensing extra staff in NMLS “just to be safe” can actually increase TILA loan-originator risk.",
+      "topic_tags": [
+        "Loan Originator",
+        "TILA",
+        "NMLS"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Can You Pass this TRID Quiz?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-07-14",
+      "original_url": "https://www.rimba.org/can-you-pass-this-trid-quiz/",
+      "archive_url": null,
+      "summary": "A quiz for teams on the then-new TRID amendments ahead of the October 1, 2018 mandatory date.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Answers to last week’s TRID quiz!",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-07-24",
+      "original_url": "https://www.rimba.org/answers-to-last-weeks-trid-quiz/",
+      "archive_url": null,
+      "summary": "Answers and explanations for the prior week’s TRID quiz.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Part 3: Answers to the TRID quiz!",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-07-28",
+      "original_url": "https://www.rimba.org/part-3-answers-to-the-trid-quiz/",
+      "archive_url": null,
+      "summary": "Concluding answers to the multi-part TRID quiz.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "What do you disclose when a loan originator’s license is suspended mid-application?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-08-05",
+      "original_url": "https://www.rimba.org/what-do-you-disclose-when-a-loan-originators-license-is-suspended-mid-application/",
+      "archive_url": null,
+      "summary": "What to disclose and how to proceed if an originator’s license is suspended while an application is pending.",
+      "topic_tags": [
+        "Loan Originator",
+        "Disclosures"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Collections: Calling borrowers too much – MA regulations trip up some in industry",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-08-09",
+      "original_url": "https://www.rimba.org/collections-calling-borrowers-too-much-ma-regulations-trip-up-some-in-industry/",
+      "archive_url": null,
+      "summary": "Flags Massachusetts call-frequency rules that can trip up mortgage collections teams.",
+      "topic_tags": [
+        "Servicing",
+        "Collections",
+        "Massachusetts"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Text messaging with borrowers? Yes, I think so …",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-08-19",
+      "original_url": "https://www.rimba.org/text-messaging-with-borrowers-yes-i-think-so/",
+      "archive_url": null,
+      "summary": "A practical view of whether and how lenders can text with borrowers without running afoul of communications rules.",
+      "topic_tags": [
+        "Borrower Communications"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Notification Requirements After a Data Breach",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-08-28",
+      "original_url": "https://www.rimba.org/notification-requirements-after-a-data-breach/",
+      "archive_url": null,
+      "summary": "Outlines notification duties after a data breach involving mortgage customer information.",
+      "topic_tags": [
+        "Privacy",
+        "Data Security"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "From: Spillane Consulting Associates: Alert – We’re changing to an improved format.",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-09-05",
+      "original_url": "https://www.rimba.org/spillane-consulting-associates-alert-were-changing-to-an-improved-format/",
+      "archive_url": null,
+      "summary": "Announcement that the long-running Wednesday compliance newsletter would be posted on the RIMBA site instead of emailed as a PDF.",
+      "topic_tags": [
+        "Announcement"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Increase in Fair Lending Attention Paid to Loan Servicing?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-09-07",
+      "original_url": "https://www.rimba.org/increase-in-fair-lending-attention-paid-to-loan-servicing/",
+      "archive_url": null,
+      "summary": "Notes growing fair-lending scrutiny of loan-servicing practices.",
+      "topic_tags": [
+        "Fair Lending",
+        "Servicing"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Refresher on When a Revised Loan Estimate is NOT Necessary",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-09-15",
+      "original_url": "https://www.rimba.org/refresher-on-when-a-revised-loan-estimate-is-not-necessary/",
+      "archive_url": null,
+      "summary": "A refresher on the situations in which a revised Loan Estimate is not required.",
+      "topic_tags": [
+        "TRID"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA: Distinction Between Consumer-Purpose and Business-Purpose Loans",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-09-22",
+      "original_url": "https://www.rimba.org/hmda-distinction-between-consumer-purpose-and-business-purpose-loans/",
+      "archive_url": null,
+      "summary": "Reviews the primary-purpose test and factors used to classify a loan as consumer- or business-purpose under HMDA.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA Exemptions for Commercial Loans",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-09-29",
+      "original_url": "https://www.rimba.org/hmda-exemptions-for-commercial-loans/",
+      "archive_url": null,
+      "summary": "Walks through HMDA exemptions that can apply to commercial loans.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Should You Delay Appraisal Delivery Until After Review?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-10-07",
+      "original_url": "https://www.rimba.org/should-you-delay-appraisal-delivery-until-after-review/",
+      "archive_url": null,
+      "summary": "Asks whether a lender may wait to deliver an appraisal copy until after an internal review.",
+      "topic_tags": [
+        "Appraisals",
+        "ECOA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA “Loans in Limbo”: 2017-2018 Timing Issue",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-10-13",
+      "original_url": "https://www.rimba.org/hmda-loans-in-limbo-2017-2018-timing-issue/",
+      "archive_url": null,
+      "summary": "Explains which HMDA rules apply to applications taken in 2017 with final action in 2018, including the demographic-data transition option.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Future (aka Trailing) Compensation on HELOCs?",
+      "authors": [
+        "Ben Giumarra"
+      ],
+      "authors_as_credited": "Ben Giumarra, Spillane Consulting Associates, Inc.",
+      "date": "2017-10-18",
+      "original_url": "https://www.rimba.org/future-aka-trailing-compensation-on-helocs/",
+      "archive_url": null,
+      "summary": "Examines whether trailing or future compensation on HELOCs fits loan-originator compensation rules.",
+      "topic_tags": [
+        "Loan Originator",
+        "HELOC"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Some Thoughts on Compliance Training",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-01-29",
+      "original_url": "https://www.rimba.org/some-thoughts-on-compliance-training/",
+      "archive_url": null,
+      "summary": "Argues that old HMDA habits can undermine training after the 2018 rule changes, especially loan-purpose coding.",
+      "topic_tags": [
+        "HMDA",
+        "Training"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Successors in Interest Under the 2016 Mortgage Servicing Rule",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-01-29",
+      "original_url": "https://www.rimba.org/successors-in-interest-under-the-2016-mortgage-servicing-rule/",
+      "archive_url": null,
+      "summary": "Practical take on identifying and treating successors in interest under the 2016 mortgage servicing rule.",
+      "topic_tags": [
+        "Servicing"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "How Are You Keeping Up With Regulatory Changes?",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-02-05",
+      "original_url": "https://www.rimba.org/how-are-you-keeping-up-with-regulatory-changes/",
+      "archive_url": null,
+      "summary": "A process-oriented look at how institutions can stay current as rules keep changing.",
+      "topic_tags": [
+        "Compliance Operations"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Vendor Management Best Practices",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-03-05",
+      "original_url": "https://www.rimba.org/vendor-management-best-practices/",
+      "archive_url": null,
+      "summary": "Best-practice points for managing mortgage-related vendors from a compliance standpoint.",
+      "topic_tags": [
+        "Vendor Management"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Building the BSA/AML Program",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-03-08",
+      "original_url": "https://www.rimba.org/building-the-bsaaml-program/",
+      "archive_url": null,
+      "summary": "A practical outline for building or refreshing a BSA/AML program in a mortgage shop.",
+      "topic_tags": [
+        "BSA/AML"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "HMDA Reporting on Construction Loans",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-03-29",
+      "original_url": "https://www.rimba.org/hmda-reporting-on-construction-loans/",
+      "archive_url": null,
+      "summary": "How to report construction and construction-to-permanent loans on the HMDA LAR.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Are Small Banks Still Subject to HMDA?",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-06-11",
+      "original_url": "https://www.rimba.org/are-small-banks-still-subject-to-hmda/",
+      "archive_url": null,
+      "summary": "Discusses when smaller banks remain subject to HMDA after the 2018 reforms and later exemptions.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Using Quality Control to Prove Compliance",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-06-22",
+      "original_url": "https://www.rimba.org/using-quality-control-to-prove-compliance/",
+      "archive_url": null,
+      "summary": "Treats monthly QC as a detective control that can both prove and improve a compliance management system.",
+      "topic_tags": [
+        "Quality Control",
+        "Compliance Operations"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Sharing Knowledge in New England",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-08-20",
+      "original_url": "https://www.rimba.org/sharing-knowledge-in-new-england/",
+      "archive_url": null,
+      "summary": "Passes along Encompass business-rules knowledge from colleagues, with compliance implications for LOS setup.",
+      "topic_tags": [
+        "LOS",
+        "Compliance Operations"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Understanding New HMDA Exemptions",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-09-10",
+      "original_url": "https://www.rimba.org/understanding-new-hmda-exemptions/",
+      "archive_url": null,
+      "summary": "Explains the EGRRCPA partial HMDA exemptions and how the CFPB’s 2018 interpretations affect implementation.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    },
+    {
+      "title": "Investment Properties Under HMDA",
+      "authors": [
+        "Gregg Oberg"
+      ],
+      "authors_as_credited": "Gregg Oberg, Spillane Consulting Associates, Inc.",
+      "date": "2018-10-12",
+      "original_url": "https://www.rimba.org/investment-properties-under-hmda/",
+      "archive_url": null,
+      "summary": "How investment-property transactions should be treated for HMDA reporting.",
+      "topic_tags": [
+        "HMDA"
+      ],
+      "byline_unconfirmed": false
+    }
+  ]
+}

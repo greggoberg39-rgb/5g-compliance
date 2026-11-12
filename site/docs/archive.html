@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Archive — 5G Regulatory Compliance</title>
+<style>/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}
+</style>
+</head><body>
+<header>
+  <a class="brand" href="index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="archive.html" class="on">Archive</a>
+  <a href="about.html">About</a>
+</nav>
+<main>
+<article>
+<h2>RIMBA archive, 2017–2018</h2>
+<p class="lede">Posts Ben Giumarra and Gregg Oberg wrote for the Rhode Island Mortgage Bankers Association. Bylines follow the on-page “Article By:” credit. RIMBA’s CMS often lists a staff poster; that is not treated as authorship.</p>
+
+<h2>Republished here</h2>
+<p>These pieces are on this site in full, with permission, and link back to the original RIMBA page.</p>
+<div class="grid">
+<div class="card archive-item"><h3>Unnecessary Flood Disclosures?</h3><div class="meta"><span class="date">March 28, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Explains which flood-related disclosures are actually required and where lenders may be over-disclosing.</p><p class="meta"><a href="unnecessary-flood-disclosures.html">Read on this site</a> · <a href="https://www.rimba.org/unnecessary-flood-disclosures/">https://www.rimba.org/unnecessary-flood-disclosures/</a></p><p class="tags"><span class="tag">Flood</span><span class="tag">Disclosures</span></p></div>
+<div class="card archive-item"><h3>How much of TRID will help with HMDA?</h3><div class="meta"><span class="date">October 27, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Tests how far TRID lessons, principles, and definitions carry over to 2018 HMDA data collection.</p><p class="meta"><a href="how-much-of-trid-will-help-with-hmda.html">Read on this site</a> · <a href="https://www.rimba.org/how-much-of-trid-will-help-with-hmda/">https://www.rimba.org/how-much-of-trid-will-help-with-hmda/</a></p><p class="tags"><span class="tag">TRID</span><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>HMDA Analysis for More than Just Compliance…</h3><div class="meta"><span class="date">November 2, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Argues that HMDA LAR review can surface business and fair-lending insights, not just technical reporting errors.</p><p class="meta"><a href="hmda-analysis-for-more-than-just-compliance.html">Read on this site</a> · <a href="https://www.rimba.org/hmda-analysis-for-more-than-just-compliance/">https://www.rimba.org/hmda-analysis-for-more-than-just-compliance/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Fair Lending</span></p></div>
+<div class="card archive-item"><h3>HMDA is coming …Review #1</h3><div class="meta"><span class="date">November 10, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc. (with commentary from Gregg Oberg)</div><p>Vacation-week guide, based on Ben’s material with commentary from Gregg, on when HMDA demographic data does not have to be collected.</p><p class="meta"><a href="hmda-is-coming-review-1.html">Read on this site</a> · <a href="https://www.rimba.org/hmda-is-coming-review-1/">https://www.rimba.org/hmda-is-coming-review-1/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Demographic Data</span></p></div>
+<div class="card archive-item"><h3>HMDA is Coming … Review #2</h3><div class="meta"><span class="date">November 17, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc. (vacation-week text and commentary by Gregg Oberg; short note from Ben)</div><p>Follow-up on collecting 2018 demographic data, including visual observation and treating applicant answers as given.</p><p class="meta"><a href="hmda-is-coming-review-2.html">Read on this site</a> · <a href="https://www.rimba.org/hmda-is-coming-review-2/">https://www.rimba.org/hmda-is-coming-review-2/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Demographic Data</span></p></div>
+<div class="card archive-item"><h3>Borrower Changes Demographic Data Answer</h3><div class="meta"><span class="date">November 27, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>How to handle a borrower who wants to change HMDA ethnicity, race, or sex answers after the application is taken.</p><p class="meta"><a href="borrower-changes-demographic-data-answer.html">Read on this site</a> · <a href="https://www.rimba.org/borrower-changes-demographic-data-answer/">https://www.rimba.org/borrower-changes-demographic-data-answer/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Demographic Data</span></p></div>
+<div class="card archive-item"><h3>Republicans Win CFPB Hearing: How It Affects You</h3><div class="meta"><span class="date">December 1, 2017</span> · Ben Giumarra, Spillane Consulting Associates</div><p>What the late-2017 fight over the CFPB acting director, after Director Cordray’s departure, meant for mortgage institutions.</p><p class="meta"><a href="republicans-win-cfpb-hearing-how-it-affects-you.html">Read on this site</a> · <a href="https://www.rimba.org/republicans-win-cfpb-hearing-how-it-affects-you/">https://www.rimba.org/republicans-win-cfpb-hearing-how-it-affects-you/</a></p><p class="tags"><span class="tag">CFPB</span></p></div>
+<div class="card archive-item"><h3>How to Invite Real Estate Agents to Your Christmas Party (without running afoul of RESPA)</h3><div class="meta"><span class="date">December 7, 2017</span> · Ben Giumarra, Spillane Consulting Associates</div><p>RESPA Section 8 pointers for lender-sponsored parties and other events with real estate agents or referral partners.</p><p class="meta"><a href="how-to-invite-real-estate-agents-to-your-christmas-party-without-running-afoul-of-respa.html">Read on this site</a> · <a href="https://www.rimba.org/how-to-invite-real-estate-agents-to-your-christmas-party-without-running-afoul-of-respa/">https://www.rimba.org/how-to-invite-real-estate-agents-to-your-christmas-party-without-running-afoul-of-respa/</a></p><p class="tags"><span class="tag">RESPA</span></p></div>
+<div class="card archive-item"><h3>Small Way to Avoid Some Servicing Requirements?</h3><div class="meta"><span class="date">December 14, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Identifies loan types that fall outside some federal mortgage servicing rules so shops can avoid unnecessary burden.</p><p class="meta"><a href="small-way-to-avoid-some-servicing-requirements.html">Read on this site</a> · <a href="https://www.rimba.org/small-way-to-avoid-some-servicing-requirements/">https://www.rimba.org/small-way-to-avoid-some-servicing-requirements/</a></p><p class="tags"><span class="tag">Servicing</span></p></div>
+<div class="card archive-item"><h3>Thanks to John + Any difference between Non-QM and higher-priced QM?</h3><div class="meta"><span class="date">January 2, 2018</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Distinguishes non-QM from higher-priced QM and why the difference matters for credit strategy and risk.</p><p class="meta"><a href="thanks-to-john-any-difference-between-non-qm-and-higher-priced-qm.html">Read on this site</a> · <a href="https://www.rimba.org/thanks-to-john-any-difference-between-non-qm-and-higher-priced-qm/">https://www.rimba.org/thanks-to-john-any-difference-between-non-qm-and-higher-priced-qm/</a></p><p class="tags"><span class="tag">QM</span><span class="tag">Ability-to-Repay</span></p></div>
+<div class="card archive-item"><h3>HMDA on Hold?</h3><div class="meta"><span class="date">January 2, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Reads the CFPB’s late-2017 “good faith compliance” HMDA statement and what it did — and did not — change for January 1, 2018.</p><p class="meta"><a href="hmda-on-hold.html">Read on this site</a> · <a href="https://www.rimba.org/hmda-on-hold/">https://www.rimba.org/hmda-on-hold/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">CFPB</span></p></div>
+<div class="card archive-item"><h3>Who Ya Gonna Call?</h3><div class="meta"><span class="date">March 22, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Describes SCA’s compliance hotline and works through real HMDA implementation questions from an MBA webinar.</p><p class="meta"><a href="who-ya-gonna-call.html">Read on this site</a> · <a href="https://www.rimba.org/who-ya-gonna-call/">https://www.rimba.org/who-ya-gonna-call/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Compliance Operations</span></p></div>
+</div>
+
+<h2>Also located (links only)</h2>
+<p>Additional 2017–2018 rimba.org posts located during research. Titles, credits, dates, and short summaries only — the full text is not republished here. A few early-2017 bylines were not standardized; those are flagged.</p>
+<div class="grid">
+<div class="card archive-item"><h3>Dodging HMDA-applicability on pre-approvals under the new rules</h3><div class="meta"><span class="date">February 13, 2017</span> · Uncertain — early 2017 page; appeared in a Giumarra search of rimba.org but did not use a clear 'Article By:' line <span class="tag">Byline uncertain</span></div><p>Looks at whether and when pre-approvals are covered under the revised HMDA rules.</p><p class="meta"><a href="https://www.rimba.org/dodging-hmda-applicability-on-pre-approvals-under-the-new-rules/">https://www.rimba.org/dodging-hmda-applicability-on-pre-approvals-under-the-new-rules/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Understand which vendors need extreme vetting per CFPB</h3><div class="meta"><span class="date">February 16, 2017</span> · Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located <span class="tag">Byline uncertain</span></div><p>Guidance on which vendors warrant heightened CFPB-related due diligence.</p><p class="meta"><a href="https://www.rimba.org/understand-which-vendors-need-extreme-vetting-per-cfpb/">https://www.rimba.org/understand-which-vendors-need-extreme-vetting-per-cfpb/</a></p><p class="tags"><span class="tag">CFPB</span><span class="tag">Vendor Management</span></p></div>
+<div class="card archive-item"><h3>TRID Tips on Speeding-Up Closing</h3><div class="meta"><span class="date">February 24, 2017</span> · Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located <span class="tag">Byline uncertain</span></div><p>Practical TRID tips aimed at shortening the path to closing.</p><p class="meta"><a href="https://www.rimba.org/trid-tips-on-speeding-up-closing/">https://www.rimba.org/trid-tips-on-speeding-up-closing/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>Simplified HMDA Data When Applicant Declines to Report GMI</h3><div class="meta"><span class="date">March 1, 2017</span> · Uncertain — early 2017 page mentioning Ben; no clear 'Article By:' line located <span class="tag">Byline uncertain</span></div><p>How to report HMDA government-monitoring information when an applicant declines to provide it.</p><p class="meta"><a href="https://www.rimba.org/simplified-hmda-data-when-applicant-declines-to-report-gmi/">https://www.rimba.org/simplified-hmda-data-when-applicant-declines-to-report-gmi/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Demographic Data</span></p></div>
+<div class="card archive-item"><h3>Unnecessary Disclosures: Servicing/Rescission – CFPB Death Penalty?</h3><div class="meta"><span class="date">March 14, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Warns that extra, unnecessary disclosures can create servicing and rescission risk.</p><p class="meta"><a href="https://www.rimba.org/unnecessary-disclosures-servicingrescission-cfpb-death-penalty/">https://www.rimba.org/unnecessary-disclosures-servicingrescission-cfpb-death-penalty/</a></p><p class="tags"><span class="tag">CFPB</span><span class="tag">Servicing</span><span class="tag">Disclosures</span></p></div>
+<div class="card archive-item"><h3>Lender’s Obligation for Seller’s Closing Disclosure?</h3><div class="meta"><span class="date">March 21, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Clarifies what a lender must do with the seller’s Closing Disclosure under TRID.</p><p class="meta"><a href="https://www.rimba.org/lenders-obligation-for-sellers-closing-disclosure/">https://www.rimba.org/lenders-obligation-for-sellers-closing-disclosure/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>Complying with a Massachusetts advertising rule for brokered loans</h3><div class="meta"><span class="date">April 4, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Walks through a Massachusetts advertising rule that applies to brokered loans.</p><p class="meta"><a href="https://www.rimba.org/complying-with-a-massachusetts-advertising-rule-for-brokered-loans/">https://www.rimba.org/complying-with-a-massachusetts-advertising-rule-for-brokered-loans/</a></p><p class="tags"><span class="tag">Advertising</span><span class="tag">Massachusetts</span></p></div>
+<div class="card archive-item"><h3>Special Treatment for Commercial Customers — Fair Lending Concern or No?</h3><div class="meta"><span class="date">April 12, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Asks whether preferential treatment of commercial customers raises fair-lending issues.</p><p class="meta"><a href="https://www.rimba.org/special-treatment-for-commercial-customers-fair-lending-concern-or-no/">https://www.rimba.org/special-treatment-for-commercial-customers-fair-lending-concern-or-no/</a></p><p class="tags"><span class="tag">Fair Lending</span></p></div>
+<div class="card archive-item"><h3>Waiving overdraft fees: Fair lending concerns in 2017</h3><div class="meta"><span class="date">April 20, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Looks at fair-lending risk when overdraft fees are waived for some customers and not others.</p><p class="meta"><a href="https://www.rimba.org/waiving-overdraft-fees-fair-lending-concerns-in-2017/">https://www.rimba.org/waiving-overdraft-fees-fair-lending-concerns-in-2017/</a></p><p class="tags"><span class="tag">Fair Lending</span></p></div>
+<div class="card archive-item"><h3>Underwriter also doing Appraisal Review?</h3><div class="meta"><span class="date">April 26, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Examines independence and compliance issues when an underwriter also reviews the appraisal.</p><p class="meta"><a href="https://www.rimba.org/underwriter-also-doing-appraisal-review/">https://www.rimba.org/underwriter-also-doing-appraisal-review/</a></p><p class="tags"><span class="tag">Appraisals</span><span class="tag">Underwriting</span></p></div>
+<div class="card archive-item"><h3>Incorporate Massachusetts fair lending rules into ECOA disclosures?</h3><div class="meta"><span class="date">May 11, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Considers whether Massachusetts fair-lending rules should be built into ECOA disclosures.</p><p class="meta"><a href="https://www.rimba.org/incorporate-massachusetts-fair-lending-rules-into-ecoa-disclosures/">https://www.rimba.org/incorporate-massachusetts-fair-lending-rules-into-ecoa-disclosures/</a></p><p class="tags"><span class="tag">ECOA</span><span class="tag">Fair Lending</span><span class="tag">Massachusetts</span></p></div>
+<div class="card archive-item"><h3>Figuring out HELOCs: Late Charges, Prepayment Penalties, and More (Massachusetts-heavy)</h3><div class="meta"><span class="date">May 19, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Unpacks HELOC late charges, prepayment penalties, and related Massachusetts rules.</p><p class="meta"><a href="https://www.rimba.org/figuring-out-helocs-late-charges-prepayment-penalties-and-more-massachusetts-heavy/">https://www.rimba.org/figuring-out-helocs-late-charges-prepayment-penalties-and-more-massachusetts-heavy/</a></p><p class="tags"><span class="tag">HELOC</span><span class="tag">Massachusetts</span></p></div>
+<div class="card archive-item"><h3>Are No-Verification Loans Making a Comeback?</h3><div class="meta"><span class="date">May 22, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Asks whether low- or no-verification loan products can return under post-crisis ability-to-repay rules.</p><p class="meta"><a href="https://www.rimba.org/are-no-verification-loans-making-a-comeback/">https://www.rimba.org/are-no-verification-loans-making-a-comeback/</a></p><p class="tags"><span class="tag">QM</span><span class="tag">Ability-to-Repay</span></p></div>
+<div class="card archive-item"><h3>4-Step Self Assessment for Fair Lending Pricing Problems</h3><div class="meta"><span class="date">May 25, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>A four-step self-assessment for spotting fair-lending issues in loan pricing.</p><p class="meta"><a href="https://www.rimba.org/4-step-self-assessment-for-fair-lending-pricing-problems/">https://www.rimba.org/4-step-self-assessment-for-fair-lending-pricing-problems/</a></p><p class="tags"><span class="tag">Fair Lending</span><span class="tag">Pricing</span></p></div>
+<div class="card archive-item"><h3>Underwriting to “Shadow Rent” in Compliance with Ability-to-Repay/QM Rules?</h3><div class="meta"><span class="date">May 31, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Evaluates whether underwriting to “shadow rent” can satisfy ATR/QM requirements.</p><p class="meta"><a href="https://www.rimba.org/underwriting-to-shadow-rent-in-compliance-with-ability-to-repayqm-rules/">https://www.rimba.org/underwriting-to-shadow-rent-in-compliance-with-ability-to-repayqm-rules/</a></p><p class="tags"><span class="tag">QM</span><span class="tag">Ability-to-Repay</span></p></div>
+<div class="card archive-item"><h3>Focus on Counties, not Towns, to Avoid Redlining Allegations</h3><div class="meta"><span class="date">June 8, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Argues for county-level market analysis as a way to reduce redlining risk.</p><p class="meta"><a href="https://www.rimba.org/focus-on-counties-not-towns-to-avoid-redlining-allegations/">https://www.rimba.org/focus-on-counties-not-towns-to-avoid-redlining-allegations/</a></p><p class="tags"><span class="tag">Fair Lending</span><span class="tag">Redlining</span></p></div>
+<div class="card archive-item"><h3>TILA Slowing Down Day 1 Certainty Implementation?</h3><div class="meta"><span class="date">June 16, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Looks at TILA constraints on Day 1 Certainty-style appraisal and underwriting programs.</p><p class="meta"><a href="https://www.rimba.org/tila-slowing-down-day-1-certainty-implementation/">https://www.rimba.org/tila-slowing-down-day-1-certainty-implementation/</a></p><p class="tags"><span class="tag">TILA</span><span class="tag">Appraisals</span></p></div>
+<div class="card archive-item"><h3>Corrected Disclosures Affecting HMDA LAR and Federal Reserve Comments on Finance Charge</h3><div class="meta"><span class="date">June 22, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>How corrected disclosures flow through to the HMDA LAR, plus Federal Reserve comments on the finance charge.</p><p class="meta"><a href="https://www.rimba.org/corrected-disclosures-affecting-hmda-lar-and-federal-reserve-comments-on-finance-charge/">https://www.rimba.org/corrected-disclosures-affecting-hmda-lar-and-federal-reserve-comments-on-finance-charge/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">TILA</span></p></div>
+<div class="card archive-item"><h3>“Uber”-Like Mortgage Originators?</h3><div class="meta"><span class="date">June 29, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Considers compliance issues raised by more flexible, contractor-style mortgage originator models.</p><p class="meta"><a href="https://www.rimba.org/uber-like-mortgage-originators/">https://www.rimba.org/uber-like-mortgage-originators/</a></p><p class="tags"><span class="tag">Loan Originator</span><span class="tag">TILA</span></p></div>
+<div class="card archive-item"><h3>NMLS vs. TILA Definitions of “Loan Originator”</h3><div class="meta"><span class="date">July 5, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Explains why licensing extra staff in NMLS “just to be safe” can actually increase TILA loan-originator risk.</p><p class="meta"><a href="https://www.rimba.org/nmls-vs-tila-definitions-of-loan-originator/">https://www.rimba.org/nmls-vs-tila-definitions-of-loan-originator/</a></p><p class="tags"><span class="tag">Loan Originator</span><span class="tag">TILA</span><span class="tag">NMLS</span></p></div>
+<div class="card archive-item"><h3>Can You Pass this TRID Quiz?</h3><div class="meta"><span class="date">July 14, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>A quiz for teams on the then-new TRID amendments ahead of the October 1, 2018 mandatory date.</p><p class="meta"><a href="https://www.rimba.org/can-you-pass-this-trid-quiz/">https://www.rimba.org/can-you-pass-this-trid-quiz/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>Answers to last week’s TRID quiz!</h3><div class="meta"><span class="date">July 24, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Answers and explanations for the prior week’s TRID quiz.</p><p class="meta"><a href="https://www.rimba.org/answers-to-last-weeks-trid-quiz/">https://www.rimba.org/answers-to-last-weeks-trid-quiz/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>Part 3: Answers to the TRID quiz!</h3><div class="meta"><span class="date">July 28, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Concluding answers to the multi-part TRID quiz.</p><p class="meta"><a href="https://www.rimba.org/part-3-answers-to-the-trid-quiz/">https://www.rimba.org/part-3-answers-to-the-trid-quiz/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>What do you disclose when a loan originator’s license is suspended mid-application?</h3><div class="meta"><span class="date">August 5, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>What to disclose and how to proceed if an originator’s license is suspended while an application is pending.</p><p class="meta"><a href="https://www.rimba.org/what-do-you-disclose-when-a-loan-originators-license-is-suspended-mid-application/">https://www.rimba.org/what-do-you-disclose-when-a-loan-originators-license-is-suspended-mid-application/</a></p><p class="tags"><span class="tag">Loan Originator</span><span class="tag">Disclosures</span></p></div>
+<div class="card archive-item"><h3>Collections: Calling borrowers too much – MA regulations trip up some in industry</h3><div class="meta"><span class="date">August 9, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Flags Massachusetts call-frequency rules that can trip up mortgage collections teams.</p><p class="meta"><a href="https://www.rimba.org/collections-calling-borrowers-too-much-ma-regulations-trip-up-some-in-industry/">https://www.rimba.org/collections-calling-borrowers-too-much-ma-regulations-trip-up-some-in-industry/</a></p><p class="tags"><span class="tag">Servicing</span><span class="tag">Collections</span><span class="tag">Massachusetts</span></p></div>
+<div class="card archive-item"><h3>Text messaging with borrowers? Yes, I think so …</h3><div class="meta"><span class="date">August 19, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>A practical view of whether and how lenders can text with borrowers without running afoul of communications rules.</p><p class="meta"><a href="https://www.rimba.org/text-messaging-with-borrowers-yes-i-think-so/">https://www.rimba.org/text-messaging-with-borrowers-yes-i-think-so/</a></p><p class="tags"><span class="tag">Borrower Communications</span></p></div>
+<div class="card archive-item"><h3>Notification Requirements After a Data Breach</h3><div class="meta"><span class="date">August 28, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Outlines notification duties after a data breach involving mortgage customer information.</p><p class="meta"><a href="https://www.rimba.org/notification-requirements-after-a-data-breach/">https://www.rimba.org/notification-requirements-after-a-data-breach/</a></p><p class="tags"><span class="tag">Privacy</span><span class="tag">Data Security</span></p></div>
+<div class="card archive-item"><h3>From: Spillane Consulting Associates: Alert – We’re changing to an improved format.</h3><div class="meta"><span class="date">September 5, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Announcement that the long-running Wednesday compliance newsletter would be posted on the RIMBA site instead of emailed as a PDF.</p><p class="meta"><a href="https://www.rimba.org/spillane-consulting-associates-alert-were-changing-to-an-improved-format/">https://www.rimba.org/spillane-consulting-associates-alert-were-changing-to-an-improved-format/</a></p><p class="tags"><span class="tag">Announcement</span></p></div>
+<div class="card archive-item"><h3>Increase in Fair Lending Attention Paid to Loan Servicing?</h3><div class="meta"><span class="date">September 7, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Notes growing fair-lending scrutiny of loan-servicing practices.</p><p class="meta"><a href="https://www.rimba.org/increase-in-fair-lending-attention-paid-to-loan-servicing/">https://www.rimba.org/increase-in-fair-lending-attention-paid-to-loan-servicing/</a></p><p class="tags"><span class="tag">Fair Lending</span><span class="tag">Servicing</span></p></div>
+<div class="card archive-item"><h3>Refresher on When a Revised Loan Estimate is NOT Necessary</h3><div class="meta"><span class="date">September 15, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>A refresher on the situations in which a revised Loan Estimate is not required.</p><p class="meta"><a href="https://www.rimba.org/refresher-on-when-a-revised-loan-estimate-is-not-necessary/">https://www.rimba.org/refresher-on-when-a-revised-loan-estimate-is-not-necessary/</a></p><p class="tags"><span class="tag">TRID</span></p></div>
+<div class="card archive-item"><h3>HMDA: Distinction Between Consumer-Purpose and Business-Purpose Loans</h3><div class="meta"><span class="date">September 22, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Reviews the primary-purpose test and factors used to classify a loan as consumer- or business-purpose under HMDA.</p><p class="meta"><a href="https://www.rimba.org/hmda-distinction-between-consumer-purpose-and-business-purpose-loans/">https://www.rimba.org/hmda-distinction-between-consumer-purpose-and-business-purpose-loans/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>HMDA Exemptions for Commercial Loans</h3><div class="meta"><span class="date">September 29, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Walks through HMDA exemptions that can apply to commercial loans.</p><p class="meta"><a href="https://www.rimba.org/hmda-exemptions-for-commercial-loans/">https://www.rimba.org/hmda-exemptions-for-commercial-loans/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Should You Delay Appraisal Delivery Until After Review?</h3><div class="meta"><span class="date">October 7, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Asks whether a lender may wait to deliver an appraisal copy until after an internal review.</p><p class="meta"><a href="https://www.rimba.org/should-you-delay-appraisal-delivery-until-after-review/">https://www.rimba.org/should-you-delay-appraisal-delivery-until-after-review/</a></p><p class="tags"><span class="tag">Appraisals</span><span class="tag">ECOA</span></p></div>
+<div class="card archive-item"><h3>HMDA “Loans in Limbo”: 2017-2018 Timing Issue</h3><div class="meta"><span class="date">October 13, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Explains which HMDA rules apply to applications taken in 2017 with final action in 2018, including the demographic-data transition option.</p><p class="meta"><a href="https://www.rimba.org/hmda-loans-in-limbo-2017-2018-timing-issue/">https://www.rimba.org/hmda-loans-in-limbo-2017-2018-timing-issue/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Future (aka Trailing) Compensation on HELOCs?</h3><div class="meta"><span class="date">October 18, 2017</span> · Ben Giumarra, Spillane Consulting Associates, Inc.</div><p>Examines whether trailing or future compensation on HELOCs fits loan-originator compensation rules.</p><p class="meta"><a href="https://www.rimba.org/future-aka-trailing-compensation-on-helocs/">https://www.rimba.org/future-aka-trailing-compensation-on-helocs/</a></p><p class="tags"><span class="tag">Loan Originator</span><span class="tag">HELOC</span></p></div>
+<div class="card archive-item"><h3>Some Thoughts on Compliance Training</h3><div class="meta"><span class="date">January 29, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Argues that old HMDA habits can undermine training after the 2018 rule changes, especially loan-purpose coding.</p><p class="meta"><a href="https://www.rimba.org/some-thoughts-on-compliance-training/">https://www.rimba.org/some-thoughts-on-compliance-training/</a></p><p class="tags"><span class="tag">HMDA</span><span class="tag">Training</span></p></div>
+<div class="card archive-item"><h3>Successors in Interest Under the 2016 Mortgage Servicing Rule</h3><div class="meta"><span class="date">January 29, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Practical take on identifying and treating successors in interest under the 2016 mortgage servicing rule.</p><p class="meta"><a href="https://www.rimba.org/successors-in-interest-under-the-2016-mortgage-servicing-rule/">https://www.rimba.org/successors-in-interest-under-the-2016-mortgage-servicing-rule/</a></p><p class="tags"><span class="tag">Servicing</span></p></div>
+<div class="card archive-item"><h3>How Are You Keeping Up With Regulatory Changes?</h3><div class="meta"><span class="date">February 5, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>A process-oriented look at how institutions can stay current as rules keep changing.</p><p class="meta"><a href="https://www.rimba.org/how-are-you-keeping-up-with-regulatory-changes/">https://www.rimba.org/how-are-you-keeping-up-with-regulatory-changes/</a></p><p class="tags"><span class="tag">Compliance Operations</span></p></div>
+<div class="card archive-item"><h3>Vendor Management Best Practices</h3><div class="meta"><span class="date">March 5, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Best-practice points for managing mortgage-related vendors from a compliance standpoint.</p><p class="meta"><a href="https://www.rimba.org/vendor-management-best-practices/">https://www.rimba.org/vendor-management-best-practices/</a></p><p class="tags"><span class="tag">Vendor Management</span></p></div>
+<div class="card archive-item"><h3>Building the BSA/AML Program</h3><div class="meta"><span class="date">March 8, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>A practical outline for building or refreshing a BSA/AML program in a mortgage shop.</p><p class="meta"><a href="https://www.rimba.org/building-the-bsaaml-program/">https://www.rimba.org/building-the-bsaaml-program/</a></p><p class="tags"><span class="tag">BSA/AML</span></p></div>
+<div class="card archive-item"><h3>HMDA Reporting on Construction Loans</h3><div class="meta"><span class="date">March 29, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>How to report construction and construction-to-permanent loans on the HMDA LAR.</p><p class="meta"><a href="https://www.rimba.org/hmda-reporting-on-construction-loans/">https://www.rimba.org/hmda-reporting-on-construction-loans/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Are Small Banks Still Subject to HMDA?</h3><div class="meta"><span class="date">June 11, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Discusses when smaller banks remain subject to HMDA after the 2018 reforms and later exemptions.</p><p class="meta"><a href="https://www.rimba.org/are-small-banks-still-subject-to-hmda/">https://www.rimba.org/are-small-banks-still-subject-to-hmda/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Using Quality Control to Prove Compliance</h3><div class="meta"><span class="date">June 22, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Treats monthly QC as a detective control that can both prove and improve a compliance management system.</p><p class="meta"><a href="https://www.rimba.org/using-quality-control-to-prove-compliance/">https://www.rimba.org/using-quality-control-to-prove-compliance/</a></p><p class="tags"><span class="tag">Quality Control</span><span class="tag">Compliance Operations</span></p></div>
+<div class="card archive-item"><h3>Sharing Knowledge in New England</h3><div class="meta"><span class="date">August 20, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Passes along Encompass business-rules knowledge from colleagues, with compliance implications for LOS setup.</p><p class="meta"><a href="https://www.rimba.org/sharing-knowledge-in-new-england/">https://www.rimba.org/sharing-knowledge-in-new-england/</a></p><p class="tags"><span class="tag">LOS</span><span class="tag">Compliance Operations</span></p></div>
+<div class="card archive-item"><h3>Understanding New HMDA Exemptions</h3><div class="meta"><span class="date">September 10, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>Explains the EGRRCPA partial HMDA exemptions and how the CFPB’s 2018 interpretations affect implementation.</p><p class="meta"><a href="https://www.rimba.org/understanding-new-hmda-exemptions/">https://www.rimba.org/understanding-new-hmda-exemptions/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+<div class="card archive-item"><h3>Investment Properties Under HMDA</h3><div class="meta"><span class="date">October 12, 2018</span> · Gregg Oberg, Spillane Consulting Associates, Inc.</div><p>How investment-property transactions should be treated for HMDA reporting.</p><p class="meta"><a href="https://www.rimba.org/investment-properties-under-hmda/">https://www.rimba.org/investment-properties-under-hmda/</a></p><p class="tags"><span class="tag">HMDA</span></p></div>
+</div>
+</article>
+</main>
+<footer>5G Regulatory Compliance · v1.0.0 · Built 2026-11-12 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+</body></html>
