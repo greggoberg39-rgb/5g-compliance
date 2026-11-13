@@ -7,7 +7,7 @@ Published on GitHub Pages at [https://greggoberg39-rgb.github.io/5g-compliance/]
 ## What’s in this folder
 
 - `site/` — the static site. Run the build from here.
-- `site/config.json` — site name, tagline, and navigation (the reskin point for branding).
+- `site/config.json` — site name, tagline, navigation, site URL, and share settings (the reskin point for branding).
 - `site/content/posts/` — one Markdown file per post (front matter + body).
 - `site/content/resources/` — Resource Library entries (front matter + body, plus optional data files).
 - `site/content/media/` — images used in republished posts.
@@ -66,6 +66,14 @@ Set it to `False` and run `python3 build.py` again. Post pages and home-page car
 Python 3 only. No extra packages.
 
 ## Changelog
+
+### 1.2.0 — 2026-11-13
+
+- Added a share bar to every post and every Resource Library page (after the title/byline and again at the end): Share on X, LinkedIn, Gmail, Email, Copy link, and a native Share button on devices that support it.
+- Share buttons are plain links plus a small bit of vanilla JavaScript. No third-party scripts or trackers.
+- Posts and resource pages now include Open Graph and Twitter Card tags so links preview with a title, excerpt, and a branded 1200×630 image (`site/content/media/share-card.png`).
+- Site URL, X handle, default share image, and which share buttons appear all live in `site/config.json`.
+- Footer version bumped to 1.2.0.
 
 ### 1.1.0 — 2026-11-13
 

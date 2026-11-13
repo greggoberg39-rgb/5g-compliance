@@ -321,6 +321,84 @@ footer {
 .resource-card .card-link-inner h3 { color: var(--navy); }
 .resource-card .card-link-inner:hover h3, .resource-card .card-link-inner:focus h3 { color: var(--teal); }
 .resource-card .meta a { font-weight: 600; }
+
+/* Share bar — reset site header <nav> styles so this bar stays inline */
+nav.share-bar,
+.share-bar {
+  position: static;
+  top: auto;
+  z-index: auto;
+  background: transparent;
+  padding: 0;
+  display: block;
+  flex-wrap: unset;
+  gap: 0;
+  margin: 4px 0 18px;
+}
+.share-bar-bottom {
+  margin: 22px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.share-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+nav.share-bar .share-btn,
+.share-bar .share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--navy);
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+nav.share-bar .share-btn:hover,
+nav.share-bar .share-btn:focus,
+.share-bar .share-btn:hover,
+.share-bar .share-btn:focus {
+  color: var(--teal);
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+nav.share-bar .share-btn:focus-visible,
+.share-bar .share-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.share-bar .share-btn svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+nav.share-bar .share-btn.copied,
+nav.share-bar .share-btn.copied:hover,
+nav.share-bar .share-btn.copied:focus,
+.share-bar .share-btn.copied,
+.share-bar .share-btn.copied:hover,
+.share-bar .share-btn.copied:focus {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+@media (max-width: 419px) {
+  nav.share-bar .share-btn,
+  .share-bar .share-btn { padding: 8px 10px; font-size: 0.8rem; }
+}
 </style>
 </head><body>
 <header>
@@ -357,5 +435,5 @@ footer {
 <p class="disclaimer">Nothing on this site is legal advice, and it is not an official publication of RIMBA or of any employer. Opinions are those of the named authors.</p>
 </article>
 </main>
-<footer>5G Regulatory Compliance · v1.1.0 · Built 2026-11-13 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+<footer>5G Regulatory Compliance · v1.2.0 · Built 2026-11-13 · Commentary only; not legal advice. Not an official publication of RIMBA.</footer>
 </body></html>

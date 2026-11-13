@@ -2,7 +2,13 @@
   "site_name": "5G Regulatory Compliance",
   "short_name": "5G",
   "tagline": "Giumarra, Gregg, and Grok",
-  "footer_note": "Commentary only; not legal advice. Not an official RIMBA publication.",
+  "footer_note": "Commentary only; not legal advice. Not an official publication of RIMBA.",
+  "site_url": "https://greggoberg39-rgb.github.io/5g-compliance",
+  "share": {
+    "x_handle": "GreggOberg",
+    "og_image": "media/share-card.png",
+    "buttons": ["x", "linkedin", "gmail", "email", "copy", "native"]
+  },
   "nav": [
     {"id": "home", "label": "Home", "href": "index.html"},
     {"id": "resources", "label": "Resources", "href": "resources/"},

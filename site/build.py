@@ -17,10 +17,11 @@ The Resource Library still builds.
 No heavy dependencies — Python 3 only.
 """
 import datetime, json, os, re, shutil, sys
+from urllib.parse import quote
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TODAY = datetime.date.today().isoformat()
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 # Set to False to hide post cards and skip generating post pages
 # (files stay in content/posts/). About and Archive still build.
 BLOG_ENABLED = True
@@ -63,6 +64,202 @@ def fmt_long(d):
 
 def html_esc(s):
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+
+
+
+DEFAULT_SHARE_BUTTONS = ("x", "linkedin", "gmail", "email", "copy", "native")
+
+SHARE_ICONS = {
+    "x": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+    "linkedin": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>',
+    "gmail": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>',
+    "email": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>',
+    "copy": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7C4.24 7 2 9.24 2 12s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>',
+    "native": '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11A2.99 2.99 0 0 0 21 5a3 3 0 1 0-2.96 2.39L11 11.5v.99l7.04 4.11A2.99 2.99 0 0 0 21 19a3 3 0 1 0-3-2.92z"/></svg>',
+}
+
+SHARE_SCRIPT = """<script>
+(function(){
+  function fallbackCopy(url, done){
+    var ta = document.createElement("textarea");
+    ta.value = url;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  var bars = document.querySelectorAll(".share-bar");
+  bars.forEach(function(bar){
+    var nativeBtn = bar.querySelector(".share-native");
+    if (nativeBtn && navigator.share) {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener("click", function(){
+        navigator.share({
+          title: bar.getAttribute("data-share-title") || document.title,
+          text: bar.getAttribute("data-share-text") || "",
+          url: bar.getAttribute("data-share-url") || window.location.href
+        }).catch(function(){});
+      });
+    }
+    var copyBtn = bar.querySelector(".share-copy");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function(){
+        var url = bar.getAttribute("data-share-url") || window.location.href;
+        var label = copyBtn.querySelector(".share-label-text");
+        var prev = label ? label.textContent : "Copy link";
+        var done = function(){
+          copyBtn.classList.add("copied");
+          if (label) label.textContent = "Copied!";
+          copyBtn.setAttribute("aria-label", "Copied!");
+          setTimeout(function(){
+            copyBtn.classList.remove("copied");
+            if (label) label.textContent = prev;
+            copyBtn.setAttribute("aria-label", "Copy link");
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done).catch(function(){ fallbackCopy(url, done); });
+        } else {
+          fallbackCopy(url, done);
+        }
+      });
+    }
+  });
+})();
+</script>"""
+
+
+def absolute_url(config, path):
+    base = (config.get("site_url") or "").rstrip("/")
+    path = (path or "").lstrip("/")
+    if not base:
+        return path
+    return base + ("/" + path if path else "")
+
+
+def share_settings(config):
+    share = config.get("share") or {}
+    handle = (share.get("x_handle") or "").strip().lstrip("@")
+    buttons = share.get("buttons") or list(DEFAULT_SHARE_BUTTONS)
+    og_image = (share.get("og_image") or "media/share-card.png").lstrip("/")
+    return {"x_handle": handle, "buttons": buttons, "og_image": og_image}
+
+
+def social_meta(config, *, title, description, url, og_type="article"):
+    settings = share_settings(config)
+    image = absolute_url(config, settings["og_image"])
+    site_name = config.get("site_name") or ""
+    handle = settings["x_handle"]
+    parts = [
+        f'<meta name="description" content="{html_esc(description)}">',
+        f'<link rel="canonical" href="{html_esc(url)}">',
+        f'<meta property="og:title" content="{html_esc(title)}">',
+        f'<meta property="og:description" content="{html_esc(description)}">',
+        f'<meta property="og:url" content="{html_esc(url)}">',
+        f'<meta property="og:type" content="{html_esc(og_type)}">',
+        f'<meta property="og:image" content="{html_esc(image)}">',
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        f'<meta property="og:image:alt" content="{html_esc(site_name)}">',
+        f'<meta property="og:site_name" content="{html_esc(site_name)}">',
+        '<meta name="twitter:card" content="summary_large_image">',
+        f'<meta name="twitter:title" content="{html_esc(title)}">',
+        f'<meta name="twitter:description" content="{html_esc(description)}">',
+        f'<meta name="twitter:image" content="{html_esc(image)}">',
+    ]
+    if handle:
+        parts.append(f'<meta name="twitter:site" content="@{html_esc(handle)}">')
+        parts.append(f'<meta name="twitter:creator" content="@{html_esc(handle)}">')
+    return "\n".join(parts)
+
+
+def _share_item(kind, href, label, extra_class="", tag="a", attrs=""):
+    icon = SHARE_ICONS[kind]
+    cls = f"share-btn share-{kind}{(' ' + extra_class) if extra_class else ''}"
+    inner = f'{icon}<span class="share-label-text">{html_esc(label)}</span>'
+    if tag == "a":
+        return (
+            f'<li><a class="{cls}" href="{html_esc(href)}" target="_blank" '
+            f'rel="noopener noreferrer" aria-label="{html_esc(label)}">{inner}</a></li>'
+        )
+    return (
+        f'<li><button type="button" class="{cls}" aria-label="{html_esc(label)}"'
+        f'{attrs}>{inner}</button></li>'
+    )
+
+
+def share_bar(config, *, title, excerpt, url, position="top"):
+    settings = share_settings(config)
+    q_title = quote(title or "", safe="")
+    q_url = quote(url or "", safe="")
+    body = (excerpt or "").strip()
+    if body and url:
+        body = body + "\n\n" + url
+    elif url:
+        body = url
+    q_body = quote(body, safe="")
+    tweet = f"https://twitter.com/intent/tweet?text={q_title}&url={q_url}"
+    if settings["x_handle"]:
+        tweet += "&via=" + quote(settings["x_handle"], safe="")
+    items = []
+    for kind in settings["buttons"]:
+        if kind == "x":
+            items.append(_share_item("x", tweet, "Share on X"))
+        elif kind == "linkedin":
+            items.append(_share_item(
+                "linkedin",
+                "https://www.linkedin.com/sharing/share-offsite/?url=" + q_url,
+                "Share on LinkedIn",
+            ))
+        elif kind == "gmail":
+            items.append(_share_item(
+                "gmail",
+                f"https://mail.google.com/mail/?view=cm&fs=1&su={q_title}&body={q_body}",
+                "Share via Gmail",
+            ))
+        elif kind == "email":
+            # mailto should stay in the same tab; render as a plain link without target=_blank
+            icon = SHARE_ICONS["email"]
+            href = f"mailto:?subject={q_title}&body={q_body}"
+            items.append(
+                f'<li><a class="share-btn share-email" href="{html_esc(href)}" '
+                f'aria-label="Share by email">'
+                f'{icon}<span class="share-label-text">Email</span></a></li>'
+            )
+        elif kind == "copy":
+            items.append(_share_item("copy", "", "Copy link", tag="button"))
+        elif kind == "native":
+            items.append(
+                _share_item("native", "", "Share", tag="button", attrs=" hidden")
+            )
+    if not items:
+        return ""
+    pos_cls = "share-bar-top" if position == "top" else "share-bar-bottom"
+    return (
+        f'<nav class="share-bar {pos_cls}" aria-label="Share this page" '
+        f'data-share-url="{html_esc(url)}" data-share-title="{html_esc(title)}" '
+        f'data-share-text="{html_esc((excerpt or "").strip())}">'
+        f'<ul class="share-list">{"".join(items)}</ul></nav>'
+    )
+
+
+def share_bundle(config, *, title, excerpt, url, og_type="article"):
+    """Social meta, top and bottom share bars, and the one-time share script."""
+    return {
+        "<!--__SOCIAL_META__-->": social_meta(
+            config, title=title, description=excerpt or "", url=url, og_type=og_type
+        ),
+        "<!--__SHARE_TOP__-->": share_bar(
+            config, title=title, excerpt=excerpt, url=url, position="top"
+        ),
+        "<!--__SHARE_BOTTOM__-->": share_bar(
+            config, title=title, excerpt=excerpt, url=url, position="bottom"
+        ),
+        "<!--__SHARE_SCRIPT__-->": SHARE_SCRIPT,
+    }
 
 
 def tag_pills(tags, as_buttons=False):
@@ -368,6 +565,13 @@ def build():
                 "/*__NOTE__*/": note_html,
                 "/*__TAGS__*/": tag_pills(tags),
                 "<!--__BODY__-->": render_body(p["body"]),
+                **share_bundle(
+                    config,
+                    title=p.get("title") or "",
+                    excerpt=p.get("excerpt") or "",
+                    url=absolute_url(config, slug + ".html"),
+                    og_type="article",
+                ),
             },
         )
         write(os.path.join(DOCS, slug + ".html"), page)
@@ -442,6 +646,13 @@ def build():
                 "<!--__BODY__-->": render_body(r["body"]),
                 "<!--__WIDGET_SCRIPT__-->": widget_script,
                 "<!--__RESOURCES_HREF__-->": html_esc(rel_path("resources/", 2)),
+                **share_bundle(
+                    config,
+                    title=r.get("title") or "",
+                    excerpt=r.get("excerpt") or "",
+                    url=absolute_url(config, f"resources/{slug}/"),
+                    og_type="article",
+                ),
             },
         )
         write(os.path.join(DOCS, "resources", slug, "index.html"), page)
@@ -455,6 +666,16 @@ def build():
         **{
             "/*__CSS__*/": css,
             "<!--__RESOURCES__-->": "\n".join(resource_cards) or "<p>No resources published yet.</p>",
+            **share_bundle(
+                config,
+                title="Resource Library",
+                excerpt=(
+                    "Reference pieces for mortgage compliance work — maps, surveys, "
+                    "and explainers that are meant to be used more than once, not just read as a post."
+                ),
+                url=absolute_url(config, "resources/"),
+                og_type="website",
+            ),
         },
     )
     write(os.path.join(DOCS, "resources", "index.html"), resources_page)
