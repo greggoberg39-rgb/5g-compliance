@@ -2,12 +2,14 @@
 
 A professional blog on mortgage regulatory compliance by Ben Giumarra and Gregg Oberg, with help from Grok. **3G** = Giumarra, Gregg, and Grok.
 
-This folder is a local draft only. Nothing has been published, and no GitHub repository has been created.
+Published on GitHub Pages at [https://greggoberg39-rgb.github.io/5g-compliance/](https://greggoberg39-rgb.github.io/5g-compliance/). This folder is the local copy of the site.
 
 ## What’s in this folder
 
 - `site/` — the static site. Run the build from here.
+- `site/config.json` — site name, tagline, and navigation (the reskin point for branding).
 - `site/content/posts/` — one Markdown file per post (front matter + body).
+- `site/content/resources/` — Resource Library entries (front matter + body, plus optional data files).
 - `site/content/media/` — images used in republished posts.
 - `site/templates/` — HTML templates and CSS.
 - `site/docs/` — the built site (this is what GitHub Pages would serve later).
@@ -43,6 +45,12 @@ python3 build.py
 
 For a republished piece, include a `source:` URL in the front matter. The built page will add “Originally published at &lt;url&gt;” and a permission note automatically.
 
+## How to add a resource
+
+1. Add a Markdown file in `site/content/resources/` with front matter (`title`, `date`, `excerpt`, `slug`, `author`). The body can be Markdown or HTML (HTML is used as-is if the body starts with `<`).
+2. Optional front matter: `canvas_url` and `canvas_note` (a link to an interactive companion page, listed on the index and near the top of the resource), `widget: state-spectrum` plus `data: some-file.json` for a 50-state map/table widget, or `draft: true` to keep it out of the build.
+3. Rebuild with `python3 build.py` from the `site` folder.
+
 ## Turn the posts off (BLOG_ENABLED)
 
 At the top of `site/build.py` is a switch:
@@ -51,13 +59,20 @@ At the top of `site/build.py` is a switch:
 BLOG_ENABLED = True
 ```
 
-Set it to `False` and run `python3 build.py` again. Post pages and home-page cards disappear; the files in `content/posts/` are left in place. The About and Archive pages still build. Set it back to `True` and rebuild to restore them.
+Set it to `False` and run `python3 build.py` again. Post pages and home-page cards disappear; the files in `content/posts/` are left in place. The About, Archive, and Resources pages still build. Set it back to `True` and rebuild to restore them.
 
 ## Requirements
 
 Python 3 only. No extra packages.
 
 ## Changelog
+
+### 1.1.0 — 2026-11-13
+
+- Added a public Resource Library (`/resources/`), driven by Markdown files in `site/content/resources/` and site branding/nav in `site/config.json`.
+- Every page header now includes a Resources nav link.
+- First resource: a 50-state (plus D.C.) map and table on consumer protection vs. sanctity of contract, at `/resources/consumer-protection-vs-contract/`.
+- Footer version bumped to 1.1.0.
 
 ### 1.0.0 — 2026-11-12
 

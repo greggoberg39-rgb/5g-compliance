@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consumer protection vs. sanctity of contract — 5G Regulatory Compliance</title>
+<style>/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}
+
+/* Resource library and state-spectrum widget */
+.byline { margin: 0 0 12px; }
+.canvas-note {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+.resource-main { max-width: 1100px; }
+.resource-body h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 1.4rem 0 0.6rem;
+}
+.resource-body table { width: 100%; font-size: 0.92rem; }
+.resource-body th, .resource-body td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+.resource-body th { background: var(--teal-soft); color: var(--navy); }
+.resource-body ol, .resource-body ul { padding-left: 1.2rem; }
+.metrics-row {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .metrics-row { grid-template-columns: 1fr 1fr 1fr; }
+}
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.metric-value { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+.metric-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal); margin: 2px 0 8px; }
+.metric-card p { margin: 0; color: var(--mute); font-size: 0.9rem; }
+.spectrum-widget { margin: 0 0 28px; }
+.widget-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+}
+.view-toggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.view-toggle button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border: 0;
+  background: var(--card);
+  color: var(--slate);
+  cursor: pointer;
+}
+.view-toggle button + button { border-left: 1px solid var(--line); }
+.view-toggle button.on { background: var(--teal); color: #fff; }
+.widget-caption { color: var(--mute); font-size: 0.88rem; margin: 0 0 12px; }
+.spectrum-map-wrap, .spectrum-bar-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.spectrum-map-wrap svg { width: 100%; max-width: 720px; height: auto; aspect-ratio: 476 / 316; display: block; }
+.spectrum-map-wrap .tile { cursor: pointer; }
+.spectrum-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mute);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.spectrum-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.chip-swatch { display: block; width: 100%; height: 6px; }
+.chip-ab {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+  background: var(--card);
+}
+.chip.sel .chip-ab, .chip.pa .chip-ab { border-width: 2px; }
+.chip.pa .chip-ab { border-color: var(--teal); }
+.chip.sel .chip-ab { border-color: var(--ink); font-weight: 700; }
+.spectrum-props {
+  display: grid;
+  gap: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .spectrum-props { grid-template-columns: 1fr 1fr; }
+}
+.spectrum-props div { margin: 0; }
+.spectrum-props dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--mute); }
+.spectrum-props dd { margin: 2px 0 0; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--mute); font-weight: 600; }
+.field input, .field select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--card);
+  min-width: 180px;
+}
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.spectrum-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.spectrum-table th, .spectrum-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.spectrum-table th { background: var(--navy); color: #fff; font-weight: 600; position: sticky; top: 0; }
+.spectrum-table td.num, .spectrum-table th.num { text-align: right; white-space: nowrap; }
+.spectrum-table tbody tr { cursor: pointer; }
+.spectrum-table tbody tr:hover { background: var(--teal-soft); }
+.spectrum-table tbody tr.pa { box-shadow: inset 3px 0 0 var(--teal); }
+.spectrum-table tbody tr.sel { background: var(--teal-soft); }
+.spectrum-table tbody tr.sel td:first-child { font-weight: 700; }
+.resource-card .card-link-inner { display: block; text-decoration: none; color: inherit; }
+.resource-card .card-link-inner h3 { color: var(--navy); }
+.resource-card .card-link-inner:hover h3, .resource-card .card-link-inner:focus h3 { color: var(--teal); }
+.resource-card .meta a { font-weight: 600; }
+</style>
+</head><body>
+<header>
+  <a class="brand" href="../../index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+<a href="../../index.html">Home</a>
+  <a href="../../resources/" class="on">Resources</a>
+  <a href="../../archive.html">Archive</a>
+  <a href="../../about.html">About</a>
+</nav>
+<main class="resource-main">
+<article>
+<p class="meta"><a href="../../resources/">← All resources</a></p>
+<h2>Consumer protection vs. sanctity of contract</h2>
+<p class="byline"><b>5G Regulatory Compliance (research by Grok for Giumarra &amp; Gregg)</b> · <span class="date">November 13, 2026</span></p>
+<p class="canvas-note"><a href="https://cursor.com/canvas/store-6c834ee1-46e6-4528-877e-0b6273f16995/f6da7971-35c5-4bdb-9e46-8613cc67bbdb">Also available as an interactive page</a>.</p>
+<p class="disclaimer">This is a general research synthesis for briefing, not a legal opinion and not advice about any loan, claim, or contract. The 0–100 scores are judgment calls on a published rubric, using the National Consumer Law Center's 2018 feature ratings as the backbone, plus documented later changes and a smaller set of contract and mortgage factors. A later statute or decision can move a state. Confirm the current official code and case law before relying on any cell.</p>
+<div class="spectrum-widget" id="spectrum-widget" hidden>
+  <div class="metrics-row" id="spectrum-metrics"></div>
+  <div class="widget-toolbar">
+    <div class="view-toggle" role="tablist" aria-label="Spectrum view">
+      <button type="button" class="on" data-view="map">Map</button>
+      <button type="button" data-view="spectrum">Ranked spectrum</button>
+    </div>
+  </div>
+  <p class="widget-caption">Blue-green marks are more consumer-protective (courts or statutes more willing to police unfair or deceptive terms). Gold marks sit closer to “you signed it.” Click a state for its score and statute. Pennsylvania is outlined. The tile map is schematic, not geographic. Scores as of November 13, 2026 (America/New_York).</p>
+  <div id="spectrum-map" class="spectrum-map-wrap"></div>
+  <div id="spectrum-bar" class="spectrum-bar-wrap" hidden></div>
+  <dl class="spectrum-props" id="spectrum-props"></dl>
+  <div class="widget-toolbar table-toolbar">
+    <label class="field">Search
+      <input type="search" id="spectrum-search" placeholder="State or statute" autocomplete="off">
+    </label>
+    <label class="field">Sort
+      <select id="spectrum-sort">
+        <option value="protective">Most protective first</option>
+        <option value="sanctity">Most contract-enforcing first</option>
+        <option value="alpha">Alphabetical</option>
+        <option value="foreclosure">Foreclosure path</option>
+      </select>
+    </label>
+  </div>
+  <p class="widget-caption">Sortable table of the composite score, key UDAP statute, customary foreclosure path, and a one-line note. Higher scores are more consumer-protective.</p>
+  <div class="table-wrap">
+    <table class="spectrum-table" id="spectrum-table">
+      <thead>
+        <tr>
+          <th class="num">Rank</th>
+          <th>State</th>
+          <th class="num">Score</th>
+          <th>Band</th>
+          <th>Key statute</th>
+          <th>Foreclosure</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+<script type="application/json" id="spectrum-data">{
+  "states": [
+    {
+      "ab": "CT",
+      "name": "Connecticut",
+      "rank": 1,
+      "score": 93.0,
+      "band": "Far left",
+      "statute": "CUTPA",
+      "cite": "Conn. Gen. Stat. § 42-110a et seq.",
+      "fc": "Judicial",
+      "apl": "Conn. Gen. Stat. §§ 36a-746 et seq.",
+      "note": "CUTPA is a broad little-FTC act with fee-shifting and punitive damages; customary foreclosure is judicial."
+    },
+    {
+      "ab": "MA",
+      "name": "Massachusetts",
+      "rank": 2,
+      "score": 91.2,
+      "band": "Far left",
+      "statute": "Chapter 93A",
+      "cite": "Mass. Gen. Laws ch. 93A",
+      "fc": "Nonjudicial",
+      "apl": "Mass. Gen. Laws ch. 183C",
+      "note": "Chapter 93A plus AG rules that treat unconscionable terms as unfair; double or treble damages for willful or bad-faith violations; 30-day demand letter required; foreclosure is nonjudicial."
+    },
+    {
+      "ab": "NJ",
+      "name": "New Jersey",
+      "rank": 3,
+      "score": 91.0,
+      "band": "Far left",
+      "statute": "Consumer Fraud Act",
+      "cite": "N.J. Stat. § 56:8-1 et seq.",
+      "fc": "Judicial",
+      "apl": "N.J.S.A. 46:10B-22 et seq.",
+      "note": "Consumer Fraud Act mandates treble damages and fees; New Jersey also has the Home Ownership Security Act and judicial foreclosure."
+    },
+    {
+      "ab": "NM",
+      "name": "New Mexico",
+      "rank": 4,
+      "score": 90.2,
+      "band": "Far left",
+      "statute": "Unfair Practices Act",
+      "cite": "N.M. Stat. § 57-12-1 et seq.",
+      "fc": "Judicial",
+      "apl": "N.M. Stat. §§ 58-21A-1 et seq.",
+      "note": "Unfair Practices Act is broad and privately enforceable; Home Loan Protection Act adds high-cost mortgage rules."
+    },
+    {
+      "ab": "HI",
+      "name": "Hawaii",
+      "rank": 5,
+      "score": 90.0,
+      "band": "Far left",
+      "statute": "UDAP, ch. 480",
+      "cite": "Haw. Rev. Stat. ch. 480",
+      "fc": "Mixed",
+      "apl": "",
+      "note": "NCLC's only all-strong UDAP statute: unfair and deceptive catch-alls, automatic treble or $1,000, fees, and lender coverage."
+    },
+    {
+      "ab": "ND",
+      "name": "North Dakota",
+      "rank": 6,
+      "score": 88.5,
+      "band": "Far left",
+      "statute": "Consumer Fraud Law",
+      "cite": "N.D. Cent. Code ch. 51-15",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer fraud law is relatively strong on private remedies; foreclosure is judicial."
+    },
+    {
+      "ab": "IL",
+      "name": "Illinois",
+      "rank": 7,
+      "score": 88.0,
+      "band": "Far left",
+      "statute": "Consumer Fraud and Deceptive Business Practices Act",
+      "cite": "815 ILCS 505/1 et seq.",
+      "fc": "Judicial",
+      "apl": "815 ILCS 137",
+      "note": "ICFA is a broad, privately enforceable unfair-and-deceptive statute; Illinois also has a High Risk Home Loan Act and judicial foreclosure."
+    },
+    {
+      "ab": "VT",
+      "name": "Vermont",
+      "rank": 8,
+      "score": 86.8,
+      "band": "Far left",
+      "statute": "Consumer Protection Act",
+      "cite": "9 V.S.A. § 2451 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Broad unfair-and-deceptive Consumer Protection Act with exemplary damages and judicial foreclosure."
+    },
+    {
+      "ab": "MO",
+      "name": "Missouri",
+      "rank": 9,
+      "score": 86.2,
+      "band": "Far left",
+      "statute": "Merchandising Practices Act",
+      "cite": "Mo. Rev. Stat. § 407.010 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Merchandising Practices Act is a broad, privately enforceable unfair-and-deceptive statute with strong NCLC feature ratings."
+    },
+    {
+      "ab": "CA",
+      "name": "California",
+      "rank": 10,
+      "score": 86.0,
+      "band": "Far left",
+      "statute": "UCL and CLRA",
+      "cite": "Cal. Bus. & Prof. Code § 17200; Cal. Civ. Code § 1750 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "Cal. Fin. Code §§ 4970 et seq.",
+      "note": "UCL covers unlawful, unfair, or fraudulent practices; CLRA adds remedies; strong unconscionability doctrine; UCL itself is restitution-only."
+    },
+    {
+      "ab": "SC",
+      "name": "South Carolina",
+      "rank": 11,
+      "score": 84.2,
+      "band": "Left",
+      "statute": "Unfair Trade Practices Act",
+      "cite": "S.C. Code § 39-5-10 et seq.",
+      "fc": "Judicial",
+      "apl": "S.C. Code §§ 37-23-10 et seq.",
+      "note": "UTPA plus a high-cost home-loan act and judicial foreclosure; willful violations can be trebled, and a public-interest showing can be required."
+    },
+    {
+      "ab": "DC",
+      "name": "District of Columbia",
+      "rank": 12,
+      "score": 83.2,
+      "band": "Left",
+      "statute": "Consumer Protection Procedures Act",
+      "cite": "D.C. Code § 28-3901 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "CPPA is aggressive (treble damages or $1,500 per violation, plus punitive damages); foreclosure is typically nonjudicial."
+    },
+    {
+      "ab": "NC",
+      "name": "North Carolina",
+      "rank": 13,
+      "score": 82.8,
+      "band": "Left",
+      "statute": "Unfair and Deceptive Trade Practices Act",
+      "cite": "N.C. Gen. Stat. § 75-1.1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "N.C.G.S. § 24-1.1E",
+      "note": "Automatic treble damages under ch. 75 and the nation's first comprehensive high-cost home-loan statute; reliance can still be a hurdle."
+    },
+    {
+      "ab": "WA",
+      "name": "Washington",
+      "rank": 14,
+      "score": 82.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Wash. Rev. Code ch. 19.86",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "CPA is a broad little-FTC act with fees and limited treble damages (capped at $25,000 for unfair/deceptive violations); a private plaintiff must show a public-interest impact."
+    },
+    {
+      "ab": "MT",
+      "name": "Montana",
+      "rank": 15,
+      "score": 82.2,
+      "band": "Left",
+      "statute": "Unfair Trade Practices and Consumer Protection Act",
+      "cite": "Mont. Code § 30-14-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad private UDAP remedies, including up to treble damages, with an insurance-coverage gap."
+    },
+    {
+      "ab": "ID",
+      "name": "Idaho",
+      "rank": 16,
+      "score": 80.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Idaho Code § 48-601 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad private UDAP remedies, including fees and punitive damages, with some coverage questions around credit and insurance."
+    },
+    {
+      "ab": "MI",
+      "name": "Michigan",
+      "rank": 17,
+      "score": 79.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Mich. Comp. Laws § 445.901 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "2026 Michigan Supreme Court decision restored MCPA coverage of licensed and regulated businesses; still no general treble damages."
+    },
+    {
+      "ab": "KS",
+      "name": "Kansas",
+      "rank": 18,
+      "score": 79.0,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Kan. Stat. § 50-623 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Strong private remedies, including a civil-penalty option; many listed violations still require knowledge or willfulness."
+    },
+    {
+      "ab": "MD",
+      "name": "Maryland",
+      "rank": 19,
+      "score": 77.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Md. Code, Com. Law § 13-101 et seq.",
+      "fc": "Mixed",
+      "apl": "Md. Code, Com. Law Title 12 high-cost provisions",
+      "note": "MCPA is privately enforceable, with later expansions; foreclosure is nonjudicial but includes mediation and court ratification."
+    },
+    {
+      "ab": "IA",
+      "name": "Iowa",
+      "rank": 20,
+      "score": 75.5,
+      "band": "Left",
+      "statute": "Consumer Fraud Act; ch. 714H private right",
+      "cite": "Iowa Code §§ 714.16, 714H",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "A 2009 private right of action exists (ch. 714H), but it does not reach most lenders, insurers, utilities, or real-estate licensees."
+    },
+    {
+      "ab": "AZ",
+      "name": "Arizona",
+      "rank": 21,
+      "score": 75.0,
+      "band": "Left",
+      "statute": "Consumer Fraud Act",
+      "cite": "Ariz. Rev. Stat. § 44-1521 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad unfair and deceptive prohibitions and few industry exemptions, but no fee-shifting or multiple damages for private plaintiffs."
+    },
+    {
+      "ab": "ME",
+      "name": "Maine",
+      "rank": 22,
+      "score": 74.0,
+      "band": "Center",
+      "statute": "Unfair Trade Practices Act",
+      "cite": "5 M.R.S. § 205-A et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Broad UTPA with strong public-enforcement tools; private multiple damages and some fee questions are weaker."
+    },
+    {
+      "ab": "OH",
+      "name": "Ohio",
+      "rank": 23,
+      "score": 73.5,
+      "band": "Center",
+      "statute": "Consumer Sales Practices Act",
+      "cite": "Ohio Rev. Code § 1345.01 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "CSPA offers treble damages, but most lenders and creditors are exempt from the statute."
+    },
+    {
+      "ab": "PA",
+      "name": "Pennsylvania",
+      "rank": 23,
+      "score": 73.5,
+      "band": "Center",
+      "statute": "UTPCPL",
+      "cite": "73 P.S. § 201-1 et seq.",
+      "fc": "Judicial",
+      "apl": "Consumer Equity Protection Act, Ch. 5",
+      "note": "UTPCPL catch-all plus treble damages and fees; Gregg (2021) makes deceptive conduct strict liability, but reliance and a strict parol-evidence rule (Yocca) still constrain claims."
+    },
+    {
+      "ab": "LA",
+      "name": "Louisiana",
+      "rank": 25,
+      "score": 72.2,
+      "band": "Center",
+      "statute": "LUTPA",
+      "cite": "La. R.S. § 51:1401 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "LUTPA has unfair/deceptive coverage, but banks, insurers, and utilities are largely exempt; treble damages require AG notice."
+    },
+    {
+      "ab": "GA",
+      "name": "Georgia",
+      "rank": 26,
+      "score": 71.5,
+      "band": "Center",
+      "statute": "Fair Business Practices Act",
+      "cite": "O.C.G.A. § 10-1-390 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "O.C.G.A. §§ 7-6A-1 et seq.",
+      "note": "Fair Business Practices Act plus the Fair Lending Act; reliance and pre-suit notice are hurdles; foreclosure is nonjudicial."
+    },
+    {
+      "ab": "AR",
+      "name": "Arkansas",
+      "rank": 27,
+      "score": 71.2,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Ark. Code § 4-88-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Covers deceptive and unconscionable acts, but 2017 amendments require reliance and actual financial loss and generally bar class actions."
+    },
+    {
+      "ab": "NH",
+      "name": "New Hampshire",
+      "rank": 28,
+      "score": 71.0,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "N.H. Rev. Stat. § 358-A:1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Little-FTC act with multiple damages for willful violations, but lenders, insurers, and utilities are largely exempt."
+    },
+    {
+      "ab": "KY",
+      "name": "Kentucky",
+      "rank": 29,
+      "score": 70.8,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "Ky. Rev. Stat. § 367.110 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer Protection Act is relatively broad, but consumers cannot enforce it against some industries, including certain lenders."
+    },
+    {
+      "ab": "AK",
+      "name": "Alaska",
+      "rank": 30,
+      "score": 70.5,
+      "band": "Center",
+      "statute": "Unfair Trade Practices and Consumer Protection Act",
+      "cite": "Alaska Stat. § 45.50.471 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Strong prohibitions and automatic treble damages, offset by a loser-pays fee risk, an insurer exemption, and no coverage of real-estate deals."
+    },
+    {
+      "ab": "NY",
+      "name": "New York",
+      "rank": 30,
+      "score": 70.5,
+      "band": "Center",
+      "statute": "General Business Law §§ 349\\u2013350",
+      "cite": "N.Y. Gen. Bus. Law §§ 349, 350",
+      "fc": "Judicial",
+      "apl": "N.Y. Banking Law §§ 6-l, 6-m",
+      "note": "GBL § 349 is a workhorse deception statute, but consumers do not get a broad unfairness catch-all, treble damages are capped at $1,000, and fee-shifting is limited."
+    },
+    {
+      "ab": "OK",
+      "name": "Oklahoma",
+      "rank": 32,
+      "score": 70.0,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "15 Okla. Stat. § 751 et seq.",
+      "fc": "Mixed",
+      "apl": "",
+      "note": "Consumer Protection Act is solid on remedies, with insurance and utility gaps; foreclosure may proceed judicially or by power of sale."
+    },
+    {
+      "ab": "RI",
+      "name": "Rhode Island",
+      "rank": 32,
+      "score": 70.0,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "R.I. Gen. Laws § 6-13.1-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "A 2021 amendment strengthened AG tools and damages, but private suits remain barred where the conduct is subject to other agency regulation."
+    },
+    {
+      "ab": "UT",
+      "name": "Utah",
+      "rank": 34,
+      "score": 69.5,
+      "band": "Center",
+      "statute": "Consumer Sales Practices Act",
+      "cite": "Utah Code § 13-11-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumer Sales Practices Act covers unfair and deceptive acts, with insurance and utility gaps and no multiple damages."
+    },
+    {
+      "ab": "DE",
+      "name": "Delaware",
+      "rank": 35,
+      "score": 68.0,
+      "band": "Center",
+      "statute": "Consumer Fraud Act",
+      "cite": "6 Del. C. § 2511 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer Fraud Act covers deception broadly, but NCLC found no general unfairness prohibition consumers can use."
+    },
+    {
+      "ab": "IN",
+      "name": "Indiana",
+      "rank": 36,
+      "score": 67.2,
+      "band": "Center",
+      "statute": "Deceptive Consumer Sales Act",
+      "cite": "Ind. Code § 24-5-0.5-1 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumers cannot enforce some key prohibitions; intent and reliance hurdles shrink the Deceptive Consumer Sales Act in practice."
+    },
+    {
+      "ab": "WV",
+      "name": "West Virginia",
+      "rank": 37,
+      "score": 66.2,
+      "band": "Center",
+      "statute": "Consumer Credit and Protection Act, Art. 6",
+      "cite": "W. Va. Code § 46A-6-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumer Credit and Protection Act reaches unfair and deceptive practices, with some coverage ambiguities."
+    },
+    {
+      "ab": "NV",
+      "name": "Nevada",
+      "rank": 38,
+      "score": 65.2,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Nev. Rev. Stat. ch. 598",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Deceptive-practices statute lacks a broad unfairness catch-all; AG enforcement can require knowledge or intent."
+    },
+    {
+      "ab": "WY",
+      "name": "Wyoming",
+      "rank": 39,
+      "score": 64.2,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Wyo. Stat. § 40-12-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Knowledge is required, individual plaintiffs do not recover attorney fees, and a pre-suit notice applies; AG suits also require knowledge or intent."
+    },
+    {
+      "ab": "AL",
+      "name": "Alabama",
+      "rank": 40,
+      "score": 62.5,
+      "band": "Right",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Ala. Code § 8-19-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad unfair/deceptive ban, but banks and lenders are exempt; pre-suit notice and no class actions; nonjudicial foreclosure."
+    },
+    {
+      "ab": "OR",
+      "name": "Oregon",
+      "rank": 40,
+      "score": 62.5,
+      "band": "Right",
+      "statute": "Unlawful Trade Practices Act",
+      "cite": "Or. Rev. Stat. § 646.605 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No broad privately enforceable unfairness ban, and deception coverage is limited; some industries are hard for consumers to reach."
+    },
+    {
+      "ab": "TX",
+      "name": "Texas",
+      "rank": 42,
+      "score": 61.5,
+      "band": "Right",
+      "statute": "DTPA",
+      "cite": "Tex. Bus. & Com. Code § 17.41 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "DTPA remedies can be strong, but consumers cannot enforce a general unfairness ban, and some claims require reliance."
+    },
+    {
+      "ab": "WI",
+      "name": "Wisconsin",
+      "rank": 42,
+      "score": 61.5,
+      "band": "Right",
+      "statute": "Wis. Stat. §§ 100.18, 100.20",
+      "cite": "Wis. Stat. §§ 100.18, 100.20",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Patchwork statutes: consumers can enforce unfairness only via specific state rules, and the economic-loss doctrine applies even to consumers."
+    },
+    {
+      "ab": "NE",
+      "name": "Nebraska",
+      "rank": 44,
+      "score": 60.5,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Neb. Rev. Stat. § 59-1601 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Most lenders and utilities are exempt; damage enhancements are capped at $1,000 for some claims."
+    },
+    {
+      "ab": "CO",
+      "name": "Colorado",
+      "rank": 45,
+      "score": 56.0,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Colo. Rev. Stat. § 6-1-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Laundry-list statute with no general unfairness or deception catch-all; bad-faith trebling exists, but the substantive net is narrow."
+    },
+    {
+      "ab": "MN",
+      "name": "Minnesota",
+      "rank": 46,
+      "score": 55.5,
+      "band": "Right",
+      "statute": "Consumer Fraud Act; UDTPA",
+      "cite": "Minn. Stat. §§ 325F.68, 325D.43 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No general unfairness prohibition; consumer-fraud statute is narrower and often requires a public-interest showing in private suits."
+    },
+    {
+      "ab": "FL",
+      "name": "Florida",
+      "rank": 47,
+      "score": 54.8,
+      "band": "Far right",
+      "statute": "FDUTPA",
+      "cite": "Fla. Stat. § 501.201 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "FDUTPA is broad on paper, but lenders and other industries are carved out and losing plaintiffs can owe the business's fees."
+    },
+    {
+      "ab": "TN",
+      "name": "Tennessee",
+      "rank": 47,
+      "score": 54.8,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Tenn. Code § 47-18-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumers cannot enforce the statute's broad prohibitions; listed practices and industry gaps leave a thin private right."
+    },
+    {
+      "ab": "SD",
+      "name": "South Dakota",
+      "rank": 49,
+      "score": 50.5,
+      "band": "Far right",
+      "statute": "Deceptive Trade Practices and Consumer Protection Law",
+      "cite": "S.D. Codified Laws ch. 37-24",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No unfairness catch-all; deception often requires knowledge or intent; no attorney-fee recovery for individual consumer suits."
+    },
+    {
+      "ab": "VA",
+      "name": "Virginia",
+      "rank": 50,
+      "score": 47.5,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Va. Code § 59.1-196 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No general unfairness prohibition, and most lenders, insurers, and utilities are exempt; willful violations can be trebled."
+    },
+    {
+      "ab": "MS",
+      "name": "Mississippi",
+      "rank": 51,
+      "score": 38.0,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Miss. Code § 75-24-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Among the weakest private remedies: consumers cannot enforce the broad prohibitions, and fees and multiple damages are lacking."
+    }
+  ],
+  "tiles": {
+    "ME": [
+      11,
+      0
+    ],
+    "WI": [
+      6,
+      1
+    ],
+    "MI": [
+      7,
+      1
+    ],
+    "NY": [
+      9,
+      1
+    ],
+    "VT": [
+      10,
+      1
+    ],
+    "NH": [
+      11,
+      1
+    ],
+    "WA": [
+      0,
+      2
+    ],
+    "ID": [
+      1,
+      2
+    ],
+    "MT": [
+      2,
+      2
+    ],
+    "ND": [
+      3,
+      2
+    ],
+    "MN": [
+      4,
+      2
+    ],
+    "IL": [
+      5,
+      2
+    ],
+    "IN": [
+      6,
+      2
+    ],
+    "OH": [
+      7,
+      2
+    ],
+    "PA": [
+      8,
+      2
+    ],
+    "NJ": [
+      9,
+      2
+    ],
+    "CT": [
+      10,
+      2
+    ],
+    "MA": [
+      11,
+      2
+    ],
+    "OR": [
+      0,
+      3
+    ],
+    "NV": [
+      1,
+      3
+    ],
+    "WY": [
+      2,
+      3
+    ],
+    "SD": [
+      3,
+      3
+    ],
+    "IA": [
+      4,
+      3
+    ],
+    "MO": [
+      5,
+      3
+    ],
+    "KY": [
+      6,
+      3
+    ],
+    "WV": [
+      7,
+      3
+    ],
+    "VA": [
+      8,
+      3
+    ],
+    "MD": [
+      9,
+      3
+    ],
+    "DE": [
+      10,
+      3
+    ],
+    "RI": [
+      11,
+      3
+    ],
+    "CA": [
+      0,
+      4
+    ],
+    "UT": [
+      1,
+      4
+    ],
+    "CO": [
+      2,
+      4
+    ],
+    "NE": [
+      3,
+      4
+    ],
+    "KS": [
+      4,
+      4
+    ],
+    "AR": [
+      5,
+      4
+    ],
+    "TN": [
+      6,
+      4
+    ],
+    "NC": [
+      7,
+      4
+    ],
+    "SC": [
+      8,
+      4
+    ],
+    "DC": [
+      9,
+      4
+    ],
+    "AZ": [
+      1,
+      5
+    ],
+    "NM": [
+      2,
+      5
+    ],
+    "OK": [
+      3,
+      5
+    ],
+    "LA": [
+      4,
+      5
+    ],
+    "MS": [
+      5,
+      5
+    ],
+    "AL": [
+      6,
+      5
+    ],
+    "GA": [
+      7,
+      5
+    ],
+    "AK": [
+      0,
+      6
+    ],
+    "TX": [
+      3,
+      6
+    ],
+    "FL": [
+      7,
+      6
+    ],
+    "HI": [
+      0,
+      7
+    ]
+  }
+}</script>
+
+<div class="post-body resource-body">
+<section id="pennsylvania">
+<h3>Pennsylvania: center-left</h3>
+<p>Pennsylvania ranks 23rd of 51, with a score of 73.5, tied with Ohio. That is center-left on this scale: well short of Massachusetts or Connecticut, and well short of a pure “you signed it” state. The split is the point. The Unfair Trade Practices and Consumer Protection Law is a real private right, but Pennsylvania contract doctrine still treats the integrated writing as the deal.</p>
+<p>On the consumer-protective side, the UTPCPL, 73 P.S. § 201-1 et seq., covers trade or commerce, including credit, and its catch-all, § 201-2(4)(xxi), reaches “deceptive conduct.” A private plaintiff who proves an ascertainable loss may recover actual damages, up to treble damages, and attorney fees under § 201-9.2. In <cite>Gregg v. Ameriprise Financial</cite>, 247 A.3d 1043 (Pa. 2021), the Pennsylvania Supreme Court held that this catch-all imposes strict liability for deceptive conduct: the vendor need not have intended to deceive or have been negligent. Conduct with the capacity to deceive is enough, if the consumer justifiably relied and suffered financial harm. That holding is as advertised, with those two limits still attached.</p>
+<p>On the sanctity-of-contract side, justifiable reliance is a required element of a private UTPCPL claim (<cite>Toy v. Metropolitan Life Ins. Co.</cite>, 928 A.2d 186 (Pa. 2007); <cite>Yocca</cite>). In <cite>Yocca v. Pittsburgh Steelers Sports, Inc.</cite>, 854 A.2d 425 (Pa. 2004), the Court applied a strict parol-evidence rule to an integrated stadium-license agreement. The writing superseded earlier marketing, and fraud in the inducement generally cannot be used to vary an integrated writing. The same integration clause defeated justifiable reliance on those pre-contract statements for the UTPCPL claim. Pennsylvania also uses the gist-of-the-action doctrine (see <cite>Bruno v. Erie Insurance</cite>) to keep many disputes in contract rather than tort. NCLC rated Pennsylvania “Undecided” on whether the UTPCPL contains a broad, privately enforceable unfairness or unconscionability prohibition going beyond deception. <cite>Gregg</cite> is a deception case, not a Chapter 93A-style power to rewrite harsh but disclosed terms.</p>
+<p>For mortgage work, Pennsylvania is a judicial-foreclosure state, and Chapter 5 of the Mortgage Bankers and Brokers and Consumer Equity Protection Act adds high-cost-loan limits. Net: Pennsylvania will police deception in a consumer transaction, including after the signing, more readily than many states. It is less willing than Massachusetts to undo a contract simply because the terms are unfair.</p>
+</section>
+
+<section id="left-pole">
+<h3>The consumer-protective pole</h3>
+<p>The left end of this scale is not a political ranking. It marks jurisdictions where a statute or doctrine is most likely to reach beyond the four corners of a signed consumer contract, with remedies that make a challenge realistic.</p>
+<p>Massachusetts, at 91.2 and second on the list, is the classic example of that pole. Chapter 93A prohibits unfair or deceptive acts in trade or commerce. The Attorney General’s regulation, 940 CMR 3.16, says a practice violates Chapter 93A if it is “oppressive or otherwise unconscionable in any respect,” if it conceals a fact that might have changed the buyer’s mind, or if it violates certain other consumer-protection laws. That is a statutory hook to treat oppressive terms as unfair, not merely to police lies. Consumers generally must send a 30-day demand letter. Willful or knowing violations, or a bad-faith refusal to settle, can bring double or treble damages plus fees. Massachusetts also has the Predatory Home Loan Practices Act, ch. 183C. One offset: customary foreclosure is nonjudicial (power of sale). 93A is the left pole; the foreclosure path is not.</p>
+<p>Connecticut ranks first at 93.0. The Connecticut Unfair Trade Practices Act, Conn. Gen. Stat. § 42-110a et seq., is a broad little-FTC act with a private right, fee-shifting, and discretionary punitive damages. NCLC rated its prohibitions and private access as strong, with only a mixed mark on insurance and on the size of public civil penalties. Customary foreclosure is judicial, and Connecticut has an abusive-home-loan statute at §§ 36a-746 et seq.</p>
+<p>New Jersey is third at 91.0. The Consumer Fraud Act, N.J. Stat. § 56:8-1 et seq., is known for mandatory treble damages and attorney fees. The Home Ownership Security Act, N.J.S.A. 46:10B-22 et seq., adds high-cost mortgage rules, and foreclosure is judicial. Close behind are New Mexico (Unfair Practices Act plus the Home Loan Protection Act) and Hawaii, which was the only state NCLC rated “Strong” on every feature it scored, including automatic treble damages or $1,000 and coverage of lenders. North Dakota, Illinois, Vermont, Missouri, and California also land in this far-left band. A high statutory-feature score, as in North Dakota, is not the same thing as a Chapter 93A reputation; the rubric measures the tools on the books, not how often courts actually rewrite deals.</p>
+</section>
+
+<section id="right-pole">
+<h3>The sanctity-of-contract pole</h3>
+<p>The right end is where private consumers have the hardest time using a UDAP statute to get out from under, or to reprice, a signed deal: narrow or unenforceable catch-alls, industry exemptions (especially for lenders), proof obstacles, or remedies that do not make a winner whole.</p>
+<p>Mississippi is last at 38.0. NCLC found that consumers cannot enforce the statute’s broad prohibitions, and that attorney fees and multiple damages are lacking. It called Mississippi, with Iowa’s private-action gaps, among the weakest overall private-remedy regimes. Iowa itself scores much higher here than that 2018 narrative might suggest, because chapter 714H now supplies treble damages and fees for the businesses it does cover; the private right still does not reach most banks, credit unions, insurers, or real-estate licensees, which is why Iowa is not on the left pole.</p>
+<p>Virginia, at 47.5, has no general unfairness prohibition and exempts most lenders, insurers, and utilities from the Consumer Protection Act. Willful violations can be trebled, but the coverage holes dominate for mortgage and credit work. South Dakota, at 50.5, lacks an unfairness catch-all, often requires knowledge or intent for deception, and does not award attorney fees in individual consumer suits. Tennessee and Florida sit just inside this far-right band: Tennessee consumers cannot enforce the broad prohibitions; Florida’s FDUTPA is broad on paper but carves out lenders and can require an unsuccessful plaintiff to pay the business’s fees. Colorado and Minnesota, just above the cut, are laundry-list or narrow-deception jurisdictions without a general unfairness catch-all.</p>
+</section>
+
+<section id="rubric">
+<h3>Scoring rubric</h3>
+<p>Higher scores are more consumer-protective. Feature ratings marked Strong, Mixed, Undecided, or Weak start from NCLC Appendix C (2018), except Michigan coverage, which is updated for the July 31, 2026 decision in <cite>Attorney General v. Eli Lilly and Co.</cite></p>
+<table>
+<thead>
+<tr><th>Factor</th><th>Points</th><th>What it measures</th></tr>
+</thead>
+<tbody>
+<tr><td>A. UDAP scope</td><td>24</td><td>Broad unfair or unconscionable catch-all (10), broad deception catch-all (6), and no major gaps in the consumer’s ability to enforce those prohibitions (8). The unfairness prong is the left pole of the question.</td></tr>
+<tr><td>B. Who is covered</td><td>20</td><td>Creditors and credit (12), post-sale acts such as servicing and collection (5), real estate (2), insurance and utilities (1). Lender exemptions matter a lot for mortgage work.</td></tr>
+<tr><td>C. Private remedies</td><td>16</td><td>Multiple or punitive damages (6), attorney fees (6), class actions allowed (2), no pre-suit notice obstacle (2). Alaska and Florida lose 3 points for loser-pays fee rules that can hit good-faith plaintiffs.</td></tr>
+<tr><td>D. Proof barriers</td><td>10</td><td>No reliance requirement (6), no public-interest showing (2), public enforcement without proof of intent or knowledge (2).</td></tr>
+<tr><td>E. Public tools</td><td>4</td><td>Agency rulemaking, civil-penalty size, and the state’s power to obtain equitable relief and restitution. Weighted lightly because the question is about undoing a private contract.</td></tr>
+<tr><td>F. Unfair-terms power</td><td>12</td><td>Baseline 4, plus 4 if the UDAP statute has a strong unfairness catch-all (1 if mixed or undecided). Massachusetts gets +3 for 940 CMR 3.16 and Chapter 93A’s reach to unconscionable terms. California gets +2 for its sliding-scale unconscionability doctrine and the UCL unfair prong.</td></tr>
+<tr><td>G. Parol evidence and integration</td><td>8</td><td>Baseline 4 for states without a documented distinctive rule in this review. Pennsylvania is scored 1 because <cite>Yocca</cite> applies a strict parol-evidence and integration rule that also defeats UTPCPL reliance on pre-contract statements. Other states were not adjusted without a sourced 50-state survey.</td></tr>
+<tr><td>H. Economic-loss and gist-of-the-action doctrines</td><td>4</td><td>Baseline 2. Pennsylvania is 0 for the gist-of-the-action doctrine. Wisconsin is 0 because its economic-loss doctrine applies to consumers. Same limit: only documented outliers were moved.</td></tr>
+<tr><td>I. Mortgage-specific</td><td>6</td><td>Customary judicial foreclosure (3) or a mixed path (2), plus 3 if a current state high-cost or anti-predatory-lending statute was identified (the 12 states listed in the table). Federal HOEPA and ability-to-repay rules apply everywhere and are not used to spread the states.</td></tr>
+</tbody>
+</table>
+<p>Bands: 85 or above, far left (strongly consumer-protective); 75 to 84.9, left; 65 to 74.9, center (Pennsylvania sits on the left side of this band); 55 to 64.9, right; below 55, far right (strongly contract-enforcing). Ties share a rank. Michigan’s 2018 NCLC marks for creditor, insurance, utility, and post-sale coverage are treated as Strong after the Michigan Supreme Court, on July 31, 2026, overruled <cite>Smith v. Globe Life</cite> and <cite>Liss v. Lewiston-Richards</cite> and limited the MCPA exemption to conduct specifically authorized by law. Rhode Island’s 2021 amendments strengthened Attorney General tools and damages; the private-action bar for regulated activities remains, and the coverage score is not upgraded past that limit.</p>
+</section>
+
+<section id="sources">
+<h3>Sources</h3>
+<p>Primary comparative sources and the Pennsylvania and Massachusetts authorities used above. Statute-text comparisons and NCLC feature ratings are starting points, not a substitute for the current official code or controlling case law.</p>
+<ul>
+<li><a href="https://www.nclc.org/resources/how-well-do-states-protect-consumers/">Consumer Protection in the States: A 50-State Evaluation of Unfair and Deceptive Practices Laws</a> — National Consumer Law Center, 2018 (appendices posted 2022)</li>
+<li><a href="https://consumerlawlibrary.org/udap-states/">State consumer-protection statutes, 50 states and D.C.</a> — Consumer Law Library, as of 2026-11-09</li>
+<li><a href="https://law.justia.com/cases/pennsylvania/supreme-court/2021/29-wap-2019.html"><cite>Gregg v. Ameriprise Financial</cite>, 247 A.3d 1043 (Pa. 2021)</a></li>
+<li><a href="https://law.justia.com/cases/pennsylvania/supreme-court/2004/j-10-2004mo.html"><cite>Yocca v. Pittsburgh Steelers Sports, Inc.</cite>, 854 A.2d 425 (Pa. 2004)</a></li>
+<li><a href="https://www.mass.gov/info-details/the-massachusetts-consumer-protection-law">Massachusetts Consumer Protection Law, G.L. c. 93A</a> — Mass.gov</li>
+<li><a href="https://regulations.justia.com/states/massachusetts/940-cmr/title-940-cmr-3-00/section-3-16/">940 CMR 3.16</a> (unconscionable or oppressive practices as Chapter 93A violations)</li>
+<li><a href="https://lawtopolis.com/learn/foreclosure-by-state/">Foreclosure process by state, with statute citations</a> — Lawtopolis</li>
+<li><a href="https://www.nolo.com/legal-encyclopedia/chart-judicial-v-nonjudicial-foreclosures.html">Judicial vs. nonjudicial foreclosure chart</a> — Nolo</li>
+<li><a href="https://www.michigan.gov/ag/news/press-releases/2026/07/31/ag-nessel-on-msc-reversing-controversial-consumer-protection-decisions"><cite>Attorney General v. Eli Lilly and Co.</cite>: MCPA exemption limited to specifically authorized conduct</a> — Michigan Attorney General, July 31, 2026</li>
+</ul>
+</section>
+
+<section id="caveats">
+<h3>Caveats</h3>
+<p>Scores are a synthesis, not a court. They compress statutes, remedies, proof rules, a few contract doctrines, foreclosure path, and selected high-cost-loan laws into one number. That is useful for orientation and dangerous if treated as a prediction about a particular loan or clause.</p>
+<p>The UDAP backbone is NCLC’s 2018 feature ratings. Law has moved since then. Michigan 2026 and Rhode Island 2021 are called out because they are well documented; other amendments may not be reflected. Parol-evidence and economic-loss adjustments were made only for documented outliers (Pennsylvania, Wisconsin, plus the Massachusetts and California unfair-terms boosts). A state can be stricter or more liberal on those doctrines than the baseline assumes. The high-cost-loan list is conservative and not exhaustive. Some states allow both judicial and nonjudicial foreclosure; the table uses the customary path, and Maryland, Hawaii, and Oklahoma are scored as mixed.</p>
+<p>Federal law sits on top of all of this. HOEPA, ability-to-repay and qualified-mortgage rules, and the TILA ban on mandatory arbitration clauses in residential mortgage loans, 15 U.S.C. § 1639c(e), apply nationwide. State differences still matter for UDAP claims, unfair terms, foreclosure procedure, and state high-cost statutes, but no state ranking replaces that federal floor. This page is for general briefing, not legal advice.</p>
+</section>
+</div>
+<p class="meta"><a href="../../resources/">← All resources</a></p>
+</article>
+</main>
+<footer>5G Regulatory Compliance · v1.1.0 · Built 2026-11-13 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+<script>
+(function () {
+  var root = document.getElementById("spectrum-widget");
+  var dataNode = document.getElementById("spectrum-data");
+  if (!root || !dataNode) return;
+  var payload;
+  try { payload = JSON.parse(dataNode.textContent); }
+  catch (e) { return; }
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  var STATES = payload.states || [];
+  var TILES = payload.tiles || {};
+  if (!STATES.length) return;
+  root.hidden = false;
+
+  var SCORE_MIN = 38;
+  var SCORE_MAX = 93;
+  var selected = "PA";
+  var view = "map";
+  var query = "";
+  var sort = "protective";
+
+  function colorForScore(score) {
+    var t = (score - SCORE_MIN) / (SCORE_MAX - SCORE_MIN);
+    if (t < 0) t = 0;
+    if (t > 1) t = 1;
+    // gold (contract-enforcing) -> slate-muted -> teal (consumer-protective)
+    var stops = [
+      [184, 134, 11],
+      [171, 155, 107],
+      [200, 206, 196],
+      [90, 148, 140],
+      [15, 118, 110]
+    ];
+    var x = t * (stops.length - 1);
+    var i = Math.floor(x);
+    if (i >= stops.length - 1) {
+      var last = stops[stops.length - 1];
+      return "rgb(" + last[0] + "," + last[1] + "," + last[2] + ")";
+    }
+    var f = x - i;
+    var a = stops[i], b = stops[i + 1];
+    var r = Math.round(a[0] + (b[0] - a[0]) * f);
+    var g = Math.round(a[1] + (b[1] - a[1]) * f);
+    var bl = Math.round(a[2] + (b[2] - a[2]) * f);
+    return "rgb(" + r + "," + g + "," + bl + ")";
+  }
+
+  function byAb(ab) {
+    for (var i = 0; i < STATES.length; i++) if (STATES[i].ab === ab) return STATES[i];
+    return STATES[0];
+  }
+
+  function renderMetrics() {
+    var pa = byAb("PA");
+    var top = STATES.slice().sort(function (a, b) { return b.score - a.score || a.name.localeCompare(b.name); });
+    var bot = STATES.slice().sort(function (a, b) { return a.score - b.score || a.name.localeCompare(b.name); });
+    var t3 = top.slice(0, 3);
+    var b3 = bot.slice(0, 3);
+    var html = "";
+    html += '<div class="metric-card"><div class="metric-value">#' + pa.rank + ' of ' + STATES.length + '</div><div class="metric-label">Pennsylvania</div><p>Score ' + pa.score.toFixed(1) + ', tied with Ohio, in the center band, on the left side of center</p></div>';
+    html += '<div class="metric-card"><div class="metric-value">' + t3.map(function (s) { return s.ab; }).join(", ") + '</div><div class="metric-label">Most consumer-protective</div><p>' + t3.map(function (s) { return s.score.toFixed(1); }).join(", ") + ". New Mexico and Hawaii are immediately behind.</p></div>";
+    html += '<div class="metric-card"><div class="metric-value">' + b3.map(function (s) { return s.ab; }).join(", ") + '</div><div class="metric-label">Most contract-enforcing</div><p>' + b3.map(function (s) { return s.score.toFixed(1); }).join(", ") + ". Weak private UDAP reach, thin remedies, or both.</p></div>";
+    document.getElementById("spectrum-metrics").innerHTML = html;
+  }
+
+  function renderMap() {
+    var cell = 36, gap = 4, cols = 12, rows = 8;
+    var width = cols * (cell + gap) - gap;
+    var height = rows * (cell + gap) - gap;
+    var svg = '<svg viewBox="0 0 ' + width + ' ' + height + '" width="100%" height="' + height + '" role="img" aria-label="Tile map of the 50 states and D.C., colored from consumer-protective to sanctity of contract" style="aspect-ratio:' + width + '/' + height + ';height:auto">';
+    STATES.forEach(function (row) {
+      var at = TILES[row.ab];
+      if (!at) return;
+      var x = at[0] * (cell + gap);
+      var y = at[1] * (cell + gap);
+      var isSel = row.ab === selected;
+      var isPA = row.ab === "PA";
+      var stroke = isSel ? "#122033" : (isPA ? "#0f766e" : "#d8dee6");
+      var sw = (isSel || isPA) ? 2 : 1;
+      var weight = (isPA || isSel) ? 700 : 500;
+      svg += '<g class="tile" data-ab="' + row.ab + '" tabindex="0" role="button" aria-label="' + row.name + '">';
+      svg += '<title>' + esc(row.name) + ': rank ' + row.rank + ', score ' + row.score.toFixed(1) + '</title>';
+      svg += '<rect x="' + x + '" y="' + y + '" width="' + cell + '" height="' + cell + '" rx="4" fill="#fff" stroke="' + stroke + '" stroke-width="' + sw + '"/>';
+      svg += '<rect x="' + x + '" y="' + y + '" width="' + cell + '" height="5" rx="4" fill="' + colorForScore(row.score) + '"/>';
+      svg += '<text x="' + (x + cell / 2) + '" y="' + (y + cell / 2 + 7) + '" text-anchor="middle" fill="#122033" font-size="11" font-weight="' + weight + '" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">' + row.ab + '</text>';
+      svg += '</g>';
+    });
+    svg += '</svg>';
+    var wrap = document.getElementById("spectrum-map");
+    wrap.innerHTML = svg;
+    wrap.querySelectorAll(".tile").forEach(function (g) {
+      function pick() { selected = g.getAttribute("data-ab"); renderAll(); }
+      g.addEventListener("click", pick);
+      g.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); }
+      });
+    });
+  }
+
+  function renderBar() {
+    var wrap = document.getElementById("spectrum-bar");
+    var html = '<div class="spectrum-axis"><span>Consumer-protective</span><span>Sanctity of contract</span></div><div class="spectrum-chips">';
+    STATES.forEach(function (row) {
+      var isSel = row.ab === selected;
+      var isPA = row.ab === "PA";
+      var cls = "chip" + (isSel ? " sel" : "") + (isPA ? " pa" : "");
+      html += '<button type="button" class="' + cls + '" data-ab="' + esc(row.ab) + '" title="' + esc(row.name) + ': ' + row.score.toFixed(1) + '">';
+      html += '<span class="chip-swatch" style="background:' + colorForScore(row.score) + '"></span>';
+      html += '<span class="chip-ab">' + row.ab + '</span></button>';
+    });
+    html += '</div>';
+    wrap.innerHTML = html;
+    wrap.querySelectorAll("button[data-ab]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        selected = btn.getAttribute("data-ab");
+        renderAll();
+      });
+    });
+  }
+
+  function renderProps() {
+    var s = byAb(selected);
+    var apl = s.apl || "No separate statute scored here (federal HOEPA still applies)";
+    var rows = [
+      ["Jurisdiction", s.name + " (" + s.ab + ")"],
+      ["Rank", s.rank + " of " + STATES.length],
+      ["Score", s.score.toFixed(1) + " / 100 · " + s.band],
+      ["Key statute", s.statute + " (" + s.cite + ")"],
+      ["Foreclosure", s.fc],
+      ["State high-cost / APL law", apl],
+      ["One-line note", s.note]
+    ];
+    var html = "";
+    rows.forEach(function (pair) {
+      html += "<div><dt>" + esc(pair[0]) + "</dt><dd>" + esc(pair[1]) + "</dd></div>";
+    });
+    document.getElementById("spectrum-props").innerHTML = html;
+  }
+
+  function filteredRows() {
+    var q = query.trim().toLowerCase();
+    var rows = STATES.filter(function (row) {
+      if (!q) return true;
+      return (row.name + " " + row.ab + " " + row.statute + " " + row.cite).toLowerCase().indexOf(q) >= 0;
+    });
+    if (sort === "sanctity") rows = rows.slice().sort(function (a, b) { return a.score - b.score || a.name.localeCompare(b.name); });
+    else if (sort === "alpha") rows = rows.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
+    else if (sort === "foreclosure") {
+      var order = { Judicial: 0, Mixed: 1, Nonjudicial: 2 };
+      rows = rows.slice().sort(function (a, b) { return order[a.fc] - order[b.fc] || b.score - a.score; });
+    } else {
+      rows = rows.slice().sort(function (a, b) { return a.rank - b.rank || a.name.localeCompare(b.name); });
+    }
+    return rows;
+  }
+
+  function renderTable() {
+    var tbody = document.querySelector("#spectrum-table tbody");
+    var rows = filteredRows();
+    var html = "";
+    rows.forEach(function (row) {
+      var name = row.ab === "PA" ? row.name + " (focus)" : row.name;
+      var trClass = row.ab === selected ? ' class="sel"' : (row.ab === "PA" ? ' class="pa"' : "");
+      html += "<tr" + trClass + " data-ab=\"" + esc(row.ab) + "\">";
+      html += '<td class="num">' + row.rank + "</td>";
+      html += "<td>" + esc(name) + "</td>";
+      html += '<td class="num">' + row.score.toFixed(1) + "</td>";
+      html += "<td>" + esc(row.band) + "</td>";
+      html += "<td>" + esc(row.statute + ". " + row.cite) + "</td>";
+      html += "<td>" + esc(row.fc) + "</td>";
+      html += "<td>" + esc(row.note) + "</td>";
+      html += "</tr>";
+    });
+    tbody.innerHTML = html;
+    tbody.querySelectorAll("tr").forEach(function (tr) {
+      tr.addEventListener("click", function () {
+        selected = tr.getAttribute("data-ab");
+        renderAll();
+      });
+    });
+  }
+
+  function renderAll() {
+    document.getElementById("spectrum-map").hidden = view !== "map";
+    document.getElementById("spectrum-bar").hidden = view !== "spectrum";
+    if (view === "map") renderMap();
+    else renderBar();
+    renderProps();
+    renderTable();
+  }
+
+  document.querySelectorAll(".view-toggle button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      view = btn.getAttribute("data-view");
+      document.querySelectorAll(".view-toggle button").forEach(function (b) { b.classList.toggle("on", b === btn); });
+      renderAll();
+    });
+  });
+  document.getElementById("spectrum-search").addEventListener("input", function (e) {
+    query = e.target.value;
+    renderTable();
+  });
+  document.getElementById("spectrum-sort").addEventListener("change", function (e) {
+    sort = e.target.value;
+    renderTable();
+  });
+
+  renderMetrics();
+  renderAll();
+})();
+
+</script>
+</body></html>

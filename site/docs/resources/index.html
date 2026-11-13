@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources — 5G Regulatory Compliance</title>
+<style>/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}
+
+/* Resource library and state-spectrum widget */
+.byline { margin: 0 0 12px; }
+.canvas-note {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+.resource-main { max-width: 1100px; }
+.resource-body h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 1.4rem 0 0.6rem;
+}
+.resource-body table { width: 100%; font-size: 0.92rem; }
+.resource-body th, .resource-body td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+.resource-body th { background: var(--teal-soft); color: var(--navy); }
+.resource-body ol, .resource-body ul { padding-left: 1.2rem; }
+.metrics-row {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .metrics-row { grid-template-columns: 1fr 1fr 1fr; }
+}
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.metric-value { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+.metric-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal); margin: 2px 0 8px; }
+.metric-card p { margin: 0; color: var(--mute); font-size: 0.9rem; }
+.spectrum-widget { margin: 0 0 28px; }
+.widget-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+}
+.view-toggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.view-toggle button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border: 0;
+  background: var(--card);
+  color: var(--slate);
+  cursor: pointer;
+}
+.view-toggle button + button { border-left: 1px solid var(--line); }
+.view-toggle button.on { background: var(--teal); color: #fff; }
+.widget-caption { color: var(--mute); font-size: 0.88rem; margin: 0 0 12px; }
+.spectrum-map-wrap, .spectrum-bar-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.spectrum-map-wrap svg { width: 100%; max-width: 720px; height: auto; aspect-ratio: 476 / 316; display: block; }
+.spectrum-map-wrap .tile { cursor: pointer; }
+.spectrum-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mute);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.spectrum-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.chip-swatch { display: block; width: 100%; height: 6px; }
+.chip-ab {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+  background: var(--card);
+}
+.chip.sel .chip-ab, .chip.pa .chip-ab { border-width: 2px; }
+.chip.pa .chip-ab { border-color: var(--teal); }
+.chip.sel .chip-ab { border-color: var(--ink); font-weight: 700; }
+.spectrum-props {
+  display: grid;
+  gap: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .spectrum-props { grid-template-columns: 1fr 1fr; }
+}
+.spectrum-props div { margin: 0; }
+.spectrum-props dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--mute); }
+.spectrum-props dd { margin: 2px 0 0; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--mute); font-weight: 600; }
+.field input, .field select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--card);
+  min-width: 180px;
+}
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.spectrum-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.spectrum-table th, .spectrum-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.spectrum-table th { background: var(--navy); color: #fff; font-weight: 600; position: sticky; top: 0; }
+.spectrum-table td.num, .spectrum-table th.num { text-align: right; white-space: nowrap; }
+.spectrum-table tbody tr { cursor: pointer; }
+.spectrum-table tbody tr:hover { background: var(--teal-soft); }
+.spectrum-table tbody tr.pa { box-shadow: inset 3px 0 0 var(--teal); }
+.spectrum-table tbody tr.sel { background: var(--teal-soft); }
+.spectrum-table tbody tr.sel td:first-child { font-weight: 700; }
+.resource-card .card-link-inner { display: block; text-decoration: none; color: inherit; }
+.resource-card .card-link-inner h3 { color: var(--navy); }
+.resource-card .card-link-inner:hover h3, .resource-card .card-link-inner:focus h3 { color: var(--teal); }
+.resource-card .meta a { font-weight: 600; }
+</style>
+</head><body>
+<header>
+  <a class="brand" href="../index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+<a href="../index.html">Home</a>
+  <a href="../resources/" class="on">Resources</a>
+  <a href="../archive.html">Archive</a>
+  <a href="../about.html">About</a>
+</nav>
+<main>
+<article>
+<h2>Resource Library</h2>
+<p class="lede">Reference pieces for mortgage compliance work — maps, surveys, and explainers that are meant to be used more than once, not just read as a post.</p>
+<p class="disclaimer">Resources on this page are general research and commentary. They are not legal advice and are not an official publication of RIMBA or of any employer.</p>
+<div class="grid">
+<div class="card resource-card"><a class="card-link-inner" href="consumer-protection-vs-contract/"><h3>Consumer protection vs. sanctity of contract</h3><div class="meta"><span class="date">November 13, 2026</span></div><p>A 50-state (plus D.C.) ranking of how readily courts or statutes will police unfair or deceptive consumer contracts, with Pennsylvania at the center-left.</p></a><p class="meta"><a href="https://cursor.com/canvas/store-6c834ee1-46e6-4528-877e-0b6273f16995/f6da7971-35c5-4bdb-9e46-8613cc67bbdb">Also available as an interactive page</a></p></div>
+</div>
+</article>
+</main>
+<footer>5G Regulatory Compliance · v1.1.0 · Built 2026-11-13 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+</body></html>

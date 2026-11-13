@@ -1,0 +1,822 @@
+{
+  "states": [
+    {
+      "ab": "CT",
+      "name": "Connecticut",
+      "rank": 1,
+      "score": 93.0,
+      "band": "Far left",
+      "statute": "CUTPA",
+      "cite": "Conn. Gen. Stat. § 42-110a et seq.",
+      "fc": "Judicial",
+      "apl": "Conn. Gen. Stat. §§ 36a-746 et seq.",
+      "note": "CUTPA is a broad little-FTC act with fee-shifting and punitive damages; customary foreclosure is judicial."
+    },
+    {
+      "ab": "MA",
+      "name": "Massachusetts",
+      "rank": 2,
+      "score": 91.2,
+      "band": "Far left",
+      "statute": "Chapter 93A",
+      "cite": "Mass. Gen. Laws ch. 93A",
+      "fc": "Nonjudicial",
+      "apl": "Mass. Gen. Laws ch. 183C",
+      "note": "Chapter 93A plus AG rules that treat unconscionable terms as unfair; double or treble damages for willful or bad-faith violations; 30-day demand letter required; foreclosure is nonjudicial."
+    },
+    {
+      "ab": "NJ",
+      "name": "New Jersey",
+      "rank": 3,
+      "score": 91.0,
+      "band": "Far left",
+      "statute": "Consumer Fraud Act",
+      "cite": "N.J. Stat. § 56:8-1 et seq.",
+      "fc": "Judicial",
+      "apl": "N.J.S.A. 46:10B-22 et seq.",
+      "note": "Consumer Fraud Act mandates treble damages and fees; New Jersey also has the Home Ownership Security Act and judicial foreclosure."
+    },
+    {
+      "ab": "NM",
+      "name": "New Mexico",
+      "rank": 4,
+      "score": 90.2,
+      "band": "Far left",
+      "statute": "Unfair Practices Act",
+      "cite": "N.M. Stat. § 57-12-1 et seq.",
+      "fc": "Judicial",
+      "apl": "N.M. Stat. §§ 58-21A-1 et seq.",
+      "note": "Unfair Practices Act is broad and privately enforceable; Home Loan Protection Act adds high-cost mortgage rules."
+    },
+    {
+      "ab": "HI",
+      "name": "Hawaii",
+      "rank": 5,
+      "score": 90.0,
+      "band": "Far left",
+      "statute": "UDAP, ch. 480",
+      "cite": "Haw. Rev. Stat. ch. 480",
+      "fc": "Mixed",
+      "apl": "",
+      "note": "NCLC's only all-strong UDAP statute: unfair and deceptive catch-alls, automatic treble or $1,000, fees, and lender coverage."
+    },
+    {
+      "ab": "ND",
+      "name": "North Dakota",
+      "rank": 6,
+      "score": 88.5,
+      "band": "Far left",
+      "statute": "Consumer Fraud Law",
+      "cite": "N.D. Cent. Code ch. 51-15",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer fraud law is relatively strong on private remedies; foreclosure is judicial."
+    },
+    {
+      "ab": "IL",
+      "name": "Illinois",
+      "rank": 7,
+      "score": 88.0,
+      "band": "Far left",
+      "statute": "Consumer Fraud and Deceptive Business Practices Act",
+      "cite": "815 ILCS 505/1 et seq.",
+      "fc": "Judicial",
+      "apl": "815 ILCS 137",
+      "note": "ICFA is a broad, privately enforceable unfair-and-deceptive statute; Illinois also has a High Risk Home Loan Act and judicial foreclosure."
+    },
+    {
+      "ab": "VT",
+      "name": "Vermont",
+      "rank": 8,
+      "score": 86.8,
+      "band": "Far left",
+      "statute": "Consumer Protection Act",
+      "cite": "9 V.S.A. § 2451 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Broad unfair-and-deceptive Consumer Protection Act with exemplary damages and judicial foreclosure."
+    },
+    {
+      "ab": "MO",
+      "name": "Missouri",
+      "rank": 9,
+      "score": 86.2,
+      "band": "Far left",
+      "statute": "Merchandising Practices Act",
+      "cite": "Mo. Rev. Stat. § 407.010 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Merchandising Practices Act is a broad, privately enforceable unfair-and-deceptive statute with strong NCLC feature ratings."
+    },
+    {
+      "ab": "CA",
+      "name": "California",
+      "rank": 10,
+      "score": 86.0,
+      "band": "Far left",
+      "statute": "UCL and CLRA",
+      "cite": "Cal. Bus. & Prof. Code § 17200; Cal. Civ. Code § 1750 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "Cal. Fin. Code §§ 4970 et seq.",
+      "note": "UCL covers unlawful, unfair, or fraudulent practices; CLRA adds remedies; strong unconscionability doctrine; UCL itself is restitution-only."
+    },
+    {
+      "ab": "SC",
+      "name": "South Carolina",
+      "rank": 11,
+      "score": 84.2,
+      "band": "Left",
+      "statute": "Unfair Trade Practices Act",
+      "cite": "S.C. Code § 39-5-10 et seq.",
+      "fc": "Judicial",
+      "apl": "S.C. Code §§ 37-23-10 et seq.",
+      "note": "UTPA plus a high-cost home-loan act and judicial foreclosure; willful violations can be trebled, and a public-interest showing can be required."
+    },
+    {
+      "ab": "DC",
+      "name": "District of Columbia",
+      "rank": 12,
+      "score": 83.2,
+      "band": "Left",
+      "statute": "Consumer Protection Procedures Act",
+      "cite": "D.C. Code § 28-3901 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "CPPA is aggressive (treble damages or $1,500 per violation, plus punitive damages); foreclosure is typically nonjudicial."
+    },
+    {
+      "ab": "NC",
+      "name": "North Carolina",
+      "rank": 13,
+      "score": 82.8,
+      "band": "Left",
+      "statute": "Unfair and Deceptive Trade Practices Act",
+      "cite": "N.C. Gen. Stat. § 75-1.1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "N.C.G.S. § 24-1.1E",
+      "note": "Automatic treble damages under ch. 75 and the nation's first comprehensive high-cost home-loan statute; reliance can still be a hurdle."
+    },
+    {
+      "ab": "WA",
+      "name": "Washington",
+      "rank": 14,
+      "score": 82.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Wash. Rev. Code ch. 19.86",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "CPA is a broad little-FTC act with fees and limited treble damages (capped at $25,000 for unfair/deceptive violations); a private plaintiff must show a public-interest impact."
+    },
+    {
+      "ab": "MT",
+      "name": "Montana",
+      "rank": 15,
+      "score": 82.2,
+      "band": "Left",
+      "statute": "Unfair Trade Practices and Consumer Protection Act",
+      "cite": "Mont. Code § 30-14-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad private UDAP remedies, including up to treble damages, with an insurance-coverage gap."
+    },
+    {
+      "ab": "ID",
+      "name": "Idaho",
+      "rank": 16,
+      "score": 80.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Idaho Code § 48-601 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad private UDAP remedies, including fees and punitive damages, with some coverage questions around credit and insurance."
+    },
+    {
+      "ab": "MI",
+      "name": "Michigan",
+      "rank": 17,
+      "score": 79.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Mich. Comp. Laws § 445.901 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "2026 Michigan Supreme Court decision restored MCPA coverage of licensed and regulated businesses; still no general treble damages."
+    },
+    {
+      "ab": "KS",
+      "name": "Kansas",
+      "rank": 18,
+      "score": 79.0,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Kan. Stat. § 50-623 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Strong private remedies, including a civil-penalty option; many listed violations still require knowledge or willfulness."
+    },
+    {
+      "ab": "MD",
+      "name": "Maryland",
+      "rank": 19,
+      "score": 77.5,
+      "band": "Left",
+      "statute": "Consumer Protection Act",
+      "cite": "Md. Code, Com. Law § 13-101 et seq.",
+      "fc": "Mixed",
+      "apl": "Md. Code, Com. Law Title 12 high-cost provisions",
+      "note": "MCPA is privately enforceable, with later expansions; foreclosure is nonjudicial but includes mediation and court ratification."
+    },
+    {
+      "ab": "IA",
+      "name": "Iowa",
+      "rank": 20,
+      "score": 75.5,
+      "band": "Left",
+      "statute": "Consumer Fraud Act; ch. 714H private right",
+      "cite": "Iowa Code §§ 714.16, 714H",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "A 2009 private right of action exists (ch. 714H), but it does not reach most lenders, insurers, utilities, or real-estate licensees."
+    },
+    {
+      "ab": "AZ",
+      "name": "Arizona",
+      "rank": 21,
+      "score": 75.0,
+      "band": "Left",
+      "statute": "Consumer Fraud Act",
+      "cite": "Ariz. Rev. Stat. § 44-1521 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad unfair and deceptive prohibitions and few industry exemptions, but no fee-shifting or multiple damages for private plaintiffs."
+    },
+    {
+      "ab": "ME",
+      "name": "Maine",
+      "rank": 22,
+      "score": 74.0,
+      "band": "Center",
+      "statute": "Unfair Trade Practices Act",
+      "cite": "5 M.R.S. § 205-A et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Broad UTPA with strong public-enforcement tools; private multiple damages and some fee questions are weaker."
+    },
+    {
+      "ab": "OH",
+      "name": "Ohio",
+      "rank": 23,
+      "score": 73.5,
+      "band": "Center",
+      "statute": "Consumer Sales Practices Act",
+      "cite": "Ohio Rev. Code § 1345.01 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "CSPA offers treble damages, but most lenders and creditors are exempt from the statute."
+    },
+    {
+      "ab": "PA",
+      "name": "Pennsylvania",
+      "rank": 23,
+      "score": 73.5,
+      "band": "Center",
+      "statute": "UTPCPL",
+      "cite": "73 P.S. § 201-1 et seq.",
+      "fc": "Judicial",
+      "apl": "Consumer Equity Protection Act, Ch. 5",
+      "note": "UTPCPL catch-all plus treble damages and fees; Gregg (2021) makes deceptive conduct strict liability, but reliance and a strict parol-evidence rule (Yocca) still constrain claims."
+    },
+    {
+      "ab": "LA",
+      "name": "Louisiana",
+      "rank": 25,
+      "score": 72.2,
+      "band": "Center",
+      "statute": "LUTPA",
+      "cite": "La. R.S. § 51:1401 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "LUTPA has unfair/deceptive coverage, but banks, insurers, and utilities are largely exempt; treble damages require AG notice."
+    },
+    {
+      "ab": "GA",
+      "name": "Georgia",
+      "rank": 26,
+      "score": 71.5,
+      "band": "Center",
+      "statute": "Fair Business Practices Act",
+      "cite": "O.C.G.A. § 10-1-390 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "O.C.G.A. §§ 7-6A-1 et seq.",
+      "note": "Fair Business Practices Act plus the Fair Lending Act; reliance and pre-suit notice are hurdles; foreclosure is nonjudicial."
+    },
+    {
+      "ab": "AR",
+      "name": "Arkansas",
+      "rank": 27,
+      "score": 71.2,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Ark. Code § 4-88-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Covers deceptive and unconscionable acts, but 2017 amendments require reliance and actual financial loss and generally bar class actions."
+    },
+    {
+      "ab": "NH",
+      "name": "New Hampshire",
+      "rank": 28,
+      "score": 71.0,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "N.H. Rev. Stat. § 358-A:1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Little-FTC act with multiple damages for willful violations, but lenders, insurers, and utilities are largely exempt."
+    },
+    {
+      "ab": "KY",
+      "name": "Kentucky",
+      "rank": 29,
+      "score": 70.8,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "Ky. Rev. Stat. § 367.110 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer Protection Act is relatively broad, but consumers cannot enforce it against some industries, including certain lenders."
+    },
+    {
+      "ab": "AK",
+      "name": "Alaska",
+      "rank": 30,
+      "score": 70.5,
+      "band": "Center",
+      "statute": "Unfair Trade Practices and Consumer Protection Act",
+      "cite": "Alaska Stat. § 45.50.471 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Strong prohibitions and automatic treble damages, offset by a loser-pays fee risk, an insurer exemption, and no coverage of real-estate deals."
+    },
+    {
+      "ab": "NY",
+      "name": "New York",
+      "rank": 30,
+      "score": 70.5,
+      "band": "Center",
+      "statute": "General Business Law §§ 349\\u2013350",
+      "cite": "N.Y. Gen. Bus. Law §§ 349, 350",
+      "fc": "Judicial",
+      "apl": "N.Y. Banking Law §§ 6-l, 6-m",
+      "note": "GBL § 349 is a workhorse deception statute, but consumers do not get a broad unfairness catch-all, treble damages are capped at $1,000, and fee-shifting is limited."
+    },
+    {
+      "ab": "OK",
+      "name": "Oklahoma",
+      "rank": 32,
+      "score": 70.0,
+      "band": "Center",
+      "statute": "Consumer Protection Act",
+      "cite": "15 Okla. Stat. § 751 et seq.",
+      "fc": "Mixed",
+      "apl": "",
+      "note": "Consumer Protection Act is solid on remedies, with insurance and utility gaps; foreclosure may proceed judicially or by power of sale."
+    },
+    {
+      "ab": "RI",
+      "name": "Rhode Island",
+      "rank": 32,
+      "score": 70.0,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "R.I. Gen. Laws § 6-13.1-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "A 2021 amendment strengthened AG tools and damages, but private suits remain barred where the conduct is subject to other agency regulation."
+    },
+    {
+      "ab": "UT",
+      "name": "Utah",
+      "rank": 34,
+      "score": 69.5,
+      "band": "Center",
+      "statute": "Consumer Sales Practices Act",
+      "cite": "Utah Code § 13-11-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumer Sales Practices Act covers unfair and deceptive acts, with insurance and utility gaps and no multiple damages."
+    },
+    {
+      "ab": "DE",
+      "name": "Delaware",
+      "rank": 35,
+      "score": 68.0,
+      "band": "Center",
+      "statute": "Consumer Fraud Act",
+      "cite": "6 Del. C. § 2511 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumer Fraud Act covers deception broadly, but NCLC found no general unfairness prohibition consumers can use."
+    },
+    {
+      "ab": "IN",
+      "name": "Indiana",
+      "rank": 36,
+      "score": 67.2,
+      "band": "Center",
+      "statute": "Deceptive Consumer Sales Act",
+      "cite": "Ind. Code § 24-5-0.5-1 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Consumers cannot enforce some key prohibitions; intent and reliance hurdles shrink the Deceptive Consumer Sales Act in practice."
+    },
+    {
+      "ab": "WV",
+      "name": "West Virginia",
+      "rank": 37,
+      "score": 66.2,
+      "band": "Center",
+      "statute": "Consumer Credit and Protection Act, Art. 6",
+      "cite": "W. Va. Code § 46A-6-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumer Credit and Protection Act reaches unfair and deceptive practices, with some coverage ambiguities."
+    },
+    {
+      "ab": "NV",
+      "name": "Nevada",
+      "rank": 38,
+      "score": 65.2,
+      "band": "Center",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Nev. Rev. Stat. ch. 598",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Deceptive-practices statute lacks a broad unfairness catch-all; AG enforcement can require knowledge or intent."
+    },
+    {
+      "ab": "WY",
+      "name": "Wyoming",
+      "rank": 39,
+      "score": 64.2,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Wyo. Stat. § 40-12-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Knowledge is required, individual plaintiffs do not recover attorney fees, and a pre-suit notice applies; AG suits also require knowledge or intent."
+    },
+    {
+      "ab": "AL",
+      "name": "Alabama",
+      "rank": 40,
+      "score": 62.5,
+      "band": "Right",
+      "statute": "Deceptive Trade Practices Act",
+      "cite": "Ala. Code § 8-19-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Broad unfair/deceptive ban, but banks and lenders are exempt; pre-suit notice and no class actions; nonjudicial foreclosure."
+    },
+    {
+      "ab": "OR",
+      "name": "Oregon",
+      "rank": 40,
+      "score": 62.5,
+      "band": "Right",
+      "statute": "Unlawful Trade Practices Act",
+      "cite": "Or. Rev. Stat. § 646.605 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No broad privately enforceable unfairness ban, and deception coverage is limited; some industries are hard for consumers to reach."
+    },
+    {
+      "ab": "TX",
+      "name": "Texas",
+      "rank": 42,
+      "score": 61.5,
+      "band": "Right",
+      "statute": "DTPA",
+      "cite": "Tex. Bus. & Com. Code § 17.41 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "DTPA remedies can be strong, but consumers cannot enforce a general unfairness ban, and some claims require reliance."
+    },
+    {
+      "ab": "WI",
+      "name": "Wisconsin",
+      "rank": 42,
+      "score": 61.5,
+      "band": "Right",
+      "statute": "Wis. Stat. §§ 100.18, 100.20",
+      "cite": "Wis. Stat. §§ 100.18, 100.20",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "Patchwork statutes: consumers can enforce unfairness only via specific state rules, and the economic-loss doctrine applies even to consumers."
+    },
+    {
+      "ab": "NE",
+      "name": "Nebraska",
+      "rank": 44,
+      "score": 60.5,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Neb. Rev. Stat. § 59-1601 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Most lenders and utilities are exempt; damage enhancements are capped at $1,000 for some claims."
+    },
+    {
+      "ab": "CO",
+      "name": "Colorado",
+      "rank": 45,
+      "score": 56.0,
+      "band": "Right",
+      "statute": "Consumer Protection Act",
+      "cite": "Colo. Rev. Stat. § 6-1-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Laundry-list statute with no general unfairness or deception catch-all; bad-faith trebling exists, but the substantive net is narrow."
+    },
+    {
+      "ab": "MN",
+      "name": "Minnesota",
+      "rank": 46,
+      "score": 55.5,
+      "band": "Right",
+      "statute": "Consumer Fraud Act; UDTPA",
+      "cite": "Minn. Stat. §§ 325F.68, 325D.43 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No general unfairness prohibition; consumer-fraud statute is narrower and often requires a public-interest showing in private suits."
+    },
+    {
+      "ab": "FL",
+      "name": "Florida",
+      "rank": 47,
+      "score": 54.8,
+      "band": "Far right",
+      "statute": "FDUTPA",
+      "cite": "Fla. Stat. § 501.201 et seq.",
+      "fc": "Judicial",
+      "apl": "",
+      "note": "FDUTPA is broad on paper, but lenders and other industries are carved out and losing plaintiffs can owe the business's fees."
+    },
+    {
+      "ab": "TN",
+      "name": "Tennessee",
+      "rank": 47,
+      "score": 54.8,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Tenn. Code § 47-18-101 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Consumers cannot enforce the statute's broad prohibitions; listed practices and industry gaps leave a thin private right."
+    },
+    {
+      "ab": "SD",
+      "name": "South Dakota",
+      "rank": 49,
+      "score": 50.5,
+      "band": "Far right",
+      "statute": "Deceptive Trade Practices and Consumer Protection Law",
+      "cite": "S.D. Codified Laws ch. 37-24",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No unfairness catch-all; deception often requires knowledge or intent; no attorney-fee recovery for individual consumer suits."
+    },
+    {
+      "ab": "VA",
+      "name": "Virginia",
+      "rank": 50,
+      "score": 47.5,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Va. Code § 59.1-196 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "No general unfairness prohibition, and most lenders, insurers, and utilities are exempt; willful violations can be trebled."
+    },
+    {
+      "ab": "MS",
+      "name": "Mississippi",
+      "rank": 51,
+      "score": 38.0,
+      "band": "Far right",
+      "statute": "Consumer Protection Act",
+      "cite": "Miss. Code § 75-24-1 et seq.",
+      "fc": "Nonjudicial",
+      "apl": "",
+      "note": "Among the weakest private remedies: consumers cannot enforce the broad prohibitions, and fees and multiple damages are lacking."
+    }
+  ],
+  "tiles": {
+    "ME": [
+      11,
+      0
+    ],
+    "WI": [
+      6,
+      1
+    ],
+    "MI": [
+      7,
+      1
+    ],
+    "NY": [
+      9,
+      1
+    ],
+    "VT": [
+      10,
+      1
+    ],
+    "NH": [
+      11,
+      1
+    ],
+    "WA": [
+      0,
+      2
+    ],
+    "ID": [
+      1,
+      2
+    ],
+    "MT": [
+      2,
+      2
+    ],
+    "ND": [
+      3,
+      2
+    ],
+    "MN": [
+      4,
+      2
+    ],
+    "IL": [
+      5,
+      2
+    ],
+    "IN": [
+      6,
+      2
+    ],
+    "OH": [
+      7,
+      2
+    ],
+    "PA": [
+      8,
+      2
+    ],
+    "NJ": [
+      9,
+      2
+    ],
+    "CT": [
+      10,
+      2
+    ],
+    "MA": [
+      11,
+      2
+    ],
+    "OR": [
+      0,
+      3
+    ],
+    "NV": [
+      1,
+      3
+    ],
+    "WY": [
+      2,
+      3
+    ],
+    "SD": [
+      3,
+      3
+    ],
+    "IA": [
+      4,
+      3
+    ],
+    "MO": [
+      5,
+      3
+    ],
+    "KY": [
+      6,
+      3
+    ],
+    "WV": [
+      7,
+      3
+    ],
+    "VA": [
+      8,
+      3
+    ],
+    "MD": [
+      9,
+      3
+    ],
+    "DE": [
+      10,
+      3
+    ],
+    "RI": [
+      11,
+      3
+    ],
+    "CA": [
+      0,
+      4
+    ],
+    "UT": [
+      1,
+      4
+    ],
+    "CO": [
+      2,
+      4
+    ],
+    "NE": [
+      3,
+      4
+    ],
+    "KS": [
+      4,
+      4
+    ],
+    "AR": [
+      5,
+      4
+    ],
+    "TN": [
+      6,
+      4
+    ],
+    "NC": [
+      7,
+      4
+    ],
+    "SC": [
+      8,
+      4
+    ],
+    "DC": [
+      9,
+      4
+    ],
+    "AZ": [
+      1,
+      5
+    ],
+    "NM": [
+      2,
+      5
+    ],
+    "OK": [
+      3,
+      5
+    ],
+    "LA": [
+      4,
+      5
+    ],
+    "MS": [
+      5,
+      5
+    ],
+    "AL": [
+      6,
+      5
+    ],
+    "GA": [
+      7,
+      5
+    ],
+    "AK": [
+      0,
+      6
+    ],
+    "TX": [
+      3,
+      6
+    ],
+    "FL": [
+      7,
+      6
+    ],
+    "HI": [
+      0,
+      7
+    ]
+  }
+}

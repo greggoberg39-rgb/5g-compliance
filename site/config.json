@@ -1,0 +1,12 @@
+{
+  "site_name": "5G Regulatory Compliance",
+  "short_name": "5G",
+  "tagline": "Giumarra, Gregg, and Grok",
+  "footer_note": "Commentary only; not legal advice. Not an official RIMBA publication.",
+  "nav": [
+    {"id": "home", "label": "Home", "href": "index.html"},
+    {"id": "resources", "label": "Resources", "href": "resources/"},
+    {"id": "archive", "label": "Archive", "href": "archive.html"},
+    {"id": "about", "label": "About", "href": "about.html"}
+  ]
+}

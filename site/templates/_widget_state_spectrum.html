@@ -1,0 +1,44 @@
+<div class="spectrum-widget" id="spectrum-widget" hidden>
+  <div class="metrics-row" id="spectrum-metrics"></div>
+  <div class="widget-toolbar">
+    <div class="view-toggle" role="tablist" aria-label="Spectrum view">
+      <button type="button" class="on" data-view="map">Map</button>
+      <button type="button" data-view="spectrum">Ranked spectrum</button>
+    </div>
+  </div>
+  <p class="widget-caption">Blue-green marks are more consumer-protective (courts or statutes more willing to police unfair or deceptive terms). Gold marks sit closer to “you signed it.” Click a state for its score and statute. Pennsylvania is outlined. The tile map is schematic, not geographic. Scores as of November 13, 2026 (America/New_York).</p>
+  <div id="spectrum-map" class="spectrum-map-wrap"></div>
+  <div id="spectrum-bar" class="spectrum-bar-wrap" hidden></div>
+  <dl class="spectrum-props" id="spectrum-props"></dl>
+  <div class="widget-toolbar table-toolbar">
+    <label class="field">Search
+      <input type="search" id="spectrum-search" placeholder="State or statute" autocomplete="off">
+    </label>
+    <label class="field">Sort
+      <select id="spectrum-sort">
+        <option value="protective">Most protective first</option>
+        <option value="sanctity">Most contract-enforcing first</option>
+        <option value="alpha">Alphabetical</option>
+        <option value="foreclosure">Foreclosure path</option>
+      </select>
+    </label>
+  </div>
+  <p class="widget-caption">Sortable table of the composite score, key UDAP statute, customary foreclosure path, and a one-line note. Higher scores are more consumer-protective.</p>
+  <div class="table-wrap">
+    <table class="spectrum-table" id="spectrum-table">
+      <thead>
+        <tr>
+          <th class="num">Rank</th>
+          <th>State</th>
+          <th class="num">Score</th>
+          <th>Band</th>
+          <th>Key statute</th>
+          <th>Foreclosure</th>
+          <th>Note</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+<script type="application/json" id="spectrum-data">/*__STATE_DATA__*/</script>

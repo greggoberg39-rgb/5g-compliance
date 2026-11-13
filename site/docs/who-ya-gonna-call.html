@@ -170,6 +170,157 @@ footer {
   .post-body { padding: 22px 26px 32px; }
   h2 { font-size: 1.6rem; }
 }
+
+/* Resource library and state-spectrum widget */
+.byline { margin: 0 0 12px; }
+.canvas-note {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+.resource-main { max-width: 1100px; }
+.resource-body h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 1.4rem 0 0.6rem;
+}
+.resource-body table { width: 100%; font-size: 0.92rem; }
+.resource-body th, .resource-body td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+.resource-body th { background: var(--teal-soft); color: var(--navy); }
+.resource-body ol, .resource-body ul { padding-left: 1.2rem; }
+.metrics-row {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .metrics-row { grid-template-columns: 1fr 1fr 1fr; }
+}
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.metric-value { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+.metric-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal); margin: 2px 0 8px; }
+.metric-card p { margin: 0; color: var(--mute); font-size: 0.9rem; }
+.spectrum-widget { margin: 0 0 28px; }
+.widget-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+}
+.view-toggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.view-toggle button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border: 0;
+  background: var(--card);
+  color: var(--slate);
+  cursor: pointer;
+}
+.view-toggle button + button { border-left: 1px solid var(--line); }
+.view-toggle button.on { background: var(--teal); color: #fff; }
+.widget-caption { color: var(--mute); font-size: 0.88rem; margin: 0 0 12px; }
+.spectrum-map-wrap, .spectrum-bar-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.spectrum-map-wrap svg { width: 100%; max-width: 720px; height: auto; aspect-ratio: 476 / 316; display: block; }
+.spectrum-map-wrap .tile { cursor: pointer; }
+.spectrum-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mute);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.spectrum-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.chip-swatch { display: block; width: 100%; height: 6px; }
+.chip-ab {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+  background: var(--card);
+}
+.chip.sel .chip-ab, .chip.pa .chip-ab { border-width: 2px; }
+.chip.pa .chip-ab { border-color: var(--teal); }
+.chip.sel .chip-ab { border-color: var(--ink); font-weight: 700; }
+.spectrum-props {
+  display: grid;
+  gap: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .spectrum-props { grid-template-columns: 1fr 1fr; }
+}
+.spectrum-props div { margin: 0; }
+.spectrum-props dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--mute); }
+.spectrum-props dd { margin: 2px 0 0; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--mute); font-weight: 600; }
+.field input, .field select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--card);
+  min-width: 180px;
+}
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.spectrum-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.spectrum-table th, .spectrum-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.spectrum-table th { background: var(--navy); color: #fff; font-weight: 600; position: sticky; top: 0; }
+.spectrum-table td.num, .spectrum-table th.num { text-align: right; white-space: nowrap; }
+.spectrum-table tbody tr { cursor: pointer; }
+.spectrum-table tbody tr:hover { background: var(--teal-soft); }
+.spectrum-table tbody tr.pa { box-shadow: inset 3px 0 0 var(--teal); }
+.spectrum-table tbody tr.sel { background: var(--teal-soft); }
+.spectrum-table tbody tr.sel td:first-child { font-weight: 700; }
+.resource-card .card-link-inner { display: block; text-decoration: none; color: inherit; }
+.resource-card .card-link-inner h3 { color: var(--navy); }
+.resource-card .card-link-inner:hover h3, .resource-card .card-link-inner:focus h3 { color: var(--teal); }
+.resource-card .meta a { font-weight: 600; }
 </style>
 </head><body>
 <header>
@@ -182,7 +333,8 @@ footer {
   </a>
 </header>
 <nav>
-  <a href="index.html">Home</a>
+<a href="index.html">Home</a>
+  <a href="resources/">Resources</a>
   <a href="archive.html">Archive</a>
   <a href="about.html">About</a>
 </nav>
@@ -231,5 +383,5 @@ footer {
 <p class="meta"><a href="index.html">← All posts</a></p>
 </article>
 </main>
-<footer>5G Regulatory Compliance · v1.0.0 · Built 2026-11-12 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
+<footer>5G Regulatory Compliance · v1.1.0 · Built 2026-11-13 · Commentary only; not legal advice. Not an official RIMBA publication.</footer>
 </body></html>

@@ -3,14 +3,16 @@
 
 Usage:  python3 build.py
 
-Reads Markdown posts from content/posts/ and templates from templates/,
-copies media, and writes a static site to docs/ (for GitHub Pages).
+Reads Markdown posts from content/posts/, resource files from
+content/resources/, templates from templates/, and site branding from
+config.json. Copies media and writes a static site to docs/ (for GitHub Pages).
 
 The card index, per-post pages, front-matter parser, multi-author cards,
 permission credit, version footer, and BLOG_ENABLED switch follow the
 data-driven blog engine this site was adapted from. Set BLOG_ENABLED = False
 to skip generating post pages and hide post cards (source files stay in
 content/posts/). Drafts (front matter draft: true) are always excluded.
+The Resource Library still builds.
 
 No heavy dependencies — Python 3 only.
 """
@@ -18,7 +20,7 @@ import datetime, json, os, re, shutil, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TODAY = datetime.date.today().isoformat()
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 # Set to False to hide post cards and skip generating post pages
 # (files stay in content/posts/). About and Archive still build.
 BLOG_ENABLED = True
@@ -28,6 +30,8 @@ POSTS_DIR = os.path.join(CONTENT, "posts")
 MEDIA_SRC = os.path.join(CONTENT, "media")
 TPL_DIR = os.path.join(HERE, "templates")
 DOCS = os.path.join(HERE, "docs")
+CONFIG_PATH = os.path.join(HERE, "config.json")
+RESOURCES_DIR = os.path.join(CONTENT, "resources")
 RESEARCH = os.path.join(os.path.dirname(HERE), "research", "rimba-posts.json")
 
 
@@ -167,6 +171,110 @@ def load_research():
         return json.load(f)
 
 
+def load_config():
+    with open(CONFIG_PATH, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def rel_path(target, depth):
+    return ("../" * depth) + target
+
+
+def render_nav(config, active, depth):
+    links = []
+    for item in config.get("nav") or []:
+        cls = ' class="on"' if item.get("id") == active else ""
+        href = rel_path(item.get("href") or "", depth)
+        links.append(f'<a href="{html_esc(href)}"{cls}>{html_esc(item.get("label") or "")}</a>')
+    return "\n  ".join(links)
+
+
+def apply_chrome(tpl, config, *, active, depth, **extra):
+    """Fill branding, nav, version, and any extra __placeholders__."""
+    text = (
+        tpl
+        .replace("<!--__HOME_HREF__-->", html_esc(rel_path("index.html", depth)))
+        .replace("<!--__NAV__-->", render_nav(config, active, depth))
+        .replace("/*__SITE_NAME__*/", html_esc(config.get("site_name") or ""))
+        .replace("/*__SHORT_NAME__*/", html_esc(config.get("short_name") or ""))
+        .replace("/*__TAGLINE__*/", html_esc(config.get("tagline") or ""))
+        .replace("/*__FOOTER_NOTE__*/", html_esc(config.get("footer_note") or ""))
+        .replace("/*__VERSION__*/", VERSION)
+        .replace("/*__BUILT__*/", TODAY)
+    )
+    for key, value in extra.items():
+        text = text.replace(key, value)
+    return text
+
+
+def load_resources():
+    if not os.path.isdir(RESOURCES_DIR):
+        return []
+    resources = []
+    for fn in os.listdir(RESOURCES_DIR):
+        if not fn.endswith(".md"):
+            continue
+        r = parse_post(open(os.path.join(RESOURCES_DIR, fn), encoding="utf-8").read())
+        r["_file"] = fn
+        if r["is_draft"]:
+            continue
+        if not r.get("slug"):
+            r["slug"] = re.sub(r"[^a-z0-9]+", "-", (r.get("title") or "").lower()).strip("-")
+        resources.append(r)
+    resources.sort(key=lambda r: (r.get("date") or "", r.get("title") or ""), reverse=True)
+    return resources
+
+
+def canvas_note_html(resource):
+    url = (resource.get("canvas_url") or "").strip()
+    if not url:
+        return ""
+    label = (resource.get("canvas_note") or "Also available as an interactive page").strip()
+    return f'<p class="canvas-note"><a href="{html_esc(url)}">{html_esc(label)}</a>.</p>'
+
+
+def render_widget(resource):
+    widget = (resource.get("widget") or "").strip()
+    if widget != "state-spectrum":
+        return "", ""
+    data_name = (resource.get("data") or "").strip()
+    if not data_name or "/" in data_name or "\\" in data_name:
+        raise ValueError(f"resource {resource.get('_file')} is missing a safe data file name")
+    data_path = os.path.join(RESOURCES_DIR, data_name)
+    if not os.path.isfile(data_path):
+        raise ValueError(f"resource data file not found: {data_name}")
+    data = open(data_path, encoding="utf-8").read()
+    markup = open(os.path.join(TPL_DIR, "_widget_state_spectrum.html"), encoding="utf-8").read()
+    script = open(os.path.join(TPL_DIR, "_widget_state_spectrum.js"), encoding="utf-8").read()
+    markup = markup.replace("/*__STATE_DATA__*/", data)
+    return markup, "<script>\n" + script + "\n</script>"
+
+
+def resource_card(resource):
+    title = html_esc(resource.get("title") or "")
+    date = html_esc(fmt_long(resource["date"]) if resource.get("date") else "")
+    excerpt = html_esc(resource.get("excerpt") or "")
+    slug = html_esc(resource.get("slug") or "")
+    canvas = ""
+    url = (resource.get("canvas_url") or "").strip()
+    if url:
+        label = (resource.get("canvas_note") or "Also available as an interactive page").strip()
+        canvas = (
+            f'<p class="meta"><a href="{html_esc(url)}">{html_esc(label)}</a></p>'
+        )
+    return (
+        f'<div class="card resource-card">'
+        f'<a class="card-link-inner" href="{slug}/">'
+        f"<h3>{title}</h3>"
+        f'<div class="meta"><span class="date">{date}</span></div>'
+        f"<p>{excerpt}</p>"
+        f"</a>"
+        f"{canvas}"
+        f"</div>"
+    )
+
+
+
 def clean_docs():
     if os.path.isdir(DOCS):
         for name in os.listdir(DOCS):
@@ -208,11 +316,14 @@ def archive_card(item, local_slug=None):
 
 
 def build():
+    config = load_config()
     css = open(os.path.join(TPL_DIR, "_shared.css"), encoding="utf-8").read()
     home_tpl = open(os.path.join(TPL_DIR, "_home.html"), encoding="utf-8").read()
     post_tpl = open(os.path.join(TPL_DIR, "_post.html"), encoding="utf-8").read()
     about_tpl = open(os.path.join(TPL_DIR, "_about.html"), encoding="utf-8").read()
     archive_tpl = open(os.path.join(TPL_DIR, "_archive.html"), encoding="utf-8").read()
+    resources_tpl = open(os.path.join(TPL_DIR, "_resources.html"), encoding="utf-8").read()
+    resource_tpl = open(os.path.join(TPL_DIR, "_resource.html"), encoding="utf-8").read()
 
     clean_docs()
     os.makedirs(DOCS, exist_ok=True)
@@ -243,18 +354,21 @@ def build():
         )
         note = (p.get("note") or "").strip()
         note_html = (" " + html_esc(note)) if note else ""
-        page = (
-            post_tpl
-            .replace("/*__CSS__*/", css)
-            .replace("/*__POST_TITLE__*/", html_esc(p.get("title", "")))
-            .replace("/*__AUTHOR__*/", html_esc(p.get("author") or "Author"))
-            .replace("/*__DATE__*/", html_esc(fmt_long(p["date"])))
-            .replace("/*__SOURCE__*/", html_esc(p.get("source", "")))
-            .replace("/*__NOTE__*/", note_html)
-            .replace("/*__TAGS__*/", tag_pills(tags))
-            .replace("/*__VERSION__*/", VERSION)
-            .replace("/*__BUILT__*/", TODAY)
-            .replace("<!--__BODY__-->", render_body(p["body"]))
+        page = apply_chrome(
+            post_tpl,
+            config,
+            active="",
+            depth=0,
+            **{
+                "/*__CSS__*/": css,
+                "/*__POST_TITLE__*/": html_esc(p.get("title", "")),
+                "/*__AUTHOR__*/": html_esc(p.get("author") or "Author"),
+                "/*__DATE__*/": html_esc(fmt_long(p["date"])),
+                "/*__SOURCE__*/": html_esc(p.get("source", "")),
+                "/*__NOTE__*/": note_html,
+                "/*__TAGS__*/": tag_pills(tags),
+                "<!--__BODY__-->": render_body(p["body"]),
+            },
         )
         write(os.path.join(DOCS, slug + ".html"), page)
 
@@ -266,22 +380,20 @@ def build():
         "Source files remain in <code>content/posts/</code>.</p>"
         if not BLOG_ENABLED else "<p>No published posts yet.</p>"
     )
-    home = (
-        home_tpl
-        .replace("/*__CSS__*/", css)
-        .replace("<!--__FILTERS__-->", "".join(filter_btns) if cards else "")
-        .replace("<!--__POSTS__-->", posts_html)
-        .replace("/*__VERSION__*/", VERSION)
-        .replace("/*__BUILT__*/", TODAY)
+    home = apply_chrome(
+        home_tpl,
+        config,
+        active="home",
+        depth=0,
+        **{
+            "/*__CSS__*/": css,
+            "<!--__FILTERS__-->": "".join(filter_btns) if cards else "",
+            "<!--__POSTS__-->": posts_html,
+        },
     )
     write(os.path.join(DOCS, "index.html"), home)
 
-    about = (
-        about_tpl
-        .replace("/*__CSS__*/", css)
-        .replace("/*__VERSION__*/", VERSION)
-        .replace("/*__BUILT__*/", TODAY)
-    )
+    about = apply_chrome(about_tpl, config, active="about", depth=0, **{"/*__CSS__*/": css})
     write(os.path.join(DOCS, "about.html"), about)
 
     research = load_research()
@@ -292,15 +404,60 @@ def build():
         local = slug if slug in slugs else None
         republished_html.append(archive_card(item, local_slug=local))
     located_html = [archive_card(item) for item in research.get("also_located") or []]
-    archive = (
-        archive_tpl
-        .replace("/*__CSS__*/", css)
-        .replace("<!--__REPUBLISHED__-->", "\n".join(republished_html) or "<p>None listed.</p>")
-        .replace("<!--__LOCATED__-->", "\n".join(located_html) or "<p>None listed.</p>")
-        .replace("/*__VERSION__*/", VERSION)
-        .replace("/*__BUILT__*/", TODAY)
+    archive = apply_chrome(
+        archive_tpl,
+        config,
+        active="archive",
+        depth=0,
+        **{
+            "/*__CSS__*/": css,
+            "<!--__REPUBLISHED__-->": "\n".join(republished_html) or "<p>None listed.</p>",
+            "<!--__LOCATED__-->": "\n".join(located_html) or "<p>None listed.</p>",
+        },
     )
     write(os.path.join(DOCS, "archive.html"), archive)
+
+    resources = load_resources()
+    resource_cards = []
+    for r in resources:
+        slug = r["slug"]
+        widget_html, widget_script = render_widget(r)
+        disclaimer = (r.get("disclaimer") or (
+            "This is general research and commentary, not legal advice "
+            "and not an official publication of RIMBA or of any employer."
+        )).strip()
+        page = apply_chrome(
+            resource_tpl,
+            config,
+            active="resources",
+            depth=2,
+            **{
+                "/*__CSS__*/": css,
+                "/*__RESOURCE_TITLE__*/": html_esc(r.get("title") or ""),
+                "/*__AUTHOR__*/": html_esc(r.get("author") or config.get("site_name") or ""),
+                "/*__DATE__*/": html_esc(fmt_long(r["date"]) if r.get("date") else ""),
+                "<!--__CANVAS_NOTE__-->": canvas_note_html(r),
+                "/*__DISCLAIMER__*/": html_esc(disclaimer),
+                "<!--__WIDGET__-->": widget_html,
+                "<!--__BODY__-->": render_body(r["body"]),
+                "<!--__WIDGET_SCRIPT__-->": widget_script,
+                "<!--__RESOURCES_HREF__-->": html_esc(rel_path("resources/", 2)),
+            },
+        )
+        write(os.path.join(DOCS, "resources", slug, "index.html"), page)
+        resource_cards.append(resource_card(r))
+
+    resources_page = apply_chrome(
+        resources_tpl,
+        config,
+        active="resources",
+        depth=1,
+        **{
+            "/*__CSS__*/": css,
+            "<!--__RESOURCES__-->": "\n".join(resource_cards) or "<p>No resources published yet.</p>",
+        },
+    )
+    write(os.path.join(DOCS, "resources", "index.html"), resources_page)
 
     drafts = []
     if os.path.isdir(POSTS_DIR):
@@ -312,6 +469,7 @@ def build():
     print(f"Built v{VERSION} on {TODAY} -> {DOCS}")
     print(f"  BLOG_ENABLED={BLOG_ENABLED}")
     print(f"  published posts: {len(posts)}")
+    print(f"  resources: {len(resources)}")
     print(f"  drafts excluded: {len(drafts)}" + (f" ({', '.join(drafts)})" if drafts else ""))
     return posts
 
