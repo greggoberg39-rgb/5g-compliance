@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls — 5G Regulatory Compliance</title>
+<meta name="description" content="A mortgage-compliance lawyer tests an AI assistant's content limits, then asks whether AI image moderation has tightened, whether it should, and what a defensible control framework looks like.">
+<link rel="canonical" href="https://greggoberg39-rgb.github.io/5g-compliance/ai-image-limits-governance.html">
+<meta property="og:title" content="Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls">
+<meta property="og:description" content="A mortgage-compliance lawyer tests an AI assistant's content limits, then asks whether AI image moderation has tightened, whether it should, and what a defensible control framework looks like.">
+<meta property="og:url" content="https://greggoberg39-rgb.github.io/5g-compliance/ai-image-limits-governance.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://greggoberg39-rgb.github.io/5g-compliance/media/share-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="5G Regulatory Compliance">
+<meta property="og:site_name" content="5G Regulatory Compliance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls">
+<meta name="twitter:description" content="A mortgage-compliance lawyer tests an AI assistant's content limits, then asks whether AI image moderation has tightened, whether it should, and what a defensible control framework looks like.">
+<meta name="twitter:image" content="https://greggoberg39-rgb.github.io/5g-compliance/media/share-card.png">
+<meta name="twitter:site" content="@GreggOberg">
+<meta name="twitter:creator" content="@GreggOberg">
+<style>/* 5G Regulatory Compliance — mobile-first, no heavy fonts or assets */
+:root {
+  --ink: #122033;
+  --mute: #5b6777;
+  --line: #d8dee6;
+  --bg: #f3f5f8;
+  --card: #ffffff;
+  --navy: #0f2744;
+  --slate: #1c334d;
+  --teal: #0f766e;
+  --teal-soft: #e6f3f1;
+  --gold: #b8860b;
+  --focus: #0b4fb3;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+a { color: var(--teal); }
+a:hover, a:focus { color: var(--navy); }
+img { max-width: 100%; height: auto; }
+header {
+  background: var(--navy);
+  color: #fff;
+  padding: 18px 16px;
+}
+header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+}
+header .mark {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 48px;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+header .tagline {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+  color: #c9d6e4;
+  font-weight: 400;
+}
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--slate);
+  padding: 8px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+nav a {
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+nav a:hover, nav a:focus, nav a.on {
+  background: var(--teal);
+  color: #fff;
+}
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 72px;
+}
+.lede {
+  margin: 0 0 20px;
+  color: var(--slate);
+  font-size: 1.05rem;
+}
+.disclaimer {
+  background: #fff8e8;
+  border: 1px solid #e6d7a2;
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--slate);
+  font-size: 0.95rem;
+  margin: 16px 0 24px;
+}
+.grid { display: grid; gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.card h3 { margin: 0 0 6px; font-size: 1.12rem; color: var(--navy); }
+.card-link { display: block; text-decoration: none; color: inherit; }
+.card-link:hover, .card-link:focus { border-color: var(--teal); box-shadow: 0 0 0 2px var(--teal-soft); }
+.meta { color: var(--mute); font-size: 0.92rem; }
+.date { font-weight: 700; color: var(--navy); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.tag, button.tag {
+  display: inline-block;
+  background: var(--teal-soft);
+  color: var(--teal);
+  border: 1px solid #b7d9d5;
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+button.tag.on, .tag.on { background: var(--teal); color: #fff; border-color: var(--teal); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; align-items: center; }
+.filters .label { font-size: 0.85rem; color: var(--mute); margin-right: 4px; }
+h2 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  border-bottom: 3px solid var(--teal);
+  padding-bottom: 6px;
+  margin: 1.4rem 0 0.8rem;
+}
+.credit { margin: 14px 0; color: var(--mute); font-size: 0.95rem; }
+.post-body {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px 16px 24px;
+  overflow-x: auto;
+}
+.post-body img { max-width: 100%; height: auto; }
+.post-body img.post-img { display: block; max-width: min(100%, 340px); margin: 1.2rem auto 0.4rem; border-radius: 10px; border: 1px solid #cbd5e1; }
+.post-body p.post-figure { margin-bottom: 0; }
+.post-body table { border-collapse: collapse; max-width: 100%; }
+.post-body td, .post-body th { vertical-align: top; }
+article > h2 { margin-top: 0.4rem; }
+.archive-item { margin: 0; }
+.archive-item + .archive-item { margin-top: 12px; }
+footer {
+  text-align: center;
+  color: var(--mute);
+  font-size: 0.85rem;
+  padding: 20px 16px 32px;
+  border-top: 1px solid var(--line);
+}
+@media (min-width: 720px) {
+  body { font-size: 18px; }
+  header { padding: 24px 20px; }
+  header h1 { font-size: 1.6rem; }
+  header .mark { width: 56px; height: 56px; }
+  header .tagline { font-size: 1rem; }
+  main { padding: 28px 20px 88px; }
+  .grid.cards { grid-template-columns: 1fr 1fr; }
+  .post-body { padding: 22px 26px 32px; }
+  h2 { font-size: 1.6rem; }
+}
+
+/* Resource library and state-spectrum widget */
+.byline { margin: 0 0 12px; }
+.canvas-note {
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+  color: var(--slate);
+}
+.resource-main { max-width: 1100px; }
+.resource-body h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 1.4rem 0 0.6rem;
+}
+.resource-body table { width: 100%; font-size: 0.92rem; }
+.resource-body th, .resource-body td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+.resource-body th { background: var(--teal-soft); color: var(--navy); }
+.resource-body ol, .resource-body ul { padding-left: 1.2rem; }
+.metrics-row {
+  display: grid;
+  gap: 12px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .metrics-row { grid-template-columns: 1fr 1fr 1fr; }
+}
+.metric-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.metric-value { font-weight: 700; font-size: 1.25rem; color: var(--navy); }
+.metric-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--teal); margin: 2px 0 8px; }
+.metric-card p { margin: 0; color: var(--mute); font-size: 0.9rem; }
+.spectrum-widget { margin: 0 0 28px; }
+.widget-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin: 0 0 10px;
+}
+.view-toggle { display: flex; gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.view-toggle button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border: 0;
+  background: var(--card);
+  color: var(--slate);
+  cursor: pointer;
+}
+.view-toggle button + button { border-left: 1px solid var(--line); }
+.view-toggle button.on { background: var(--teal); color: #fff; }
+.widget-caption { color: var(--mute); font-size: 0.88rem; margin: 0 0 12px; }
+.spectrum-map-wrap, .spectrum-bar-wrap {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  overflow-x: auto;
+  margin-bottom: 16px;
+}
+.spectrum-map-wrap svg { width: 100%; max-width: 720px; height: auto; aspect-ratio: 476 / 316; display: block; }
+.spectrum-map-wrap .tile { cursor: pointer; }
+.spectrum-axis {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mute);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.spectrum-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  width: 36px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+}
+.chip-swatch { display: block; width: 100%; height: 6px; }
+.chip-ab {
+  display: block;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+  background: var(--card);
+}
+.chip.sel .chip-ab, .chip.pa .chip-ab { border-width: 2px; }
+.chip.pa .chip-ab { border-color: var(--teal); }
+.chip.sel .chip-ab { border-color: var(--ink); font-weight: 700; }
+.spectrum-props {
+  display: grid;
+  gap: 8px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 0 0 20px;
+}
+@media (min-width: 720px) {
+  .spectrum-props { grid-template-columns: 1fr 1fr; }
+}
+.spectrum-props div { margin: 0; }
+.spectrum-props dt { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--mute); }
+.spectrum-props dd { margin: 2px 0 0; }
+.field { display: flex; flex-direction: column; gap: 4px; font-size: 0.85rem; color: var(--mute); font-weight: 600; }
+.field input, .field select {
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--card);
+  min-width: 180px;
+}
+.table-wrap { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 10px; }
+.spectrum-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.spectrum-table th, .spectrum-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.spectrum-table th { background: var(--navy); color: #fff; font-weight: 600; position: sticky; top: 0; }
+.spectrum-table td.num, .spectrum-table th.num { text-align: right; white-space: nowrap; }
+.spectrum-table tbody tr { cursor: pointer; }
+.spectrum-table tbody tr:hover { background: var(--teal-soft); }
+.spectrum-table tbody tr.pa { box-shadow: inset 3px 0 0 var(--teal); }
+.spectrum-table tbody tr.sel { background: var(--teal-soft); }
+.spectrum-table tbody tr.sel td:first-child { font-weight: 700; }
+.resource-card .card-link-inner { display: block; text-decoration: none; color: inherit; }
+.resource-card .card-link-inner h3 { color: var(--navy); }
+.resource-card .card-link-inner:hover h3, .resource-card .card-link-inner:focus h3 { color: var(--teal); }
+.resource-card .meta a { font-weight: 600; }
+
+/* Share bar — reset site header <nav> styles so this bar stays inline */
+nav.share-bar,
+.share-bar {
+  position: static;
+  top: auto;
+  z-index: auto;
+  background: transparent;
+  padding: 0;
+  display: block;
+  flex-wrap: unset;
+  gap: 0;
+  margin: 4px 0 18px;
+}
+.share-bar-bottom {
+  margin: 22px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.share-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+nav.share-bar .share-btn,
+.share-bar .share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--navy);
+  text-decoration: none;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+nav.share-bar .share-btn:hover,
+nav.share-bar .share-btn:focus,
+.share-bar .share-btn:hover,
+.share-bar .share-btn:focus {
+  color: var(--teal);
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+nav.share-bar .share-btn:focus-visible,
+.share-bar .share-btn:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+.share-bar .share-btn svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: currentColor;
+}
+nav.share-bar .share-btn.copied,
+nav.share-bar .share-btn.copied:hover,
+nav.share-bar .share-btn.copied:focus,
+.share-bar .share-btn.copied,
+.share-bar .share-btn.copied:hover,
+.share-bar .share-btn.copied:focus {
+  background: var(--teal);
+  color: #fff;
+  border-color: var(--teal);
+}
+@media (max-width: 419px) {
+  nav.share-bar .share-btn,
+  .share-bar .share-btn { padding: 8px 10px; font-size: 0.8rem; }
+}
+</style>
+</head><body>
+<header>
+  <a class="brand" href="index.html">
+    <svg class="mark" viewBox="0 0 56 56" role="img" aria-label="5G"><rect width="56" height="56" rx="10" fill="#0f766e"/><text x="28" y="37" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff" font-family="system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif">5G</text></svg>
+    <div>
+      <h1>5G Regulatory Compliance</h1>
+      <p class="tagline">Giumarra, Gregg, and Grok</p>
+    </div>
+  </a>
+</header>
+<nav>
+<a href="index.html">Home</a>
+  <a href="resources/">Resources</a>
+  <a href="archive.html">Archive</a>
+  <a href="about.html">About</a>
+</nav>
+<main>
+<article>
+<p class="meta"><a href="index.html">← All posts</a></p>
+<h2>Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls</h2>
+<p><b>Gregg Oberg</b> · <span class="date">November 14, 2026</span></p>
+<p class="tags"><span class="tag">AI Governance</span></p>
+<nav class="share-bar share-bar-top" aria-label="Share this page" data-share-url="https://greggoberg39-rgb.github.io/5g-compliance/ai-image-limits-governance.html" data-share-title="Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls" data-share-text="A mortgage-compliance lawyer tests an AI assistant's content limits, then asks whether AI image moderation has tightened, whether it should, and what a defensible control framework looks like."><ul class="share-list"><li><a class="share-btn share-x" href="https://twitter.com/intent/tweet?text=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;url=https%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html&amp;via=GreggOberg" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="share-label-text">Share on X</span></a></li><li><a class="share-btn share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="share-label-text">Share on LinkedIn</span></a></li><li><a class="share-btn share-gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;body=A%20mortgage-compliance%20lawyer%20tests%20an%20AI%20assistant%27s%20content%20limits%2C%20then%20asks%20whether%20AI%20image%20moderation%20has%20tightened%2C%20whether%20it%20should%2C%20and%20what%20a%20defensible%20control%20framework%20looks%20like.%0A%0Ahttps%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" target="_blank" rel="noopener noreferrer" aria-label="Share via Gmail"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg><span class="share-label-text">Share via Gmail</span></a></li><li><a class="share-btn share-email" href="mailto:?subject=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;body=A%20mortgage-compliance%20lawyer%20tests%20an%20AI%20assistant%27s%20content%20limits%2C%20then%20asks%20whether%20AI%20image%20moderation%20has%20tightened%2C%20whether%20it%20should%2C%20and%20what%20a%20defensible%20control%20framework%20looks%20like.%0A%0Ahttps%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" aria-label="Share by email"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg><span class="share-label-text">Email</span></a></li><li><button type="button" class="share-btn share-copy" aria-label="Copy link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7C4.24 7 2 9.24 2 12s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg><span class="share-label-text">Copy link</span></button></li><li><button type="button" class="share-btn share-native" aria-label="Share" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11A2.99 2.99 0 0 0 21 5a3 3 0 1 0-2.96 2.39L11 11.5v.99l7.04 4.11A2.99 2.99 0 0 0 21 19a3 3 0 1 0-3-2.92z"/></svg><span class="share-label-text">Share</span></button></li></ul></nav>
+<div class="post-body">
+<h2>The test</h2>
+<p>Compliance people test controls for a living, so I tested one. Very late on the night of November 14, 2026, I probed the image-content limits of my AI assistant. I wanted to see where the lines were, not to produce anything I intended to use.</p>
+<p>Here is what happened, described rather than quoted. I asked for a crude, grade-school crayon doodle of a cartoon figure. It was generated without complaint. I then asked for a tasteful, classical, Renaissance-style nude. The image provider's content policy blocked it. I asked for a variant using a realistic body with cartoon decoration covering the sensitive areas. I asked the assistant to map its limits step by step. And I asked it to write a prompt that would get a different AI model to comply. The assistant declined all three follow-ups. Its reasoning was that probing a block by trying variants is itself circumvention, even when the stated purpose is research.</p>
+<p>I pushed back with two arguments. The first was satire: <em>South Park</em> does far worse on basic cable. The second was that I only wanted to show that the block works.</p>
+<p>I also ran a comparison on a paid consumer account for xAI's Grok Imagine. My observation is that its results were noticeably looser than the other tool's. A blurred screenshot is below. We blurred it to the point where nothing in the generated images is discernible, and left the app interface and my prompt bar readable.</p>
+<p class="post-figure"><img class="post-img" loading="lazy" src="media/ai-image-limits-supergrok-imagine-blurred.jpg" alt="Gregg's SuperGrok Imagine results (paid consumer account), blurred by us"></p>
+<p><em>Gregg's SuperGrok Imagine results (paid consumer account), blurred by us. The screenshot's date cannot be verified from the image itself.</em></p>
+<p>According to my account, Grok Imagine on the same paid account also generated a short, realistic video in which the player's jersey lifts to show nudity. The video file's metadata carries no creation date, so the date is my account, not independently verified.</p>
+<p class="post-figure"><img class="post-img" loading="lazy" src="media/ai-image-limits-grok-imagine-still-blurred.jpg" alt="Still from the author's Grok Imagine clip, blurred by us"></p>
+<p><em>Still from the author's Grok Imagine clip, blurred by us.</em></p>
+<p>I'm not publishing this to relitigate a late-night experiment. It surfaces several governance questions that regulated industries already know well, and two questions I want to answer with sources: has AI image moderation actually tightened, and is tighter moderation desirable or overreach?</p>
+<h2>Four things that were happening at once</h2>
+<p><strong>1. A model refusing is different from a tool blocking.</strong> The Renaissance-style request was stopped by the image provider's content policy, a control sitting outside the assistant. The follow-up requests were declined by the assistant itself. These are separate controls with different owners, different logic, and different failure modes. A user can't tell which is operating from the outside, and that matters for explainability.</p>
+<p><strong>2. Where &quot;hard limits&quot; sit is a design choice.</strong> The crayon doodle passed. The classical nude didn't. The distinction between a cartoon and a realistic depiction is plausible, but it is a line someone chose.</p>
+<p><strong>3. Testing a control is different from evading it.</strong> I'll return to this below.</p>
+<p><strong>4. The explanation may not match the mechanism.</strong> When I asked why one request passed and the other failed, the assistant said realism looked like the line. It then said plainly that this was a guess, not a published rule. I give it credit for saying so. But it illustrates a real governance gap: a user, or an examiner, receiving a refusal usually gets no reliable account of the rule that produced it. In consumer finance we would call that a problem for adverse-action explanations. The reason given should be the reason that actually drove the decision.</p>
+<h2>Question 1: Has AI image moderation materially tightened?</h2>
+<p>Short answer: it has changed direction more than once, and the picture differs by vendor and by category of content. I'm relying on public reporting rather than any systematic measurement, so treat this as a timeline, not a study.</p>
+<ul>
+<li><strong>2022: restriction for risk reasons.</strong> Stability AI's Stable Diffusion 2.0 removed NSFW images from its training data. Its founder said the aim was protecting against child abuse, and the move drew community complaints of censorship <a href="https://the-decoder.com/stable-diffusion-v2-removes-nude-images-and-causes-protests/">(The Decoder)</a>.</li>
+<li><strong>Feb. 2024: over-correction.</strong> Google paused Gemini's image generation of people after it produced inaccurate historical images. Google said its tuning had overcompensated and sometimes treated benign prompts as sensitive <a href="https://blog.google/products-and-platforms/products/gemini/gemini-image-generation-issue/">(Google)</a>. In March 2024, Midjourney reportedly blocked images of Biden and Trump ahead of the election <a href="https://apnews.com/article/midjourney-ai-imagegenerator-biden-trump-deepfakes-bc6c254ddb20e36c5e750b4570889ce1">(AP)</a>.</li>
+<li><strong>Dec. 2024: a permissive launch.</strong> xAI's Aurora image generator was reported at launch to be lightly restricted on public figures <a href="https://www.theverge.com/2024/12/7/24315644/grok-x-aurora-ai-image-generator-xai">(The Verge)</a>.</li>
+<li><strong>Mar. 2025: loosening by a mainstream vendor.</strong> OpenAI's model-behavior lead described a shift &quot;from blanket refusals in sensitive areas to a more precise approach focused on preventing real-world harm.&quot; ChatGPT began allowing images of public figures, with an opt-out. TechCrunch also reported that its safeguards around images of children were stronger than before <a href="https://techcrunch.com/2025/03/28/openai-peels-back-chatgpts-safeguards-around-image-creation/">(TechCrunch)</a>.</li>
+<li><strong>Aug. 2025: &quot;spicy mode.&quot;</strong> The Verge reported that Grok Imagine's &quot;Spicy&quot; video preset produced topless deepfake videos of Taylor Swift without being asked for nudity, with an easily bypassed age prompt. The same story noted that the text-to-image tool itself would not produce nudity on direct request, and that it refused to animate children inappropriately. xAI's acceptable-use policy already banned depicting persons in a pornographic manner <a href="https://www.theverge.com/report/718975/xai-grok-imagine-taylor-swifty-deepfake-nudes">(The Verge)</a>. Consumer groups led by the Consumer Federation of America then asked the FTC and state attorneys general to investigate <a href="https://www.theverge.com/x-ai/759554/consumer-safety-groups-are-demanding-an-ftc-investigation-into-groks-spicy-mode-elon-musk-grok-imagine-xai">(The Verge)</a>.</li>
+<li><strong>Dec. 2025 to Mar. 2026: a mainstream vendor backs off.</strong> OpenAI said in December that an &quot;adult mode&quot; would come in the first quarter of 2026 after better age prediction <a href="https://www.theverge.com/news/842657/openai-chatgpt-adult-mode-debut-q1-2026">(The Verge)</a>. By late March, PCWorld, citing the Financial Times, reported the plan was on indefinite hold <a href="https://www.pcworld.com/article/3099680/openai-just-nixed-chatgpt-erotic-adult-mode.html">(PCWorld)</a>.</li>
+<li><strong>Jan. 2026: regulators arrive.</strong> After widespread &quot;undressing&quot; of real people's photos through Grok on X, Ofcom opened a formal Online Safety Act investigation on January 12 <a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery">(Ofcom)</a>. California's Attorney General opened an investigation and sent a cease-and-desist letter <a href="https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai">(California DOJ)</a>. The European Commission opened a Digital Services Act investigation on January 26 <a href="https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act">(European Commission)</a>. X announced it would block Grok from editing images of real people into revealing clothing and would geoblock some generation where illegal <a href="https://www.bbc.co.uk/news/articles/ce8gz8g2qnlo">(BBC)</a>, <a href="https://www.theguardian.com/technology/2026/jan/15/grok-ai-images-uk-limits-x-app-ofcom">(Guardian)</a>.</li>
+<li><strong>Mid-2026: tightened, but not sealed.</strong> WIRED reported on June 11 that researchers saw changes making &quot;undress&quot; images of real people harder to create, and that users were complaining of increased moderation, yet it still found dozens of sexualized deepfakes hosted on Grok's site. WIRED quoted a deepfake expert saying Grok still falls short of other mainstream tools <a href="https://www.wired.com/story/grok-is-still-hosting-sexualized-deepfakes-of-famous-women/">(WIRED)</a>. xAI's acceptable-use policy, effective June 26, expressly bars undressing real persons and pornographic depictions of persons <a href="https://www.termsobservatory.org/version-grok-aup-2026-07-18T01-54-16Z.html">(archived copy)</a>. In mid-July, Axios reported a researcher jailbreak that still worked on Grok <a href="https://www.axios.com/2026/07/14/exclusive-grok-jailbreak-creates-sexual-violent-images">(Axios)</a>, and Ars Technica reported that xAI had sued a user over alleged illegal image generation, describing its tool as &quot;a neutral tool, subject to user control&quot; <a href="https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users/">(Ars Technica)</a>.</li>
+</ul>
+<p><strong>My recollection versus the record.</strong> I recall Grok's limits being looser around the World Cup period this past summer. That is my recollection and I haven't verified it. The public record is consistent with a platform in transition that summer: the policy tightening and the press reports above sit in the same window, and so do the reports that gaps remained. I can't tell you from the public record what any particular day's limits were.</p>
+<p><strong>So, has it tightened?</strong> Not as a single trend. At least one mainstream vendor (OpenAI) loosened on public-figure and sensitive-topic content in 2025 while strengthening safeguards around children, and others were reported to apply tighter guardrails than Grok on sexualized depictions of real people. The most permissive vendor tightened after regulators intervened in 2026, though reporting says gaps remained. The consistent direction is on two categories: depictions of real people, and children. Imaginary adult content is where vendors and users still disagree.</p>
+<h2>Question 2: Is tighter moderation desirable, or overreach?</h2>
+<p>I'll start with the strongest version of the position I walked into the night with, and then give the other side the same treatment.</p>
+<h2>The steelman: &quot;Built-in blocks shouldn't exceed what the law requires&quot;</h2>
+<p>My position, stated as strongly as I can state it, has three parts.</p>
+<p><strong>(a) A tool's blocks shouldn't exceed the law.</strong> A pencil doesn't refuse to draw. A word processor doesn't decline to type a sentence it finds distasteful. We accept in other tools that lawfulness is the boundary, and that legislatures, not product managers, draw it. Private vendors writing broader rules than any statute are making moral and aesthetic judgments for millions of people, with little accountability and no appeal. Classical art, satire, medical images, and fiction all contain nudity. A filter that stops a Renaissance-style figure but passes a crude doodle shows that the line is crude too, and there is a real cost to over-blocking. Google's 2024 episode, where tuning caused benign prompts to be treated as sensitive, is the vendor's own account of that cost.</p>
+<p><strong>(b) A paying adult should be able to bypass blocks for lawful content.</strong> Consider the relationship. An adult pays for a service, agrees to terms, and asks for something lawful. If the content harms no third party and breaks no law, then who is the block protecting? Adult consent plus lawfulness is how we treat most other products. Age-gating and verification can handle minors. The user, not the vendor, bears responsibility for what he does with the output. That is, in fact, xAI's litigating position as reported: every output is the result of the user's prompts, and Grok is &quot;a neutral tool, subject to user control&quot; <a href="https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users/">(Ars Technica)</a>.</p>
+<p><strong>(c) This tracks Elon Musk's stated free-speech philosophy.</strong> I have used only statements I could verify against sources.</p>
+<ul>
+<li>In his March 2024 interview with Don Lemon, Musk said, &quot;Moderation is a propaganda word for censorship&quot; <a href="https://www.theguardian.com/technology/2024/mar/18/elon-musk-defends-stance-diversity-free-speech-interview-don-lemon">(The Guardian)</a>. Fortune reports he also said, &quot;If something is illegal, obviously we will remove it,&quot; and &quot;Laws are put in place by the people, and we adhere to those laws. If you go beyond the law, you're actually going beyond the will of the people&quot; <a href="https://fortune.com/2024/03/18/what-did-elon-musk-say-in-don-lemon-interview-free-speech/">(Fortune)</a>. In the same exchange he asked, &quot;So, Don, you love censorship, is what you're saying&quot; <a href="https://www.theguardian.com/technology/2024/mar/18/elon-musk-defends-stance-diversity-free-speech-interview-don-lemon">(Guardian)</a>. Those remarks concerned X's handling of user posts, not AI image generation, and I don't want to stretch them beyond that.</li>
+<li>On January 14, 2026, Musk wrote that &quot;[w]ith NSFW enabled, Grok is supposed [to] allow upper body nudity of imaginary adult humans (not real ones) consistent with what can be seen in R-rated movies,&quot; calling that &quot;the de facto standard in America&quot; that &quot;will vary in other regions according to the laws on a country by country basis&quot; <a href="https://elonmuskarchive.org/posts/2011562747620712927">(archived post)</a>, <a href="https://www.bbc.co.uk/news/articles/ce8gz8g2qnlo">(BBC)</a>. Notice the shape of that position: the boundary is the law of each jurisdiction, with a distinction between imaginary and real people.</li>
+<li>On January 3, 2026, Musk wrote, &quot;Anyone using Grok to make illegal content will suffer the same consequences as if they upload illegal content&quot; <a href="https://www.businessinsider.com/elon-musk-grok-bikini-response-sexualized-images-minors-remove-clothes-2026-1">(Business Insider)</a>.</li>
+</ul>
+<p>Taken together, the stated philosophy is that the vendor enforces the law and the user answers for the rest. That is a coherent position, and it is close to the one I started the night with.</p>
+<h2>The counter-view, fairly stated</h2>
+<p><strong>Vendors have their own rights and discretion.</strong> In <em>Moody v. NetChoice</em> (2024), the Supreme Court recognized that a platform's curation of what it presents can be protected editorial discretion <a href="https://www.supremecourt.gov/opinions/23pdf/22-277new_8mjp.pdf">(Supreme Court opinion)</a>. Whether the output of a generative model is the vendor's own speech is a harder and unsettled question. In <em>Garcia v. Character Technologies</em> (M.D. Fla. 2025), a trial court said it was &quot;not prepared to hold that the Character A.I. LLM's output is speech&quot; at the pleading stage, while allowing the defendant to assert its users' rights <a href="https://www.courthousenews.com/wp-content/uploads/2025/05/garcia-v-character-technologies-order.pdf">(order)</a>. The case later settled, so no appellate court has weighed in <a href="https://www.lawfaremedia.org/article/if-ai-outputs-aren-t-speech--who-has-to-prove-they-re-human">(Lawfare)</a>. This cuts both ways for a &quot;bypass&quot; right: the user's claim to receive speech and the vendor's claim to decline to produce it are both unsettled. Either way, a company generally isn't obligated to build every feature a lawful customer might want.</p>
+<p><strong>Contract and terms of service.</strong> A paying customer buys the service on the vendor's terms. Those terms can be narrower than the law, as most are. A &quot;right&quot; to bypass isn't in the contract, and many vendors' terms prohibit it. xAI's own acceptable-use policy, as captured in July 2026, forbids &quot;jailbreaking, adversarial prompting,&quot; and circumventing safeguards, with an exception only for an official red team or &quot;official written consent&quot; <a href="https://www.termsobservatory.org/version-grok-aup-2026-07-18T01-54-16Z.html">(archived copy)</a>. So even the most permissive vendor in this discussion does not offer paying users a right to bypass its blocks.</p>
+<p><strong>The &quot;lawful content&quot; line is harder to draw in practice than in theory.</strong> A generator can't reliably tell a real person from an imaginary one, or an adult from a minor. The Verge's August 2025 testing found a &quot;spicy&quot; preset that produced celebrity nudity without a request, and the consumer groups' FTC letter raised the age-gate problem. CSAM and non-consensual intimate imagery (NCII) are the hard cases. xAI's own litigation, as reported, alleges a user made repeated attempts and modified prompts until the tool generated illegal images, and the reporting also describes safeguards that sometimes blocked the requests <a href="https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users/">(Ars Technica)</a>. A vendor that wants to avoid producing illegal content has an incentive to block more than the strict legal line, because the line is hard to see from inside a model.</p>
+<p><strong>Brand and financial risk.</strong> SpaceX's May 2026 investor disclosure reportedly set aside $530 million for legal complaints including those linked to Grok, and flagged heightened risks from its irreverent modes <a href="https://www.wired.com/story/grok-is-still-hosting-sexualized-deepfakes-of-famous-women/">(WIRED)</a>. Whatever one thinks of the policy, vendors price this exposure.</p>
+<p><strong>The law is moving toward vendor responsibility, not away from it.</strong> The TAKE IT DOWN Act, signed May 19, 2025, criminalizes knowingly publishing non-consensual intimate images, including AI &quot;digital forgeries,&quot; and requires covered platforms to run a notice-and-removal process, with 48-hour removal on a valid request. The platform obligations took effect May 19, 2026, with FTC enforcement <a href="https://www.congress.gov/crs-product/LSB11314">(CRS)</a>, <a href="https://uscode.house.gov/us/usc/119-138/t47/s223a/">(47 U.S.C. § 223a)</a>. CRS notes that some groups argue the removal provisions are overbroad. States have moved too. As of May 2025, Public Citizen counted 33 states with laws protecting the general public from intimate deepfakes, and four more protecting minors only <a href="https://www.citizen.org/news/two-thirds-of-states-enact-bills-protecting-public-from-deepfake-porn/">(Public Citizen)</a>. That count is dated and has likely grown. The TAKE IT DOWN Act's reach to an AI tool's own generation, as opposed to publication, is less clear. The Verge noted in 2025 that its provisions were &quot;unlikely to apply to Grok&quot; in that setting. Abroad, Ofcom has said the UK Online Safety Act does not regulate chatbots that only allow one-on-one interaction, do not search multiple sources, and cannot generate pornographic content, and that it could not investigate illegal-image creation by the standalone Grok service on that basis <a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/investigation-into-x-and-scope-of-the-online-safety-act">(Ofcom)</a>.</p>
+<p><strong>Section 230 may not cover a vendor's own output.</strong> Section 230 of the Communications Decency Act immunizes providers from liability as the publisher of information provided by <em>another</em> party. A CRS analysis explains that the immunity does not apply where a provider helped create or develop the content, and that courts haven't decided how it applies to generative AI. It describes AI products as operating &quot;on something like a spectrum between a retrieval search engine (more likely to be covered by Section 230) and a creative engine (less likely to be covered)&quot; <a href="https://www.congress.gov/crs-product/LSB11097">(CRS)</a>. Lawfare reports that no court has decided the question and that Section 230's own authors have said it should not apply <a href="https://www.lawfaremedia.org/article/if-ai-outputs-aren-t-speech--who-has-to-prove-they-re-human">(Lawfare)</a>. Congress has considered bills to withhold immunity expressly <a href="https://www.hawley.senate.gov/hawley-blumenthal-introduce-bipartisan-legislation-protect-consumers-and-deny-ai-companies-section/">(Sen. Hawley)</a>. Notice the tension with the &quot;neutral tool&quot; position: the more a vendor argues that the user alone creates the output, the more it invites the question of whether the vendor is shielded, and the less a vendor's decision to filter looks like an editorial choice at all.</p>
+<h2>An irony worth noting</h2>
+<p>By my own observation, xAI's SuperGrok Imagine was more permissive than the other tool I tested, which is consistent with WIRED's reporting, quoting a deepfake expert, that Grok has not matched other mainstream tools' guardrails. Yet the same company's written policy bans what some of its users want to do, prohibits circumventing its safeguards, and reserves testing for authorized red teams. The vendor that drew the most regulatory attention in the reporting I found has written rules that look much more like the &quot;restrictive&quot; vendor's than its user experience does. The gap between a stated policy and an operating control is exactly what examiners look for.</p>
+<h2>Where I come out</h2>
+<p>I don't think the assistant's refusal was obviously right, and I don't think it was obviously wrong. It is one reasonable design choice among several. A narrow-to-the-law design maximizes adult autonomy and carries more legal and reputational tail risk. A broader design costs some lawful uses and reduces that exposure. What I find hard to defend is the unexplained version of either: a block no one can describe, or a policy that doesn't match what the tool does.</p>
+<h2>Testing a control versus evading it</h2>
+<p>In mortgage compliance, we separate these without much thought. A compliance officer who runs matched-pair fair lending tests under a documented, authorized program is testing a control. An employee who quietly tries different ways to get a file past QC is circumventing one, even if his curiosity is sincere. The first is part of the control environment. The second is a finding. The federal fair lending examination procedures describe structured testing and statistical review of lending controls <a href="https://www.federalreserve.gov/boarddocs/caletters/2009/0906/caltr0906.htm">(FFIEC procedures, Fed CA 09-6)</a>, and model risk guidance calls for &quot;effective challenge&quot; that is independent and documented <a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107.pdf">(SR 11-7)</a>.</p>
+<p>That is the assistant's point in its refusal: trying variant after variant against a block is what circumvention looks like from the system's side, whatever the user's intent. It is also why red-teaming belongs in an authorized, documented program run by people with a mandate, not by end users at 1 a.m. I accept that distinction as a lawyer. As a user, I'll admit it was irritating.</p>
+<h2>A short control framework</h2>
+<p>If you build or buy an AI tool that generates content, here is a short outline of what a defensible control environment looks like, mapped to NIST's AI Risk Management Framework <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">(AI RMF 1.0)</a> and its generative AI profile <a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">(NIST AI 600-1)</a>, and to ISO/IEC 42001, the AI management system standard <a href="https://www.iso.org/standard/42001">(ISO)</a>. The mappings are mine and approximate.</p>
+<ul>
+<li><strong>Written policy (Govern; ISO 42001 AI policy and leadership).</strong> A policy that says what the tool will and will not generate, who owns it, and who may change it.</li>
+<li><strong>Documented boundaries (Map; ISO 42001 risk and impact assessment).</strong> Identify the harms at stake, such as real-person likeness, minors, NCII, and brand, and record why each boundary sits where it does. If the boundary is judgment rather than law, say so.</li>
+<li><strong>Logged refusals with reasons (Measure; ISO 42001 monitoring and operational controls).</strong> Log what was blocked, by which control (the model or the external tool), and why. Review false positives and false negatives. This is the answer to the explainability gap above.</li>
+<li><strong>An authorized red-team process (Measure; ISO 42001 internal audit).</strong> Testing circumvention is legitimate when it is authorized, scoped, documented, and reported, as the xAI policy itself recognizes with its red-team exception.</li>
+<li><strong>Escalation and response (Manage; ISO 42001 corrective action).</strong> Incident handling, takedown, law-enforcement reporting where required, regulator contact, and a path to change the boundaries.</li>
+<li><strong>Consistency between policy and behavior (Govern and Measure).</strong> Test that the tool does what the policy says. This is where the most permissive vendor in this story seems to have run into trouble.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The honest answer to both of my questions is: it depends on what you are protecting. Moderation of AI image tools has not tightened in a straight line. It loosened for some content, tightened sharply for real people and minors, and was driven partly by regulators. Whether tighter is better depends on whether you weigh adult autonomy and lawful expression more heavily or the harms to real people and to the vendor. The law is moving toward more responsibility for providers, but the questions of first-party output, Section 230, and First Amendment status are not settled, and anyone telling you otherwise is guessing.</p>
+<p>For those of us in regulated industries, the useful takeaway is process, not outcome. Write the rule down. Say why it sits where it does. Log what you block and why. Test it under authority. And make sure that what the tool does is what the policy says.</p>
+<p><em>This post is general commentary, not legal advice, and no attorney-client relationship is created by reading it. AI policies, vendor practices, and the law discussed here are changing quickly. Descriptions of news events reflect the cited reports and have not been independently verified. Consult counsel about your specific situation.</em></p>
+<h2>Sources</h2>
+<p><strong>AI image moderation timeline</strong></p>
+<ul>
+<li><a href="https://the-decoder.com/stable-diffusion-v2-removes-nude-images-and-causes-protests/">The Decoder, &quot;Stable Diffusion v2 removes NSFW images and causes protests&quot; (Nov. 26, 2022)</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/gemini/gemini-image-generation-issue/">Google, &quot;What happened with Gemini image generation&quot; (Feb. 2024)</a></li>
+<li><a href="https://apnews.com/article/midjourney-ai-imagegenerator-biden-trump-deepfakes-bc6c254ddb20e36c5e750b4570889ce1">AP, &quot;AI image-generator Midjourney blocks images of Biden, Trump&quot; (Mar. 2024)</a></li>
+<li><a href="https://www.theverge.com/2024/12/7/24315644/grok-x-aurora-ai-image-generator-xai">The Verge, &quot;X gives Grok a new photorealistic AI image generator&quot; (Dec. 7, 2024)</a></li>
+<li><a href="https://techcrunch.com/2025/03/28/openai-peels-back-chatgpts-safeguards-around-image-creation/">TechCrunch, &quot;OpenAI peels back ChatGPT's safeguards around image creation&quot; (Mar. 28, 2025)</a></li>
+<li><a href="https://www.theverge.com/report/718975/xai-grok-imagine-taylor-swifty-deepfake-nudes">The Verge, &quot;Grok's 'spicy' video mode instantly made me Taylor Swift nude deepfakes&quot; (Aug. 5, 2025)</a></li>
+<li><a href="https://www.theverge.com/x-ai/759554/consumer-safety-groups-are-demanding-an-ftc-investigation-into-groks-spicy-mode-elon-musk-grok-imagine-xai">The Verge, consumer groups' FTC letter on Grok's &quot;Spicy&quot; mode (2025)</a></li>
+<li><a href="https://www.theverge.com/news/842657/openai-chatgpt-adult-mode-debut-q1-2026">The Verge, &quot;ChatGPT's 'adult mode' is expected to debut in Q1 2026&quot; (Dec. 11, 2025)</a></li>
+<li><a href="https://www.pcworld.com/article/3099680/openai-just-nixed-chatgpt-erotic-adult-mode.html">PCWorld, &quot;OpenAI just nixed ChatGPT's erotic 'adult' mode&quot; (Mar. 26, 2026)</a></li>
+<li><a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-launches-investigation-into-x-over-grok-sexualised-imagery">Ofcom, investigation into X over Grok (Jan. 12, 2026)</a></li>
+<li><a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/investigation-into-x-and-scope-of-the-online-safety-act">Ofcom, update on the X investigation and scope of the Online Safety Act</a></li>
+<li><a href="https://oag.ca.gov/news/press-releases/attorney-general-bonta-launches-investigation-xai-grok-over-undressed-sexual-ai">California Attorney General, investigation into xAI/Grok (Jan. 2026)</a></li>
+<li><a href="https://digital-strategy.ec.europa.eu/en/news/commission-investigates-grok-and-xs-recommender-systems-under-digital-services-act">European Commission, investigation of Grok and X under the DSA (Jan. 26, 2026)</a></li>
+<li><a href="https://www.bbc.co.uk/news/articles/ce8gz8g2qnlo">BBC, &quot;X to stop Grok AI from undressing images of real people after backlash&quot; (Jan. 14, 2026)</a></li>
+<li><a href="https://www.theguardian.com/technology/2026/jan/15/grok-ai-images-uk-limits-x-app-ofcom">The Guardian, &quot;Grok AI: what do limits on tool mean for X, its users and UK media watchdog?&quot; (Jan. 15, 2026)</a></li>
+<li><a href="https://www.businessinsider.com/elon-musk-grok-bikini-response-sexualized-images-minors-remove-clothes-2026-1">Business Insider, &quot;Elon Musk responds to backlash over Grok being used to create sexualized images of minors&quot; (Jan. 5, 2026)</a></li>
+<li><a href="https://www.wired.com/story/grok-is-still-hosting-sexualized-deepfakes-of-famous-women/">WIRED, &quot;Grok Is Still Hosting Sexualized Deepfakes of Famous Women&quot; (Jun. 11, 2026)</a></li>
+<li><a href="https://www.axios.com/2026/07/14/exclusive-grok-jailbreak-creates-sexual-violent-images">Axios, &quot;Exclusive: Grok jailbreak creates sexual, violent images&quot; (Jul. 14, 2026)</a></li>
+<li><a href="https://arstechnica.com/tech-policy/2026/07/xai-cant-deny-grok-makes-csam-anymore-so-its-suing-users/">Ars Technica, &quot;xAI can't deny Grok makes CSAM anymore. So it's suing users.&quot; (Jul. 16, 2026)</a></li>
+<li><a href="https://www.termsobservatory.org/version-grok-aup-2026-07-18T01-54-16Z.html">xAI Acceptable Use Policy, effective June 26, 2026 (archived copy, Compute Terms Observatory)</a></li>
+</ul>
+<p><strong>Musk statements</strong></p>
+<ul>
+<li><a href="https://www.theguardian.com/technology/2024/mar/18/elon-musk-defends-stance-diversity-free-speech-interview-don-lemon">The Guardian, &quot;Elon Musk defends stance on diversity and free speech during tense interview&quot; (Mar. 18, 2024)</a></li>
+<li><a href="https://fortune.com/2024/03/18/what-did-elon-musk-say-in-don-lemon-interview-free-speech/">Fortune, &quot;What did Elon Musk say in his interview with Don Lemon&quot; (Mar. 18, 2024)</a></li>
+<li><a href="https://pickscribe.com/v/bOwNUiZLhRc">ABC News segment transcript of the Lemon interview coverage</a></li>
+<li><a href="https://elonmuskarchive.org/posts/2011562747620712927">Musk post of Jan. 14, 2026 (archive)</a></li>
+</ul>
+<p><strong>Law</strong></p>
+<ul>
+<li><a href="https://www.congress.gov/crs-product/LSB11097">CRS, &quot;Section 230 Immunity and Generative Artificial Intelligence&quot; (LSB11097, Dec. 28, 2023)</a></li>
+<li><a href="https://www.congress.gov/crs-product/LSB11314">CRS, &quot;The TAKE IT DOWN Act&quot; (LSB11314, May 20, 2025)</a></li>
+<li><a href="https://uscode.house.gov/us/usc/119-138/t47/s223a/">47 U.S.C. § 223a</a></li>
+<li><a href="https://www.citizen.org/news/two-thirds-of-states-enact-bills-protecting-public-from-deepfake-porn/">Public Citizen, &quot;Two-Thirds of States Enact Bills Protecting Public from Deepfake Porn&quot;</a></li>
+<li><a href="https://www.supremecourt.gov/opinions/23pdf/22-277new_8mjp.pdf"><em>Moody v. NetChoice, LLC</em>, No. 22-277 (U.S. July 1, 2024)</a></li>
+<li><a href="https://www.courthousenews.com/wp-content/uploads/2025/05/garcia-v-character-technologies-order.pdf"><em>Garcia v. Character Technologies</em>, No. 6:24-cv-1903 (M.D. Fla. May 2025) (order)</a></li>
+<li><a href="https://www.lawfaremedia.org/article/if-ai-outputs-aren-t-speech--who-has-to-prove-they-re-human">Lawfare, &quot;If AI Outputs Aren't Speech, Who Has to Prove They're Human?&quot;</a></li>
+<li><a href="https://www.hawley.senate.gov/hawley-blumenthal-introduce-bipartisan-legislation-protect-consumers-and-deny-ai-companies-section/">Sen. Hawley, Hawley–Blumenthal bill to deny AI companies Section 230 immunity</a></li>
+</ul>
+<p><strong>Frameworks and compliance</strong></p>
+<ul>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf">NIST, AI Risk Management Framework (AI RMF 1.0)</a></li>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST, Generative AI Profile (AI 600-1)</a></li>
+<li><a href="https://www.iso.org/standard/42001">ISO/IEC 42001:2023, AI management systems</a></li>
+<li><a href="https://www.federalreserve.gov/boarddocs/caletters/2009/0906/caltr0906.htm">Federal Reserve, CA 09-6, Revised FFIEC Fair Lending Examination Procedures</a></li>
+<li><a href="https://www.federalreserve.gov/boarddocs/srletters/2011/sr1107.pdf">Federal Reserve, SR 11-7, Model Risk Management guidance</a></li>
+</ul>
+</div>
+<nav class="share-bar share-bar-bottom" aria-label="Share this page" data-share-url="https://greggoberg39-rgb.github.io/5g-compliance/ai-image-limits-governance.html" data-share-title="Who Draws the Line? What a Late-Night Test of an AI Image Tool Taught Me About Controls" data-share-text="A mortgage-compliance lawyer tests an AI assistant's content limits, then asks whether AI image moderation has tightened, whether it should, and what a defensible control framework looks like."><ul class="share-list"><li><a class="share-btn share-x" href="https://twitter.com/intent/tweet?text=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;url=https%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html&amp;via=GreggOberg" target="_blank" rel="noopener noreferrer" aria-label="Share on X"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.727-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="share-label-text">Share on X</span></a></li><li><a class="share-btn share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" target="_blank" rel="noopener noreferrer" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.125 2.062 2.062 0 0 1 0 4.125zM7.119 20.452H3.554V9h3.565v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span class="share-label-text">Share on LinkedIn</span></a></li><li><a class="share-btn share-gmail" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;su=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;body=A%20mortgage-compliance%20lawyer%20tests%20an%20AI%20assistant%27s%20content%20limits%2C%20then%20asks%20whether%20AI%20image%20moderation%20has%20tightened%2C%20whether%20it%20should%2C%20and%20what%20a%20defensible%20control%20framework%20looks%20like.%0A%0Ahttps%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" target="_blank" rel="noopener noreferrer" aria-label="Share via Gmail"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg><span class="share-label-text">Share via Gmail</span></a></li><li><a class="share-btn share-email" href="mailto:?subject=Who%20Draws%20the%20Line%3F%20What%20a%20Late-Night%20Test%20of%20an%20AI%20Image%20Tool%20Taught%20Me%20About%20Controls&amp;body=A%20mortgage-compliance%20lawyer%20tests%20an%20AI%20assistant%27s%20content%20limits%2C%20then%20asks%20whether%20AI%20image%20moderation%20has%20tightened%2C%20whether%20it%20should%2C%20and%20what%20a%20defensible%20control%20framework%20looks%20like.%0A%0Ahttps%3A%2F%2Fgreggoberg39-rgb.github.io%2F5g-compliance%2Fai-image-limits-governance.html" aria-label="Share by email"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg><span class="share-label-text">Email</span></a></li><li><button type="button" class="share-btn share-copy" aria-label="Copy link"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7C4.24 7 2 9.24 2 12s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg><span class="share-label-text">Copy link</span></button></li><li><button type="button" class="share-btn share-native" aria-label="Share" hidden><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11A2.99 2.99 0 0 0 21 5a3 3 0 1 0-2.96 2.39L11 11.5v.99l7.04 4.11A2.99 2.99 0 0 0 21 19a3 3 0 1 0-3-2.92z"/></svg><span class="share-label-text">Share</span></button></li></ul></nav>
+<p class="meta"><a href="index.html">← All posts</a></p>
+</article>
+</main>
+<footer>5G Regulatory Compliance · v1.2.0 · Built 2026-11-14 · Commentary only; not legal advice. Not an official publication of RIMBA.</footer>
+<script>
+(function(){
+  function fallbackCopy(url, done){
+    var ta = document.createElement("textarea");
+    ta.value = url;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "absolute";
+    ta.style.left = "-9999px";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  var bars = document.querySelectorAll(".share-bar");
+  bars.forEach(function(bar){
+    var nativeBtn = bar.querySelector(".share-native");
+    if (nativeBtn && navigator.share) {
+      nativeBtn.hidden = false;
+      nativeBtn.addEventListener("click", function(){
+        navigator.share({
+          title: bar.getAttribute("data-share-title") || document.title,
+          text: bar.getAttribute("data-share-text") || "",
+          url: bar.getAttribute("data-share-url") || window.location.href
+        }).catch(function(){});
+      });
+    }
+    var copyBtn = bar.querySelector(".share-copy");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function(){
+        var url = bar.getAttribute("data-share-url") || window.location.href;
+        var label = copyBtn.querySelector(".share-label-text");
+        var prev = label ? label.textContent : "Copy link";
+        var done = function(){
+          copyBtn.classList.add("copied");
+          if (label) label.textContent = "Copied!";
+          copyBtn.setAttribute("aria-label", "Copied!");
+          setTimeout(function(){
+            copyBtn.classList.remove("copied");
+            if (label) label.textContent = prev;
+            copyBtn.setAttribute("aria-label", "Copy link");
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(done).catch(function(){ fallbackCopy(url, done); });
+        } else {
+          fallbackCopy(url, done);
+        }
+      });
+    }
+  });
+})();
+</script>
+</body></html>

@@ -310,7 +310,12 @@ def render_markdown(body):
             flush_para()
             flush_lists()
             continue
-        if line.startswith("### "):
+        img = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)\s*$", line)
+        if img:
+            flush_para(); flush_lists()
+            out.append('<p class="post-figure"><img class="post-img" loading="lazy" src="%s" alt="%s"></p>'
+                       % (html_esc(img.group(2)), html_esc(img.group(1))))
+        elif line.startswith("### "):
             flush_para(); flush_lists()
             out.append("<h3>" + inline(line[4:]) + "</h3>")
         elif line.startswith("## "):
@@ -574,6 +579,9 @@ def build():
                 ),
             },
         )
+        if not (p.get("source") or "").strip():
+            # original posts have no republication source: drop the credit line
+            page = re.sub(r'<p class="credit">.*?</p>\n?', "", page, count=1, flags=re.S)
         write(os.path.join(DOCS, slug + ".html"), page)
 
     filter_btns = ['<button type="button" class="tag on" data-tag="all">All</button>']
