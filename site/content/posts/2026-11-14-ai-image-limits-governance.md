@@ -7,6 +7,8 @@ slug: "ai-image-limits-governance"
 tags: "AI Governance"
 ---
 
+**[Click to read exactly how AI was used (full chat)](ai-image-limits-governance-transcript.html)**
+
 # The test
 
 Compliance people test controls for a living, so I tested one. Very late on the night of November 14, 2026, I probed the image-content limits of my AI assistant. I wanted to see where the lines were, not to produce anything I intended to use.

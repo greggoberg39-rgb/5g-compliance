@@ -31,6 +31,7 @@ POSTS_DIR = os.path.join(CONTENT, "posts")
 MEDIA_SRC = os.path.join(CONTENT, "media")
 TPL_DIR = os.path.join(HERE, "templates")
 DOCS = os.path.join(HERE, "docs")
+STATIC_DIR = os.path.join(HERE, "static")
 CONFIG_PATH = os.path.join(HERE, "config.json")
 RESOURCES_DIR = os.path.join(CONTENT, "resources")
 RESEARCH = os.path.join(os.path.dirname(HERE), "research", "rimba-posts.json")
@@ -489,6 +490,24 @@ def clean_docs():
         os.makedirs(DOCS, exist_ok=True)
 
 
+
+def copy_static():
+    """Copy extra hand-built pages (e.g. transcripts) into docs after a clean build."""
+    if not os.path.isdir(STATIC_DIR):
+        return
+    for name in os.listdir(STATIC_DIR):
+        if name.startswith("."):
+            continue
+        src = os.path.join(STATIC_DIR, name)
+        dst = os.path.join(DOCS, name)
+        if os.path.isdir(src):
+            if os.path.exists(dst):
+                shutil.rmtree(dst)
+            shutil.copytree(src, dst)
+        else:
+            shutil.copy2(src, dst)
+
+
 def write(path, text):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -695,6 +714,7 @@ def build():
                 p = parse_post(open(os.path.join(POSTS_DIR, fn), encoding="utf-8").read())
                 if p["is_draft"]:
                     drafts.append(fn)
+    copy_static()
     print(f"Built v{VERSION} on {TODAY} -> {DOCS}")
     print(f"  BLOG_ENABLED={BLOG_ENABLED}")
     print(f"  published posts: {len(posts)}")
