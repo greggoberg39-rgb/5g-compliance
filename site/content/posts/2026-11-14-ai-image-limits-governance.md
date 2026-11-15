@@ -17,17 +17,17 @@ Here is what happened, described rather than quoted. I asked for a crude, grade-
 
 I pushed back with two arguments. The first was satire: *South Park* does far worse on basic cable. The second was that I only wanted to show that the block works.
 
-I also ran a comparison on a paid consumer account for xAI's Grok Imagine. My observation is that its results were noticeably looser than the other tool's. A blurred screenshot is below. We blurred it to the point where nothing in the generated images is discernible, and left the app interface and my prompt bar readable.
+I also ran a comparison on a paid consumer account for xAI's Grok Imagine. My observation is that its results were noticeably looser than the other tool's. A blurred screenshot is below. We blurred it lightly and covered the nudity, leaving the app interface and my prompt bar readable.
 
-![Gregg's SuperGrok Imagine results (paid consumer account), blurred by us](media/ai-image-limits-supergrok-imagine-blurred.jpg)
+![Gregg's SuperGrok Imagine results (paid consumer account), blurred and covered by us](media/ai-image-limits-supergrok-imagine-blurred.jpg)
 
-*Gregg's SuperGrok Imagine results (paid consumer account), blurred by us. The screenshot's date cannot be verified from the image itself.*
+*Gregg's SuperGrok Imagine results (paid consumer account), blurred and covered by us. The screenshot's date cannot be verified from the image itself.*
 
 According to my account, Grok Imagine on the same paid account also generated a short, realistic video in which the player's jersey lifts to show nudity. The video file's metadata carries no creation date, so the date is my account, not independently verified.
 
-![Still from the author's Grok Imagine clip, blurred by us](media/ai-image-limits-grok-imagine-still-blurred.jpg)
+![Still from the author's Grok Imagine clip, blurred and covered by us](media/ai-image-limits-grok-imagine-still-blurred.jpg)
 
-*Still from the author's Grok Imagine clip, blurred by us.*
+*Still from the author's Grok Imagine clip, blurred and covered by us.*
 
 I'm not publishing this to relitigate a late-night experiment. It surfaces several governance questions that regulated industries already know well, and two questions I want to answer with sources: has AI image moderation actually tightened, and is tighter moderation desirable or overreach?
 
